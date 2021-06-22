@@ -1,14 +1,25 @@
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+
 const routes: Routes = [
+  {path:'header',component:HeaderComponent},
+    { path: 'register', component: SignUpComponent },
     { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent },
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '' },
+    
+   
 ];
 
-export const appRoutingModule = RouterModule.forRoot(routes);
+
+// export const appRoutingModule = RouterModule.forRoot(routes);
 
 
 
@@ -40,8 +51,12 @@ export const appRoutingModule = RouterModule.forRoot(routes);
 // @NgModule({
 //   imports: [RouterModule.forRoot(
 //     routes,
-//     { enableTracing: true } // <-- debugging purposes only
-//   )],
+//     { enableTracing: true } // <-- debugging purposes only,
+    
+
+//   ),
+//   ReactiveFormsModule,
+//   FormsModule,],
 //   exports: [RouterModule],
 // })
-// export class AppRoutingModule {}
+export const appRoutingModule = RouterModule.forRoot(routes);
