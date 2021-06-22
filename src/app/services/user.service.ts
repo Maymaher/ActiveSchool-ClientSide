@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import {Observable, observable} from 'rxjs';
-import {User} from '../user';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import * as AppUtil from '../common/app.util';
+import { User } from '../user';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +27,14 @@ export class UserService {
     return !!localStorage.getItem(AppUtil.AUTH_TOKEN);
   }
 
+  logOut() {
+    localStorage.removeItem(AppUtil.AUTH_TOKEN);
+    localStorage.removeItem(AppUtil.USER_INFO);
+  }
 
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem(AppUtil.USER_INFO) || '{}');
+  }
   
 
   

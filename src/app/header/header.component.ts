@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Headers, RequestOptions } from '@angular/http';
 import { Router } from "@angular/router";
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,30 +9,23 @@ import { Router } from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   books: any;
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor( public _userService :UserService,
+    public _router :Router) { 
+    
+  }
   
   ngOnInit() {
     var headers = new Headers();
     headers.append('Authorization', 'Bearer ' + localStorage.getItem("token"));
     headers.append('Content-Type', 'application/json');
     let options = new RequestOptions({ headers: headers });
-    // let httpOptions = {
-      
-    //   // headers: new HttpHeaders({ "Authorization": localStorage.getItem('jwtToken') })
-    // };
-    // this.http.get('/student/student', options).subscribe(data => {
-    //   this.books = data;
-    //   console.log(this.books);
-    // }, err => {
-    //   if(err.status === 401) {
-    //     this.router.navigate(['login']);
-    //   }
-    // });
+  
   }
 
-  logout() {
-    localStorage.removeItem('jwtToken');
-    this.router.navigate(['login']);
+  onLogOutClicked(){
+    this._userService.logOut();
+    this._router.navigate(['/login']);
+    // return false;
   }
 
 }
