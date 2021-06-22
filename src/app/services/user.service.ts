@@ -3,24 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as AppUtil from '../common/app.util';
 import { User } from '../user';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { Http } from '@angular/http';
+ 
+import { map } from "rxjs/operators";
+
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private _http:Http) { }
   //Call login api
-  auth(user:any) :Observable<User>{
-    let url="http://localhost:3000/api/login";
-    return this.http.post<User>(url,user);
-    
-  }
-
+ 
   //Save user data in local storage
-  saveUserDate(token:any, user:any) {
-    localStorage.setItem(AppUtil.AUTH_TOKEN, token);
-    localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
-  }
+  
   //Check user is logged in
   isLoggedIn() :boolean {
     
@@ -32,6 +31,22 @@ export class UserService {
     localStorage.removeItem(AppUtil.USER_INFO);
   }
 
+
+  createAccount(user:any) {
+   
+    return this._http.post('http://localhost:3200/api/register', user).pipe(map((resp:any) => resp.json()));
+  }
+ 
+  auth(user:any) {
+    return this._http.post('http://localhost:3200/api/login', user)
+      .pipe(map((resp:any)=> resp.json()));
+  }
+ 
+  saveUserDate(token:any, user:any) {
+    localStorage.setItem(AppUtil.AUTH_TOKEN, token);
+    localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
+  }
+ 
   getCurrentUser() {
     return JSON.parse(localStorage.getItem(AppUtil.USER_INFO) || '{}');
   }
