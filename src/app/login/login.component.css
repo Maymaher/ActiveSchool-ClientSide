@@ -40,3 +40,24 @@ body {
   .form-signin p {
     margin-top: 10px;
   }
+  .login-container{
+    display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 10%;
+border: 1px solid;
+width: 46%;
+margin: 0 auto;
+    margin-top: 0px;
+margin-top: 10%;
+border-radius: 50px;
+  }
+
+
+  img{
+    margin-right:5%;
+width: 63%;
+height: 393px;
+border-top-left-radius: 50px;
+border-bottom-left-radius: 50px;
+  }
