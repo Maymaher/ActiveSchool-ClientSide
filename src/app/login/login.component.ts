@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { UserService } from '../services/user.service';
 
 
 @Component({ selector: 'app-login',
@@ -9,38 +10,53 @@ styleUrls: ['./login.component.css']
  }
 )
 export class LoginComponent implements OnInit {
-    loginForm!: FormGroup;
-    loading = false;
-    submitted = false;
-    returnUrl!: string;
-    error = '';
 
+    email: string ="";
+    password: string="";
+    
+  
     constructor(
-        private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-        private router: Router,
-        // private authenticationService: AuthenticationService
-    ) { 
-        // redirect to home if already logged in
-        // if (this.authenticationService.currentUserValue) { 
-        //     this.router.navigate(['/']);
-        // }
-    }
+      private _userService :UserService,
+      private _flash :FlashMessagesService,
+      private _router :Router
+     
+    ) { }
+
+    
 
     ngOnInit() {
-        this.loginForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
+        
+
+       
+    }
+
+   
+
+    onLogin() {
+      if(!this.email || !this.password) {
+        this._flash.show('All fields are required', { cssClass: 'alert-danger'});
+        
+      }
+      else{
+        const user = {
+          email: this.email,
+          password: this.password
+        }
+        this._userService.auth(user).subscribe(data =>{
+          if (!data.success) {
+            this._flash.show(data.message, { cssClass: 'alert-danger'});
+            
+          }
+          else{
+            //this._flash.show(data.message, { cssClass: 'alert-success'});
+            this._userService.saveUserDate(data.token,data.user)
+            this._router.navigate(['/home']);
+
+          }
         });
+      }
+     
 
-        // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
-    // convenience getter for easy access to form fields
-    get f() { return this.loginForm.controls; }
-
-    onSubmit() {
-      
-    }
 }
