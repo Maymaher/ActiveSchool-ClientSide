@@ -1,17 +1,17 @@
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {path:'header',component:HeaderComponent},
     { path: 'register', component: SignUpComponent },
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' },
     
