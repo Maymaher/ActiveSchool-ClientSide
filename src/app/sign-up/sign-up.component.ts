@@ -59,7 +59,7 @@ export class SignUpComponent implements OnInit {
         }
 
         this._flash.show('Account was created', { cssClass: 'alert-success' } );
-        return this._router.navigate(['/login']);
+        return this._router.navigate(['']);
       }
     );
     return true;
