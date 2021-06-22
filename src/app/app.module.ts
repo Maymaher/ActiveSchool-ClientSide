@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 
