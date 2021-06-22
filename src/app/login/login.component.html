@@ -1,6 +1,6 @@
-<div style="display: flex;align-items: center;
+<div class="login-container" style="display: flex;align-items: center;
 justify-content: center;margin-top: 10%;"> 
-  <img src="/assets/images/4860253.jpg" alt="image" width="300" height="230"  style="margin-right: 5%;">
+  <img src="/assets/images/4860253.jpg" alt="image" width="300" height="230"  >
 <form (submit)="onLogin()" class="form-horizontal" >
   
 
@@ -10,7 +10,7 @@ justify-content: center;margin-top: 10%;">
     <div class="form-group">
       <label class="col-lg-2 control-label">Email</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" [(ngModel)]="email" name="email" >
+        <input type="email" class="form-control" [(ngModel)]="email" name="email" >
       </div>
     </div>
   
