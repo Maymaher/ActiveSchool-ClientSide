@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Headers, RequestOptions } from '@angular/http';
 import { Router } from "@angular/router";
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
