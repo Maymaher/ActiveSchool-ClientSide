@@ -15,7 +15,7 @@ import { map } from "rxjs/operators";
 })
 export class UserService {
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http:Http) { }
   //Call login api
  
   //Save user data in local storage
@@ -47,10 +47,6 @@ export class UserService {
     localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
   }
  
- 
- 
- 
-  
   getCurrentUser() {
     return JSON.parse(localStorage.getItem(AppUtil.USER_INFO) || '{}');
   }
