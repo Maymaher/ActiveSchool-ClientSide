@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   
 import { Router } from "@angular/router";
  import { FlashMessagesService } from 'angular2-flash-messages';
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-sign-up',
