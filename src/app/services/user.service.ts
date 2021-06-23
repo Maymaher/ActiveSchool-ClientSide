@@ -45,6 +45,8 @@ export class UserService {
   saveUserDate(token:any, user:any) {
     localStorage.setItem(AppUtil.AUTH_TOKEN, token);
     localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
+  
+    
   }
  
   getCurrentUser() {
