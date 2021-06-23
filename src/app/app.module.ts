@@ -1,18 +1,20 @@
 // import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FlashMessagesModule } from 'angular2-flash-messages';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { appRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SignUpComponent } from './components/admin/sign-up/sign-up.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 
@@ -21,16 +23,16 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 @NgModule({
     imports: [
         BrowserModule,
+        CommonModule,
         ReactiveFormsModule,
         HttpClientModule,
         appRoutingModule,
         FormsModule,
-        BrowserModule, 
         FlashMessagesModule.forRoot(),
         HttpModule,
+        RouterModule,
         
-    
-        FormsModule, 
+       
     
     
     ],

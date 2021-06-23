@@ -1,12 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import * as AppUtil from '../common/app.util';
-import { User } from '../user';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Http } from '@angular/http';
- 
 import { map } from "rxjs/operators";
+import * as AppUtil from '../common/app.util';
+ 
 
 
 
@@ -34,11 +30,11 @@ export class UserService {
 
   createAccount(user:any) {
    
-    return this._http.post('http://localhost:3200/api/register', user).pipe(map((resp:any) => resp.json()));
+    return this._http.post('http://localhost:3000/api/register', user).pipe(map((resp:any) => resp.json()));
   }
  
   auth(user:any) {
-    return this._http.post('http://localhost:3200/api/login', user)
+    return this._http.post('http://localhost:3000/api/login', user)
       .pipe(map((resp:any)=> resp.json()));
   }
  

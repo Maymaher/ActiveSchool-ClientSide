@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
-  
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
- import { FlashMessagesService } from 'angular2-flash-messages';
-import { UserService } from '../../services/user.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { UserService } from '../../../services/user.service';
+
+  
 
 @Component({
   selector: 'app-sign-up',
