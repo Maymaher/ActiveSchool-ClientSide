@@ -1,4 +1,4 @@
-FROM node:14.16.0-alpine
+FROM node:14.16.0-alpine as node
 
 RUN mkdir -p /usr/src/schoolapp
 
@@ -6,14 +6,11 @@ WORKDIR /usr/src/schoolapp
 
 COPY package*.json ./
 
-RUN npm ci
-
-RUN npm audit fix
-
-RUN npm install -g @angular/cli@11.2.12
+RUN npm install
 
 COPY . .
 
-EXPOSE 4200
+RUN npm run build --prod
 
-CMD [ "ng", "serve", "--host", "0.0.0.0", "--disableHostCheck" ]
+FROM nginx:alpine
+COPY --from=node /usr/src/schoolapp/dist/activeschool/ /usr/share/nginx/html
