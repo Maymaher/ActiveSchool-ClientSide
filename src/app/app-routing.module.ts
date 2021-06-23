@@ -7,9 +7,11 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ProfileComponent } from './components/student/profile/profile.component';
 const routes: Routes = [
   {path:'header',component:HeaderComponent},
     { path: 'register', component: SignUpComponent },
+    {path:'student/profile',component:ProfileComponent},
     { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
