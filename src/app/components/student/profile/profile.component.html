@@ -13,22 +13,20 @@
                 <div class="card">
 
                    
-						<div class="row preview-thumbnail card-body" *ngIf="authService.getCurrentUser() as user">
+						<div class="row preview-thumbnail card-body" >
 
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
 
                                 <div class="image-container">
-									<img class="align-self-start mr-1 img-thumbnail rounded-circle" style="height:65px;margin-top: 15px;" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-									alt="{{user.name}}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail">
-  
+   
                                     <div class="middle">
                                         <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                         <input type="file" style="display: none;" id="profilePicture" name="file" />
                                     </div>
                                 </div>
-                                <div class="userData ml-3">
-                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">{{user.name}}</a></h2>
+                                <div class="userData ml-3" >
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"> {{user[0].name}}</a></h2>
                                     <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Video Uploads</h6>
                                     <h6 class="d-block"><a href="javascript:void(0)">300</a> Blog Posts</h6>
                                 </div>
@@ -63,7 +61,7 @@
 												
                                             </div>
                                             <div class="col-md-8 col-6">
-												{{(user.name) ? user.name : 'User'}}
+												{{(user[0].name) ? user[0].name : 'User'}}
                                             </div>
                                         </div>
                                         <hr />
@@ -84,7 +82,7 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-												{{user.email}}
+												{{user[0].email}}
                                             </div>
                                         </div>
                                         <hr />
@@ -93,7 +91,7 @@
                                                 <label style="font-weight:bold;">Address</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-												{{user.address}}
+												{{user[0].address}}
                                             </div>
                                         </div>
                                         <hr />
