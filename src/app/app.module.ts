@@ -14,6 +14,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './components/student/profile/profile.component';
+import { StudentService } from './services/student.service';
+import { SchedularComponent } from './components/student/schedular/schedular.component';
  
 
 
@@ -29,9 +31,7 @@ import { ProfileComponent } from './components/student/profile/profile.component
         BrowserModule, 
         FlashMessagesModule.forRoot(),
         HttpModule,
-        FormsModule, 
-    
-    
+        FormsModule,
     ],
     
     declarations: [
@@ -41,11 +41,13 @@ import { ProfileComponent } from './components/student/profile/profile.component
         HeaderComponent,
         SignUpComponent,
         ProfileComponent,
+        SchedularComponent,
        
     ],
     providers: [
         UserService ,
-        AuthGuard
+        AuthGuard,
+        StudentService
     ],
     bootstrap: [AppComponent]
 })
