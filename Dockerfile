@@ -13,5 +13,4 @@ COPY . .
 RUN npm run build --prod
 
 FROM nginx:alpine
-
 COPY --from=node /usr/src/schoolapp/dist/activeschool/ /usr/share/nginx/html
