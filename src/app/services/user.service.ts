@@ -34,11 +34,11 @@ export class UserService {
 
   createAccount(user:any) {
    
-    return this._http.post('http://localhost:3200/api/register', user).pipe(map((resp:any) => resp.json()));
+    return this._http.post('http://localhost:3000/api/register', user).pipe(map((resp:any) => resp.json()));
   }
  
   auth(user:any) {
-    return this._http.post('http://localhost:3200/api/login', user)
+    return this._http.post('http://localhost:3000/api/login', user)
       .pipe(map((resp:any)=> resp.json()));
   }
  
