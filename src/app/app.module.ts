@@ -13,7 +13,10 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-
+import { ProfileComponent } from './components/student/profile/profile.component';
+import { StudentService } from './services/student.service';
+import { SchedularComponent } from './components/student/schedular/schedular.component';
+ 
 
 
 // used to create fake backend
@@ -28,11 +31,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
         BrowserModule, 
         FlashMessagesModule.forRoot(),
         HttpModule,
-        
-    
-        FormsModule, 
-    
-    
+        FormsModule,
     ],
     
     declarations: [
@@ -40,11 +39,15 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
         HomeComponent,
         LoginComponent,
         HeaderComponent,
-        SignUpComponent
+        SignUpComponent,
+        ProfileComponent,
+        SchedularComponent,
+       
     ],
     providers: [
         UserService ,
-        AuthGuard
+        AuthGuard,
+        StudentService
     ],
     bootstrap: [AppComponent]
 })
