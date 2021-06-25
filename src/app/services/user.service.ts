@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 import { map } from "rxjs/operators";
 import * as AppUtil from '../common/app.util';
  
+
 
 
 
@@ -12,6 +13,12 @@ import * as AppUtil from '../common/app.util';
 export class UserService {
 
   constructor(private _http:Http) { }
+
+
+  createAuthHeader(headers:Headers){
+    const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
+    headers.append('Authorization',`Bearer ${token}`);
+  }
   //Call login api
  
   //Save user data in local storage
@@ -30,11 +37,11 @@ export class UserService {
 
   createAccount(user:any) {
    
-    return this._http.post('http://localhost:3000/api/register', user).pipe(map((resp:any) => resp.json()));
+    return this._http.post('http://localhost:3200/api/register', user).pipe(map((resp:any) => resp.json()));
   }
  
   auth(user:any) {
-    return this._http.post('http://localhost:3000/api/login', user)
+    return this._http.post('http://localhost:3200/api/login', user)
       .pipe(map((resp:any)=> resp.json()));
   }
  
@@ -47,6 +54,13 @@ export class UserService {
     return JSON.parse(localStorage.getItem(AppUtil.USER_INFO) || '{}');
   }
   
+
+  deleteUser(user_id:any){
+    const headers = new Headers();
+    this.createAuthHeader(headers);
+    return this._http.delete(`http://localhost:3200/student/${user_id}`,{headers})
+      .pipe(map(resp=>resp.json()));
+    }
 
   
 }
