@@ -9,13 +9,17 @@ import { RouterModule } from '@angular/router';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { appRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeAdminComponent } from './components/admin/home/home.component';
 import { SignUpComponent } from './components/admin/sign-up/sign-up.component';
+import { TeacherDetailsComponent } from './components/admin/teacher-details/teacher-details.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ClassService } from './services/class.service';
+import { LevelService } from './services/level.service';
+import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
-
 
 
 // used to create fake backend
@@ -32,6 +36,8 @@ import { UserService } from './services/user.service';
         HttpModule,
         RouterModule,
         
+        
+        
        
     
     
@@ -42,11 +48,16 @@ import { UserService } from './services/user.service';
         HomeComponent,
         LoginComponent,
         HeaderComponent,
-        SignUpComponent
+        SignUpComponent,
+        HomeAdminComponent,
+        TeacherDetailsComponent
     ],
     providers: [
         UserService ,
-        AuthGuard
+        AuthGuard,
+        TeacherService,
+        ClassService,
+        LevelService
     ],
     bootstrap: [AppComponent]
 })
