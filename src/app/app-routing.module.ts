@@ -1,4 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
+import { CoursesComponent } from './components/admin/courses/courses.component';
 import { HomeAdminComponent } from './components/admin/home/home.component';
 import { SignUpComponent } from './components/admin/sign-up/sign-up.component';
 import { TeacherDetailsComponent } from './components/admin/teacher-details/teacher-details.component';
@@ -11,6 +12,8 @@ const routes: Routes = [
     { path: 'register', component: SignUpComponent },
     { path: 'admin/home', component: HomeAdminComponent ,canActivate: [AuthGuard]},
     { path: 'admin/teacherDetails/:id', component: TeacherDetailsComponent ,canActivate: [AuthGuard]},
+    { path: 'admin/teacherDetails/:id/:courseId', component: TeacherDetailsComponent ,canActivate: [AuthGuard]},
+    { path: 'admin/courses', component: CoursesComponent ,canActivate: [AuthGuard]},
 
     { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},

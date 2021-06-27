@@ -20,6 +20,8 @@ export class HomeAdminComponent implements OnInit {
    studentsData:any;
 
 
+
+
   constructor( private _router :Router,CommonModule:CommonModule,
     private _teacherService: TeacherService,
     private _studentService:StudentService,
@@ -32,6 +34,8 @@ export class HomeAdminComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
+    
    this.getStudentsData()
    this.getTeacherData()
 

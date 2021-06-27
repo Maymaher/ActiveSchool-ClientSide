@@ -17,9 +17,11 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ClassService } from './services/class.service';
+import { CourseService } from './services/course.service';
 import { LevelService } from './services/level.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
+import { CoursesComponent } from './components/admin/courses/courses.component';
 
 
 // used to create fake backend
@@ -50,14 +52,16 @@ import { UserService } from './services/user.service';
         HeaderComponent,
         SignUpComponent,
         HomeAdminComponent,
-        TeacherDetailsComponent
+        TeacherDetailsComponent,
+        CoursesComponent
     ],
     providers: [
         UserService ,
         AuthGuard,
         TeacherService,
         ClassService,
-        LevelService
+        LevelService,
+        CourseService
     ],
     bootstrap: [AppComponent]
 })
