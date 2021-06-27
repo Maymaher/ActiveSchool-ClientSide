@@ -45,6 +45,13 @@ export class TeacherService {
 
   }
 
+  deleteTeacherCourse(id:any,courseId:any){
+    const headers = new Headers();
+    this.createAuthHeader(headers);
+    return this._http.delete(`http://localhost:3200/teacher/${id}/courses/${courseId}`,{headers})
+      .pipe(map(resp=>resp.json()));
+  }
+
 
 
 
