@@ -8,11 +8,13 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="" id="">
 		      <ul style="flex-direction: row;" class="nav navbar-nav">
-		        <li class="active"><a href="index.html">Home</a></li>
-		        <li><a style="text-decoration: none;" href="technology.html">About us</a></li>
-		        <li><a style="text-decoration: none;" href="about.html">Portfolio</a></li>
-		        <li><a style="text-decoration: none;" href="blog.html">Faculty</a></li>
-		        <li><a style="text-decoration: none;" href="blog.html">History</a></li>
+		        <li class="active"><a *ngIf="currentuser.type=='student'" href="index.html">Home</a></li>
+		        <li class="active"><a *ngIf="currentuser.type=='admin'" routerLink="/admin/home">Home</a></li>
+				<li><a style="text-decoration: none;" *ngIf="currentuser.type=='admin'" routerLink="/admin/courses">Courses</a></li>
+
+		        <li><a style="text-decoration: none;" *ngIf="currentuser.type=='admin'" >Levels</a></li>
+		        <!-- <li><a style="text-decoration: none;" href="blog.html">Faculty</a></li>
+		        <li><a style="text-decoration: none;" href="blog.html">History</a></li> -->
 		        <li><a style="text-decoration: none;" href="contact.html">Contact</a></li>
 				<li *ngIf="_userService.isLoggedIn()">
 					<a href="#" (click)="onLogOutClicked()">Logout</a>
