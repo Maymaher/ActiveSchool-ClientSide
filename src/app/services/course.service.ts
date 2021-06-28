@@ -36,4 +36,20 @@ export class CourseService {
     return this._http.get('http://localhost:3200/courses',{headers})
       .pipe(map(resp=>resp.json()));
     }
+
+    deleteCourse(id:any){
+      const headers = new Headers();
+    this.createAuthHeader(headers);
+    return this._http.delete(`http://localhost:3200/courses/${id}`,{headers})
+      .pipe(map(resp=>resp.json()));
+
+    }
+
+    updateCourse(id:any){
+      const headers = new Headers();
+      this.createAuthHeader(headers);
+      return this._http.patch(`http://localhost:3200/courses/${id}`,{headers})
+        .pipe(map(resp=>resp.json()));
+
+    }
 }
