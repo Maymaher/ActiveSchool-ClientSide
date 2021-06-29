@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {StudentService} from '../../../services/student.service'
-import {ProfileComponent} from '../profile/profile.component'
+ 
 @Component({
   selector: 'app-schedular',
   templateUrl: './schedular.component.html',

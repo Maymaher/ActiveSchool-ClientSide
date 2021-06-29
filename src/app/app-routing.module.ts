@@ -9,12 +9,14 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './components/student/profile/profile.component';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
+import { AttendenceComponent } from './components/student/attendence/attendence.component'
 
 const routes: Routes = [
   {path:'header',component:HeaderComponent},
     { path: 'register', component: SignUpComponent },
     {path:'student/profile',component:ProfileComponent},
     {path:'student/schedular',component:SchedularComponent},
+    {path:'student/attendence',component:AttendenceComponent},
     { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home

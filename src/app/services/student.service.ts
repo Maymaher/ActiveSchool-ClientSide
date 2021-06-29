@@ -18,7 +18,7 @@ const user = {
 })
 export class StudentService {
 
-  constructor(private _http:Http) { }
+  constructor(public _http:Http) { }
 
 
   getCurrentUser() {
@@ -76,6 +76,35 @@ export class StudentService {
 
 
 
+  AssigenAttendence(user:any) {
+   console.log("enter");
+   
+    return this._http.post('http://localhost:3000/student/attendence', user).pipe(map((resp:any) => resp.json()));
+  }
+ 
+
+  getStudentAttendence(id:any){
+
+    return this._http.get('http://localhost:3000/student/attendence/'+id).pipe(map((resp:any)=>resp.json()))
+
+  }
+
+
+
+  updateStudentLoginStatus(id:any,status:any)
+  {
+    return this._http.patch(`http://localhost:3000/student/studenStatuse/${id}`,status).pipe(map((resp:any)=>resp.json()))
+
+    
+   
+  }
+
+
+  getAlllStudent(){
+
+    return this._http.get('http://localhost:3000/student/student').pipe(map((resp:any)=>resp.json()))
+
+  }
 
 
 

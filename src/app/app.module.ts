@@ -16,6 +16,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './components/student/profile/profile.component';
 import { StudentService } from './services/student.service';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
+import { AttendenceComponent } from './components/student/attendence/attendence.component'
  
 
 
@@ -42,6 +43,7 @@ import { SchedularComponent } from './components/student/schedular/schedular.com
         SignUpComponent,
         ProfileComponent,
         SchedularComponent,
+        AttendenceComponent,
        
     ],
     providers: [
