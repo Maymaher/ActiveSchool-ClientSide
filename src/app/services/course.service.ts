@@ -59,4 +59,11 @@ export class CourseService {
       .pipe(map(resp=> resp.json()));
 
     }
+
+    getCourse(id:any){
+      const headers = new Headers();
+    this.createAuthHeader(headers);
+    return this._http.get(`http://localhost:3200/courses/${id}`,{headers})
+      .pipe(map(resp=>resp.json()));
+    }
 }
