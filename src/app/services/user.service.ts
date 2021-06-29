@@ -1,14 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Headers, Http } from '@angular/http';
+import { map } from "rxjs/operators";
 import * as AppUtil from '../common/app.util';
-import { User } from '../user';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { Http } from '@angular/http';
-import {StudentService} from '../services/student.service'
+import { StudentService } from '../services/student.service';
 
  
-import { map } from "rxjs/operators";
+
 
 
 
@@ -21,13 +18,14 @@ export class UserService {
   }
   
 
-  constructor(private _http:Http,
-    
-    public _studentService:StudentService,
- 
-   
-    // public http: HttpClient,
-   ) { }
+  constructor(private _http:Http,  
+    public _studentService:StudentService) { }
+
+
+  createAuthHeader(headers:Headers){
+    const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
+    headers.append('Authorization',`Bearer ${token}`);
+  }
   //Call login api
  
   //Save user data in local storage
@@ -74,6 +72,27 @@ export class UserService {
     return JSON.parse(localStorage.getItem(AppUtil.USER_INFO) || '{}');
   }
   
+
+  deleteUser(user_id:any){
+    const headers = new Headers();
+    this.createAuthHeader(headers);
+    return this._http.delete(`http://localhost:3200/student/${user_id}`,{headers})
+      .pipe(map(resp=>resp.json()));
+    }
+
+    updateUser(user_id:any,user:any){
+      const headers = new Headers();
+      this.createAuthHeader(headers);
+      return this._http.patch(`http://localhost:3200/student/${user_id}`,user)
+        .pipe(map(resp=>resp.json()));
+      }
+  
+      getUserById(id:any){
+        const headers = new Headers();
+        this.createAuthHeader(headers);
+        return this._http.get(`http://localhost:3200/student/${id}`,{headers})
+          .pipe(map(resp=>resp.json()));
+      }
 
   
 }

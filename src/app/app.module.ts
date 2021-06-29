@@ -1,22 +1,34 @@
 // import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FlashMessagesModule } from 'angular2-flash-messages';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { appRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoursesComponent } from './components/admin/courses/courses.component';
+import { EditCourseComponent } from './components/admin/edit-course/edit-course.component';
+import { EditUserComponent } from './components/admin/edit-user/edit-user.component';
+import { HomeAdminComponent } from './components/admin/home/home.component';
+import { SignUpComponent } from './components/admin/sign-up/sign-up.component';
+import { TeacherDetailsComponent } from './components/admin/teacher-details/teacher-details.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { AuthGuard } from './guards/auth.guard';
-import { UserService } from './services/user.service';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AttendenceComponent } from './components/student/attendence/attendence.component';
+// import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './components/student/profile/profile.component';
-import { StudentService } from './services/student.service';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
-import { AttendenceComponent } from './components/student/attendence/attendence.component'
+import { AuthGuard } from './guards/auth.guard';
+import { ClassService } from './services/class.service';
+import { CourseService } from './services/course.service';
+import { LevelService } from './services/level.service';
+import { StudentService } from './services/student.service';
+import { TeacherService } from './services/teacher.service';
+import { UserService } from './services/user.service';
  
 
 
@@ -25,14 +37,17 @@ import { AttendenceComponent } from './components/student/attendence/attendence.
 @NgModule({
     imports: [
         BrowserModule,
+        CommonModule,
         ReactiveFormsModule,
         HttpClientModule,
         appRoutingModule,
         FormsModule,
-        BrowserModule, 
         FlashMessagesModule.forRoot(),
         HttpModule,
-        FormsModule,
+        RouterModule,
+        
+        
+       
     ],
     
     declarations: [
@@ -41,6 +56,11 @@ import { AttendenceComponent } from './components/student/attendence/attendence.
         LoginComponent,
         HeaderComponent,
         SignUpComponent,
+        HomeAdminComponent,
+        TeacherDetailsComponent,
+        CoursesComponent,
+        EditUserComponent,
+        EditCourseComponent,
         ProfileComponent,
         SchedularComponent,
         AttendenceComponent,
@@ -49,6 +69,10 @@ import { AttendenceComponent } from './components/student/attendence/attendence.
     providers: [
         UserService ,
         AuthGuard,
+        TeacherService,
+        ClassService,
+        LevelService,
+        CourseService,
         StudentService
     ],
     bootstrap: [AppComponent]

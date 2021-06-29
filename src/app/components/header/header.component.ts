@@ -8,13 +8,16 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  books: any;
+  currentuser:any;
   constructor( public _userService :UserService,
     public _router :Router) { 
     
   }
   
   ngOnInit() {
+    this.currentuser=this._userService.getCurrentUser();
+    console.log(    this._userService.getCurrentUser()
+    );
     var headers = new Headers();
     headers.append('Authorization', 'Bearer ' + localStorage.getItem("token"));
     headers.append('Content-Type', 'application/json');

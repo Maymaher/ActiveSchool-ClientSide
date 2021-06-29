@@ -9,6 +9,15 @@
 		   
 				<div class="row preview-thumbnail" *ngIf="_userService.getCurrentUser() as user">
 		      <ul style="flex-direction: row;" class="nav navbar-nav">
+		        <li class="active"><a *ngIf="currentuser.type=='student'" href="index.html">Home</a></li>
+		        <li class="active"><a *ngIf="currentuser.type=='admin'" routerLink="/admin/home">Home</a></li>
+				<li><a style="text-decoration: none;" *ngIf="currentuser.type=='admin'" routerLink="/admin/courses">Courses</a></li>
+
+		        <!-- <li><a style="text-decoration: none;" *ngIf="currentuser.type=='admin'" >Levels</a></li> -->
+		        <!-- <li><a style="text-decoration: none;" href="blog.html">Faculty</a></li>
+		        <li><a style="text-decoration: none;" href="blog.html">History</a></li> -->
+		        <!-- <li><a style="text-decoration: none;" href="contact.html">Contact</a></li> -->
+				<li *ngIf="_userService.isLoggedIn()">
 			 
 			<li  class="active" style="color:white;"><img class="align-self-start mr-1 img-thumbnail rounded-circle" style="margin-bottom:15px;width:60px;height:50px;margin-top: 15px;" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" aria-placeholder="user.name">
 				{{user.name}}
