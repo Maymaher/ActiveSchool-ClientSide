@@ -8,7 +8,11 @@ import { TeacherDetailsComponent } from './components/admin/teacher-details/teac
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { AttendenceComponent } from './components/student/attendence/attendence.component';
+import { ProfileComponent } from './components/student/profile/profile.component';
+import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
     {path:'header',component:HeaderComponent},
     { path: 'register', component: SignUpComponent },
@@ -21,6 +25,9 @@ const routes: Routes = [
 
     { path: 'admin/courses', component: CoursesComponent ,canActivate: [AuthGuard]},
 
+    {path:'student/profile',component:ProfileComponent},
+    {path:'student/schedular',component:SchedularComponent},
+    {path:'student/attendence',component:AttendenceComponent},
     { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home

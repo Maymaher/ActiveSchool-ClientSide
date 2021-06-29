@@ -58,6 +58,8 @@ export class HomeAdminComponent implements OnInit {
         
       }
     )
+    console.log("omnyaaaa");
+    
   }
 
 //   btnClick () {
