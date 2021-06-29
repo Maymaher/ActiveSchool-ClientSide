@@ -86,7 +86,7 @@
                             </div>
                             <div class="text-secondary" *ngFor="let course of
                                 teacherCourses">
-                                <li class=""
+                                <li class="col-2"
                                     style="font-size: 23px;
                                     margin-left: 50px;
                                     display: inline-block;
@@ -95,7 +95,7 @@
 
                                 </li>
                                 <a  routerLink="/admin/teacherDetails/{{teacherDetails._id}}/{{course.course._id}}"
-                                    class="fa fa-trash"
+                                    class="fa fa-trash "
                                     style="font-size: 20px; color: rgb(187, 63,
                                     63)"></a>
                             </div>
@@ -115,8 +115,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <select class="input" [(ngModel)]="tcourse" name="tcourse">
-                <option   *ngFor="let tcourse of unassignedCourses" value="{{tcourse._id}}" >{{tcourse.name}}</option>
+            <select class="input" [(ngModel)]="tcourse" name="tcourse">Select course
+                <option value="">Select Course</option>
+
+                <option   *ngFor="let tcourse of unassignedCourses" value="{{tcourse._id}}" >{{tcourse.name}} level {{tcourse.level.number}}</option>
             </select>
         </div>
         <div class="modal-footer">
@@ -147,14 +149,14 @@
                         </div>
                         <hr />
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-sm-12">
                                 <a
                                     class="btn btn-info"
                                     target="__blank"
                                     href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
