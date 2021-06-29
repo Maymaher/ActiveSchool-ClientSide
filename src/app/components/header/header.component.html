@@ -12,10 +12,10 @@
 		        <li class="active"><a *ngIf="currentuser.type=='admin'" routerLink="/admin/home">Home</a></li>
 				<li><a style="text-decoration: none;" *ngIf="currentuser.type=='admin'" routerLink="/admin/courses">Courses</a></li>
 
-		        <li><a style="text-decoration: none;" *ngIf="currentuser.type=='admin'" >Levels</a></li>
+		        <!-- <li><a style="text-decoration: none;" *ngIf="currentuser.type=='admin'" >Levels</a></li> -->
 		        <!-- <li><a style="text-decoration: none;" href="blog.html">Faculty</a></li>
 		        <li><a style="text-decoration: none;" href="blog.html">History</a></li> -->
-		        <li><a style="text-decoration: none;" href="contact.html">Contact</a></li>
+		        <!-- <li><a style="text-decoration: none;" href="contact.html">Contact</a></li> -->
 				<li *ngIf="_userService.isLoggedIn()">
 					<a href="#" (click)="onLogOutClicked()">Logout</a>
 				  </li>
