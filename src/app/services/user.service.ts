@@ -5,6 +5,8 @@ import * as AppUtil from '../common/app.util';
 import { User } from '../user';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Http } from '@angular/http';
+import {StudentService} from '../services/student.service'
+
  
 import { map } from "rxjs/operators";
 
@@ -14,8 +16,18 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class UserService {
+  status:any={
+    "status":false
+  }
+  
 
-  constructor(private _http:Http) { }
+  constructor(private _http:Http,
+    
+    public _studentService:StudentService,
+ 
+   
+    // public http: HttpClient,
+   ) { }
   //Call login api
  
   //Save user data in local storage
@@ -27,8 +39,17 @@ export class UserService {
   }
 
   logOut() {
+    this.status.status=false;
+    this._studentService.updateStudentLoginStatus(this.getCurrentUser().id,this.status).subscribe(resp =>{
+    console.log("update logout");
+      
+    })
     localStorage.removeItem(AppUtil.AUTH_TOKEN);
     localStorage.removeItem(AppUtil.USER_INFO);
+
+   
+     
+    
   }
 
 
