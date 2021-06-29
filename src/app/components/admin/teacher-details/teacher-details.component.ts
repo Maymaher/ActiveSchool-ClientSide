@@ -108,8 +108,8 @@ export class TeacherDetailsComponent implements OnInit {
       }
 
       this._flash.show('course added', { cssClass: 'alert-success' });
-      return this._router.navigate([`/admin/teacherDetails/${this.teacherId}`]);
-            // return true;
+      // return this._router.navigate([`/admin/teacherDetails/${this.teacherId}`]);
+            return true;
     });
    
     // return true;
