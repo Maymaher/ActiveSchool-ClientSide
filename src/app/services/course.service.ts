@@ -45,11 +45,18 @@ export class CourseService {
 
     }
 
-    updateCourse(id:any){
+    updateCourse(id:any,course:any){
       const headers = new Headers();
       this.createAuthHeader(headers);
-      return this._http.patch(`http://localhost:3200/courses/${id}`,{headers})
+      return this._http.patch(`http://localhost:3200/courses/${id}`,course,{headers})
         .pipe(map(resp=>resp.json()));
+
+    }
+    addCourse(course:any){
+      const headers = new Headers();
+      this.createAuthHeader(headers);
+      return this._http.post('http://localhost:3200/courses', course,{headers})
+      .pipe(map(resp=> resp.json()));
 
     }
 }
