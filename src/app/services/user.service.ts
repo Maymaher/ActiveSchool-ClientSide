@@ -62,5 +62,19 @@ export class UserService {
       .pipe(map(resp=>resp.json()));
     }
 
+    updateUser(user_id:any,user:any){
+      const headers = new Headers();
+      this.createAuthHeader(headers);
+      return this._http.patch(`http://localhost:3200/student/${user_id}`,user)
+        .pipe(map(resp=>resp.json()));
+      }
+  
+      getUserById(id:any){
+        const headers = new Headers();
+        this.createAuthHeader(headers);
+        return this._http.get(`http://localhost:3200/student/${id}`,{headers})
+          .pipe(map(resp=>resp.json()));
+      }
+
   
 }
