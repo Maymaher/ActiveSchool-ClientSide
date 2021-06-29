@@ -38,7 +38,7 @@
                   <td>{{student.level.number}}</td>
                   <td>{{student.class.number}}</td>
                  
-                  <td><a routerLink="/editStudent" class="btn btn-secondary">Edit</a></td>
+                  <td><a routerLink="/admin/editUser/{{student._id}}" class="btn btn-secondary">Edit</a></td>
 
                   <td><button (click)="deleteUser(student._id)"  class="btn btn-danger">Delete</button></td>
 
@@ -72,7 +72,7 @@
 
                 <td><a routerLink="/admin/teacherDetails/{{Teacher._id}}" class="btn" style="background-color:#4ba2d7">View</a></td>
 
-                <td><a routerLink="/editTeacher" class="btn btn-secondary">Edit</a></td>
+                <td><a routerLink="/admin/editUser/{{Teacher._id}}" class="btn btn-secondary">Edit</a></td>
 
                 <td><button (click)="deleteUser(Teacher._id)" class="btn btn-danger">Delete</button></td>
 
