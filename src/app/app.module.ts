@@ -22,6 +22,8 @@ import { LevelService } from './services/level.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
 import { CoursesComponent } from './components/admin/courses/courses.component';
+import { EditUserComponent } from './components/admin/edit-user/edit-user.component';
+import { EditCourseComponent } from './components/admin/edit-course/edit-course.component';
 
 
 // used to create fake backend
@@ -53,7 +55,9 @@ import { CoursesComponent } from './components/admin/courses/courses.component';
         SignUpComponent,
         HomeAdminComponent,
         TeacherDetailsComponent,
-        CoursesComponent
+        CoursesComponent,
+        EditUserComponent,
+        EditCourseComponent
     ],
     providers: [
         UserService ,
