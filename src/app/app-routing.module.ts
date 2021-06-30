@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/student/profile/profile.component
 import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { AuthGuard } from './guards/auth.guard';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
     {path:'student/profile',component:ProfileComponent},
     {path:'student/schedular',component:SchedularComponent},
     {path:'student/attendence',component:AttendenceComponent},
+    {path:'student/grades',component:StudenGradesComponent},
     { path: '', component: LoginComponent },
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
