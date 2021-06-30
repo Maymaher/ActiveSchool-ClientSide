@@ -8,6 +8,9 @@ http://3.137.144.158/.</br>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
+## Serverside .
+Clone the serverside from this link (https://github.com/Maymaher/ActiveSchool). </br>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
