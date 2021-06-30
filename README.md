@@ -35,7 +35,32 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-# Admin Page.
+# Admin pages 
+## Home page
+ </br> 
+  ![](img/adminhome.png) </br> 
+  </br> 
+## Teacher data 
+ </br> 
+  ![](img/teacherdata.png) </br> 
+  </br> 
+ ## Add new user
+ </br> 
+  ![](img/newuser.png) </br> 
+  </br> 
+  ## Courses page 
+ </br> 
+  ![](img/cousrespage.png) </br> 
+  </br> 
+  • To edit a cousre:
+  </br> 
+  ![](img/editcourse.png) </br> 
+  </br> 
+  • To add a cousre:
+  </br> 
+  ![](img/addcourse.png) </br> 
+  </br> 
+  
 
 # User Pages.
 # Dockerize React Application.
