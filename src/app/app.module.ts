@@ -2,6 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import {SidebarModule} from 'ng-sidebar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,8 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AttendenceComponent } from './components/student/attendence/attendence.component';
-// import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './components/student/profile/profile.component';
+import {ProfileTeacherComponent} from './components/teacher/profile/profile.component';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ClassService } from './services/class.service';
@@ -29,6 +30,10 @@ import { LevelService } from './services/level.service';
 import { StudentService } from './services/student.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
+import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
+import { ExamComponent } from './components/exam/exam/exam.component';
+import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+
  
 
 
@@ -44,8 +49,9 @@ import { UserService } from './services/user.service';
         FormsModule,
         FlashMessagesModule.forRoot(),
         HttpModule,
-        RouterModule,
-        
+        SidebarModule.forRoot(),
+        RouterModule
+       
         
        
     ],
@@ -56,14 +62,19 @@ import { UserService } from './services/user.service';
         LoginComponent,
         HeaderComponent,
         SignUpComponent,
+        ProfileComponent,
+        ExamTeacherComponent,
+        ExamComponent,
         HomeAdminComponent,
         TeacherDetailsComponent,
         CoursesComponent,
         EditUserComponent,
         EditCourseComponent,
-        ProfileComponent,
         SchedularComponent,
         AttendenceComponent,
+        StudenthomeComponent,
+        ProfileTeacherComponent
+    
        
     ],
     providers: [

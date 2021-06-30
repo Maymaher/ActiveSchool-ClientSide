@@ -118,6 +118,12 @@ export class StudentService {
 
   }
 
+  getlevelCourcese(id:any){
+
+    return this._http.get('http://localhost:3200/student/courses/'+id).pipe(map((resp:any)=>resp.json()))
+
+  }
+
 
 
 
