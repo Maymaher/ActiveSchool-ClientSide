@@ -72,7 +72,7 @@ export class EditCourseComponent implements OnInit {
       resp=>{
         console.log(resp);
         this.courseDetails=resp;
-        // console.log(this.allLevels);
+        console.log("couresss  "+this.courseDetails);
         
       }
     )
