@@ -1,0 +1,43 @@
+<div >
+    
+    <div class="card" style="width: 90ch;margin:auto;margin-top: 10ch;">
+        
+        <div class="card-body" style="display: flex;">
+         
+          <img src="/assets/images/exam.jpg" alt="image" width="270" height="220">
+
+          <div>
+              <p style="color:#00c7a1;display: inline-block;">Exam: </p><a [href]="examPath+exam.examFile">{{exam.examFile}}</a><hr>
+              <p style="color:#00c7a1;display: inline-block;">Date: </p> {{exam.date}}<hr>
+              <p style="color:#00c7a1;display: inline-block;">From: </p>{{exam.from}}<hr>
+              <p style="color:#00c7a1;display: inline-block;">To: </p>{{exam.to}}<hr>
+              <p style="color:#00c7a1;display: inline-block;">Course: </p>{{exam.course.name}}<hr>
+              <p style="color:#00c7a1;display: inline-block;">Level: </p>{{exam.level.number}}<hr>
+              <p style="color:#00c7a1;display: inline-block;">Exam Owner: </p>{{exam.teacher.name}}<hr>
+          </div>
+          
+          
+        </div>
+    </div>
+</div>
+
+
+<form (submit)="UplaodExam()" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="myfile">Select a file:</label>
+        <div class="col-lg-10">
+            <input type="file" id="myfile" name="myfile" ngModel (change)="getFile($event)">
+        </div>
+    </div>
+
+
+    <br>
+    <div class="form-group">
+        <div class="pull-right">
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+    </div>
+
+</form>
+
