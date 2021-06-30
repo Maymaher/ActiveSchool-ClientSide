@@ -6,12 +6,21 @@ import { HeaderComponent } from './components/header/header.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/teacher/profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
+import { ExamComponent } from './components/exam/exam/exam.component';
 const routes: Routes = [
   {path:'header',component:HeaderComponent},
     { path: 'register', component: SignUpComponent },
     { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    //teacher profile
+    { path: 'teacher/profile/:id', component: ProfileComponent, canActivate: [AuthGuard]},
+    //Exams of teacher page
+    { path: 'teacher/:id/exams', component: ExamTeacherComponent, canActivate: [AuthGuard]},
+    //Exam Page
+    { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' },
     
