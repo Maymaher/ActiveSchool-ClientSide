@@ -9,7 +9,7 @@ import { CoursesService } from '../../../services/courses.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileTeacherComponent implements OnInit {
   opened=false;
   teacher:any={};
   courses:any=[];

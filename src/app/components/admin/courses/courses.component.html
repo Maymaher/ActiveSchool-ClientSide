@@ -1,0 +1,60 @@
+<div class="container">
+<div style="text-align: end;">
+  <button type="button" class="btn btn-primary" style="margin: 15px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    add new course
+  </button>
+</div>
+<div class="row" style="margin: 0 auto;">
+ 
+<div class="card " style="width: 18rem;;margin:50px" *ngFor="let course of courses">
+    <div class="card-body">
+      <h5 class="card-title">Course Name : {{course.name}}</h5>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">{{course.name}}</h6> -->
+      <p class="card-text">Course Description : {{course.description}}</p>
+      <p class="card-text">Course Level : {{course.level.number}}</p>
+
+      <a routerLink="/admin/editCourse/{{course._id}}" class="btn btn-primary" style="margin:10px"  >Edit</a>
+
+
+
+                                
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" style="margin: 0 auto; width: 17%" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  add new course
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new course</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <label class="col-4">Course Name : </label> <input [(ngModel)]="name" name="name" ><br><br>
+      <label class="col-4"> Course Description : </label>  <input [(ngModel)]="description" name="description" ><br><br>
+
+      <label class="col-4"> Course Level : </label>  
+      <select class="input" [(ngModel)]="level" name="level">Select course
+        <option value="">Select Level</option>
+
+        <option   *ngFor="let level of levels" value="{{level._id}}" >{{level.number}}</option>
+    </select>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addCourse()" data-bs-dismiss="modal">Add Course</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <a  (click)="deleteCourse(course._id)"  class="btn btn-danger">Delete</a>
+      
+    </div>
+  </div>
+</div>
+</div>

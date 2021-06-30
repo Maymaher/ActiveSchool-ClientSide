@@ -1,13 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import * as AppUtil from '../common/app.util';
-import { User } from '../user';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { Http } from '@angular/http';
- 
+import { Headers, Http } from '@angular/http';
 import { map } from "rxjs/operators";
+import * as AppUtil from '../common/app.util';
+import { StudentService } from '../services/student.service';
 import { error } from '@angular/compiler/src/util';
+
+ 
 
 
 
@@ -15,8 +13,19 @@ import { error } from '@angular/compiler/src/util';
   providedIn: 'root'
 })
 export class UserService {
+  status:any={
+    "status":false
+  }
+  
 
-  constructor(private _http:Http) { }
+  constructor(private _http:Http,  
+    public _studentService:StudentService) { }
+
+
+  createAuthHeader(headers:Headers){
+    const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
+    headers.append('Authorization',`Bearer ${token}`);
+  }
   //Call login api
  
   //Save user data in local storage
@@ -28,8 +37,17 @@ export class UserService {
   }
 
   logOut() {
+    this.status.status=false;
+    this._studentService.updateStudentLoginStatus(this.getCurrentUser().id,this.status).subscribe(resp =>{
+    console.log("update logout");
+      
+    })
     localStorage.removeItem(AppUtil.AUTH_TOKEN);
     localStorage.removeItem(AppUtil.USER_INFO);
+
+   
+     
+    
   }
 
 
@@ -46,6 +64,8 @@ export class UserService {
   saveUserDate(token:any, user:any) {
     localStorage.setItem(AppUtil.AUTH_TOKEN, token);
     localStorage.setItem(AppUtil.USER_INFO, JSON.stringify(user));
+  
+    
   }
  
   getCurrentUser() {
@@ -82,6 +102,27 @@ export class UserService {
 
 
   }
+
+  deleteUser(user_id:any){
+    const headers = new Headers();
+    this.createAuthHeader(headers);
+    return this._http.delete(`http://localhost:3200/student/${user_id}`,{headers})
+      .pipe(map(resp=>resp.json()));
+    }
+
+    updateUser(user_id:any,user:any){
+      const headers = new Headers();
+      this.createAuthHeader(headers);
+      return this._http.patch(`http://localhost:3200/student/${user_id}`,user)
+        .pipe(map(resp=>resp.json()));
+      }
+  
+      getUserById(id:any){
+        const headers = new Headers();
+        this.createAuthHeader(headers);
+        return this._http.get(`http://localhost:3200/student/${id}`,{headers})
+          .pipe(map(resp=>resp.json()));
+      }
 
   
 }

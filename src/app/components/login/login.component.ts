@@ -50,7 +50,12 @@ export class LoginComponent implements OnInit {
           else{
             //this._flash.show(data.message, { cssClass: 'alert-success'});
             this._userService.saveUserDate(data.token,data.user)
+            if(data.user.type=="admin")
+            this._router.navigate(['/admin/home']);
+            else if(data.user.type=="student")
             this._router.navigate(['/home']);
+            else
+            this._router.navigate(['/teacher/home']);
 
           }
         });

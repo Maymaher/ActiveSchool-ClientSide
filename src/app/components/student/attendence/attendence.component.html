@@ -1,0 +1,34 @@
+<head>
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head><table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="width: 50px">Day</th>
+        <th style="width: 50px">Attendance </th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let user of attendence">
+ 
+            <td>{{user.date}}</td>
+          <td *ngIf="user.status">
+            <i class="fa fa-check" style="font-size:48px;color:green"></i>
+       
+          </td>
+
+          <td *ngIf="!user.status">
+            <i class="fa fa-close" style="font-size:48px;color:red"></i>
+       
+          </td>
+
+
+    
+        </tr>
+  
+    
+    </tbody>
+  </table>
+  
