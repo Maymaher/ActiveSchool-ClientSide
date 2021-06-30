@@ -36,28 +36,28 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 # Admin pages 
-![](img/loginPage.png) 
+
 ## Home page
-![](img/loginPage.png)  
+
 ## Teacher data 
  </br> 
-  ![](img/loginPage.png) 
+![](img/teacherdata.jpeg) 
   </br> 
  ## Add new user
  </br> 
-  ![](img/newuser.jpeg) </br> 
+![](img/newuser.jpeg) </br> 
   </br> 
   ## Courses page 
  </br> 
-  ![](img/cousrespage.jpeg) </br> 
+![](img/cousrespage.jpeg) </br> 
   </br> 
   • To edit a cousre:
   </br> 
-  ![](img/editcourse.jpeg) </br> 
+![](img/editcourse.jpeg) </br> 
   </br> 
   • To add a cousre:
   </br> 
-  ![](img/addcourse.jpeg) </br> 
+![](img/addcourse.jpeg) </br> 
   </br> 
   
 
