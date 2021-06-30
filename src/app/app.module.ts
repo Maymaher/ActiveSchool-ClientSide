@@ -13,6 +13,11 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UserService } from './services/user.service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ProfileComponent } from './components/teacher/profile/profile.component';
+import {SidebarModule} from 'ng-sidebar';
+import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
+import { ExamComponent } from './components/exam/exam/exam.component';
+
 
 
 
@@ -28,9 +33,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
         BrowserModule, 
         FlashMessagesModule.forRoot(),
         HttpModule,
-        
-    
         FormsModule, 
+        SidebarModule.forRoot()
     
     
     ],
@@ -40,7 +44,10 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
         HomeComponent,
         LoginComponent,
         HeaderComponent,
-        SignUpComponent
+        SignUpComponent,
+        ProfileComponent,
+        ExamTeacherComponent,
+        ExamComponent
     ],
     providers: [
         UserService ,
