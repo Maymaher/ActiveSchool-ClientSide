@@ -12,8 +12,11 @@ import { AttendenceComponent } from './components/student/attendence/attendence.
 import { ProfileComponent } from './components/student/profile/profile.component';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { AuthGuard } from './guards/auth.guard';
+import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+
 
 const routes: Routes = [
+    {path:'home',component:StudenthomeComponent,canActivate: [AuthGuard]},
     {path:'header',component:HeaderComponent},
     { path: 'register', component: SignUpComponent },
     { path: 'admin/home', component: HomeAdminComponent ,canActivate: [AuthGuard]},
@@ -29,9 +32,11 @@ const routes: Routes = [
     {path:'student/schedular',component:SchedularComponent},
     {path:'student/attendence',component:AttendenceComponent},
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' },
+   
+
     
    
 ];

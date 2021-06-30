@@ -29,6 +29,8 @@ import { LevelService } from './services/level.service';
 import { StudentService } from './services/student.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
+import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+
  
 
 
@@ -64,6 +66,8 @@ import { UserService } from './services/user.service';
         ProfileComponent,
         SchedularComponent,
         AttendenceComponent,
+        StudenthomeComponent,
+    
        
     ],
     providers: [
