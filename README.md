@@ -1,4 +1,10 @@
-# Activeschool
+# Welcome to our Activeschool application clientside 
+## To visit our website follow the link below:
+http://3.137.144.158/.</br> 
+</br>
+![](img/loginPage.png) 
+</br>
+# Getting up and running
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
