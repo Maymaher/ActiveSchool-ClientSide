@@ -40,25 +40,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Home page
 
 ## Teacher data 
- </br> 
 ![](img/teacherdata.jpeg) 
-  </br> 
- ## Add new user
- </br> 
+ ## Add new user 
 ![](img/newuser.jpeg) </br> 
-  </br> 
   ## Courses page 
- </br> 
 ![](img/cousrespage.jpeg) </br> 
-  </br> 
   • To edit a cousre:
-  </br> 
 ![](img/editcourse.jpeg) </br> 
-  </br> 
   • To add a cousre:
-  </br> 
 ![](img/addcourse.jpeg) </br> 
-  </br> 
   
 
 # User Pages.
