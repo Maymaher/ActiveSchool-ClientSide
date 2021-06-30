@@ -30,6 +30,7 @@ import { StudentService } from './services/student.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 
  
 
@@ -67,6 +68,7 @@ import { StudenthomeComponent } from './components/student/studenthome/studentho
         SchedularComponent,
         AttendenceComponent,
         StudenthomeComponent,
+        StudenGradesComponent,
     
        
     ],
