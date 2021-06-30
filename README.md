@@ -38,12 +38,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Admin pages 
 
 ## Home page
-
+[](img/adminhome.jpeg) 
 ## Teacher data 
-![](img/adminhome.jpeg) 
- ## Add new user 
+![](img/teacherdata.jpeg)
+## Student table
+![](img/studentstable.jpeg)
+## Add new user 
 ![](img/adduser.jpeg) </br> 
-  ## Courses page 
+ ## Courses page 
 ![](img/courses.jpeg) </br> 
   • To edit a cousre:
 ![](img/editcourse.jpeg) </br> 
