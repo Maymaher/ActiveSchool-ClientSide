@@ -38,7 +38,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Admin pages 
 
 ## Home page
-[](img/adminhome.jpeg) 
+![](img/adminhome.jpeg) 
 ## Teacher data 
 ![](img/teacherdata.jpeg)
 ## Student table
