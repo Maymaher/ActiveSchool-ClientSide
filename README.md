@@ -38,27 +38,27 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Admin pages 
 ## Home page
  </br> 
-  ![](img/adminhome.png) </br> 
+  ![](img/adminhome.jpeg) </br> 
   </br> 
 ## Teacher data 
  </br> 
-  ![](img/teacherdata.png) </br> 
+  ![](img/teacherdata.jpeg) </br> 
   </br> 
  ## Add new user
  </br> 
-  ![](img/newuser.png) </br> 
+  ![](img/newuser.jpeg) </br> 
   </br> 
   ## Courses page 
  </br> 
-  ![](img/cousrespage.png) </br> 
+  ![](img/cousrespage.jpeg) </br> 
   </br> 
   • To edit a cousre:
   </br> 
-  ![](img/editcourse.png) </br> 
+  ![](img/editcourse.jpeg) </br> 
   </br> 
   • To add a cousre:
   </br> 
-  ![](img/addcourse.png) </br> 
+  ![](img/addcourse.jpeg) </br> 
   </br> 
   
 
