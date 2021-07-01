@@ -51,6 +51,9 @@ import { ExamComponent } from './components/exam/exam/exam.component';
         FlashMessagesModule.forRoot(),
         HttpModule,
         RouterModule,
+        SidebarModule.forRoot(),
+      
+       
         
         
        
