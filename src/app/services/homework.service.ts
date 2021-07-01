@@ -33,4 +33,25 @@ upload(id:any,homework:any,file:File)
 
   }
 
+  //upload homework answer
+  uploadHomeworkAnswer(id:any,homework_answer:any,file:File)
+  {
+    const formData:FormData = new FormData();
+    formData.append('file',file);
+    formData.append('student',homework_answer.student);
+    
+
+    console.log(formData);
+   
+      return this._http.post('http://localhost:3200/homeworkAnswerUpload'+id, formData)
+      .pipe(map((resp:any)=> resp.json()));
+      
+    
+    
+
+
+  }
+
+
+
 }
