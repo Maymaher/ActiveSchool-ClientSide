@@ -11,6 +11,32 @@
         
                 <div class="card-body" >
                  
+                 <h5>ZoomLink</h5>
+                 <a href="{{course[0].Zoomlink}}" style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger"  
+                 data-bs-target="#staticBackdropMaterial">
+              {{course[0].Zoomlink}}</a> 
+
+           
+         
+                  
+                  
+                </div>
+            </div>
+             
+          </div>
+          
+          
+        </div>
+    <div class="card" style="width: 120ch;margin:auto;margin-top: 10ch;">
+        
+        <div class="card-body" style="display: flex;justify-content: space-between;">
+         
+ 
+          <div>
+            <div class="card" style="width: 40ch;float: right;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
                  <h5>HomeWorks</h5>
 
                  <!-- Button trigger modal -->
@@ -30,7 +56,7 @@
           
         </div>
         <div>
-            <div class="card" style="width: 87ch;float: right;height: 40ch;margin-top: 10ch;margin-right: 2ch;background-color: rgb(228, 225, 225);">
+            <div class="card" style="width: 60ch;float: right;height: 40ch;margin-top: 10ch;margin-right: 2ch;background-color: rgb(228, 225, 225);">
         
                 <div class="card-body" >
                  
@@ -44,6 +70,16 @@
             data-bs-target="#staticBackdropMaterial">
             Upload Material
         </button>
+<br/>
+
+        <ul>
+
+            <li *ngFor="let m of materialFiles">
+            <li *ngFor="let material of materialFiles">
+<a href={{material.materialFile}}>{{material.materialFile}}</a>
+
+            </li>
+        </ul>
                 </div>
             </div>
     </div>
