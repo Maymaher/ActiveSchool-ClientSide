@@ -14,6 +14,9 @@ import { SchedularComponent } from './components/student/schedular/schedular.com
 import { AuthGuard } from './guards/auth.guard';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
 import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
+import { ProfileTeacherComponent } from './components/teacher/profile/profile.component';
+import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
+import { ExamComponent } from './components/exam/exam/exam.component';
 
 
 const routes: Routes = [
@@ -36,6 +39,15 @@ const routes: Routes = [
     { path: '', component: LoginComponent },
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    //teacher profile
+    { path: 'teacher/profile/:id', component: ProfileTeacherComponent, canActivate: [AuthGuard]},
+    //Exams of teacher page
+    { path: 'teacher/:id/exams', component: ExamTeacherComponent, canActivate: [AuthGuard]},
+    //Exam Page
+    { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
+    // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    // otherwise redirect to home
     { path: '**', redirectTo: '' },
    
 
@@ -43,6 +55,10 @@ const routes: Routes = [
    
 ];
 
+
+ 
+ 
+   
 
 // export const appRoutingModule = RouterModule.forRoot(routes);
 
