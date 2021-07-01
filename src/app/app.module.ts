@@ -33,7 +33,10 @@ import { StudenthomeComponent } from './components/student/studenthome/studentho
 import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 
  
-
+ 
+import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
+import { ExamComponent } from './components/exam/exam/exam.component';
+ 
 
 // used to create fake backend
 
@@ -69,6 +72,9 @@ import { StudenGradesComponent } from './components/student/studen-grades/studen
         AttendenceComponent,
         StudenthomeComponent,
         StudenGradesComponent,
+        ExamTeacherComponent,
+        ExamComponent 
+
     
        
     ],
