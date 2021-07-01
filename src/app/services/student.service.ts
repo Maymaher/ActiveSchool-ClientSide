@@ -132,5 +132,15 @@ getAllGrates(id:any)
 
 }
 
+getCoursesInfo(id:any) 
+{
+
+
+  return this._http.get('http://localhost:3200/student/coursesInfo/'+id).pipe(map((resp:any)=>resp.json()))
+
+}
+
+
+
 
 }
