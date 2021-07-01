@@ -16,6 +16,7 @@ export class EditCourseComponent implements OnInit {
   name:string="";
   description:string="";
   level:string="";
+  Zoomlink:string="";
   allLevels:any;
   courseDetails:any;
   courseId:any;
@@ -43,7 +44,8 @@ export class EditCourseComponent implements OnInit {
     course={
       name:this.name,
       description:this.description,
-      level:this.level
+      level:this.level,
+      Zoomlink:this.Zoomlink
     }
   this.courseService.updateCourse(this.courseId,course).subscribe((resp: any) => {
     if (!resp.success) {
