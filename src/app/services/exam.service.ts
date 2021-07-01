@@ -1,13 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import * as AppUtil from '../common/app.util';
-import { User } from '../user';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Http } from '@angular/http';
- 
 import { map } from "rxjs/operators";
-import { error } from '@angular/compiler/src/util';
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -30,11 +24,11 @@ export class ExamService {
 
   }
 
-  uploadExamAnswer(id:any,answer:any,file:File)
+  uploadExamAnswer(id:any,student_id:any ,answer:any,file:File)
   {
     const formData:FormData = new FormData();
     formData.append('file',file)
-    return this._http.post('http://localhost:3200/examAnswerUpload/'+id,formData);
+    return this._http.post('http://localhost:3200/examAnswerUpload/'+id+'/'+student_id ,formData);
       
   }
 
