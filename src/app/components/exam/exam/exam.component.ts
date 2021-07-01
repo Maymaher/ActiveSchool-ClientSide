@@ -28,10 +28,10 @@ export class ExamComponent implements OnInit {
 
     this._examService.getSpecificExam(this.eid).subscribe(data =>{
       this.exam=data;
-      console.log("now " +this.now);
-      console.log("dateeeeee  "+Date.parse(this.exam.to))
+      // console.log("now " +this.now);
+      // console.log("dateeeeee  "+Date.parse(this.exam.to))
 
-      console.log("dateeeeee  "+Date.parse(this.exam.from))
+      // console.log("dateeeeee  "+Date.parse(this.exam.from))
 
       
       if(this.now <= Date.parse(this.exam.to) && this.now >= Date.parse(this.exam.from))
