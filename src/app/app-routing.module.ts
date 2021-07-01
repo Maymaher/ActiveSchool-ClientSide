@@ -8,14 +8,16 @@ import { TeacherDetailsComponent } from './components/admin/teacher-details/teac
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProfileTeacherComponent } from './components/teacher/profile/profile.component';
+import { AttendenceComponent } from './components/student/attendence/attendence.component';
+import { ProfileComponent } from './components/student/profile/profile.component';
+import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { AuthGuard } from './guards/auth.guard';
+import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
+import { ProfileTeacherComponent } from './components/teacher/profile/profile.component';
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
 import { ExamComponent } from './components/exam/exam/exam.component';
-import { AttendenceComponent } from './components/student/attendence/attendence.component';
-import { SchedularComponent } from './components/student/schedular/schedular.component';
-import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
-import { ProfileComponent } from './components/student/profile/profile.component';
+
 
 const routes: Routes = [
     {path:'home',component:StudenthomeComponent,canActivate: [AuthGuard]},
@@ -33,7 +35,10 @@ const routes: Routes = [
     {path:'student/profile',component:ProfileComponent},
     {path:'student/schedular',component:SchedularComponent},
     {path:'student/attendence',component:AttendenceComponent},
+    {path:'student/grades',component:StudenGradesComponent},
     { path: '', component: LoginComponent },
+    // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    // otherwise redirect to home
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     //teacher profile
     { path: 'teacher/profile/:id', component: ProfileTeacherComponent, canActivate: [AuthGuard]},
@@ -50,6 +55,10 @@ const routes: Routes = [
    
 ];
 
+
+ 
+ 
+   
 
 // export const appRoutingModule = RouterModule.forRoot(routes);
 
