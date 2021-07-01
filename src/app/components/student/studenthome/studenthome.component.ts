@@ -40,7 +40,7 @@ export class StudenthomeComponent implements OnInit {
     console.log("current day "+this.day);
     
   
-    this._studentService.getStudentSchedular("60cc727f770c4c17cae8a420").subscribe(resp =>{
+    this._studentService.getStudentSchedular(this._studentService.getCurrentUser().class).subscribe(resp =>{
 
       this.scheular=resp;
     

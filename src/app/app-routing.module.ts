@@ -21,7 +21,7 @@ import { ExamComponent } from './components/exam/exam/exam.component';
 
 const routes: Routes = [
     {path:'home',component:StudenthomeComponent,canActivate: [AuthGuard]},
-    {path:'header',component:HeaderComponent},
+    {path:'header',component:HeaderComponent,canActivate: [AuthGuard]},
     { path: 'register', component: SignUpComponent },
     { path: 'admin/home', component: HomeAdminComponent ,canActivate: [AuthGuard]},
     { path: 'admin/teacherDetails/:id', component: TeacherDetailsComponent ,canActivate: [AuthGuard]},
@@ -32,10 +32,10 @@ const routes: Routes = [
 
     { path: 'admin/courses', component: CoursesComponent ,canActivate: [AuthGuard]},
 
-    {path:'student/profile',component:ProfileComponent},
-    {path:'student/schedular',component:SchedularComponent},
-    {path:'student/attendence',component:AttendenceComponent},
-    {path:'student/grades',component:StudenGradesComponent},
+    {path:'student/profile',component:ProfileComponent,canActivate: [AuthGuard]},
+    {path:'student/schedular',component:SchedularComponent,canActivate: [AuthGuard]},
+    {path:'student/attendence',component:AttendenceComponent,canActivate: [AuthGuard]},
+    {path:'student/grades',component:StudenGradesComponent,canActivate: [AuthGuard]},
     { path: '', component: LoginComponent },
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
@@ -48,7 +48,7 @@ const routes: Routes = [
     { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
-    { path: '**', redirectTo: '' },
+    { path: '**', redirectTo: '' ,canActivate: [AuthGuard]},
    
 
     
