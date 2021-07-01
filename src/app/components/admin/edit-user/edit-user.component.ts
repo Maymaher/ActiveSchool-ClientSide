@@ -24,6 +24,7 @@ export class EditUserComponent implements OnInit {
 
   allClassess: any;
   allLevels:any;
+  CurrentUser:any;
 
   userData:any;
   constructor( private _userService: UserService,
@@ -38,6 +39,7 @@ export class EditUserComponent implements OnInit {
     this.getUserData()
     this.getAllLevels();
     this.getAllclasses()
+    this.CurrentUser=this._userService.getCurrentUser();
   }
   onUpdate(){
     this.userId=this.activatedRoute.snapshot.paramMap.get('id');
