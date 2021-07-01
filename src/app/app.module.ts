@@ -41,9 +41,7 @@ import { MaterialService } from './services/material.service';
 import { StudentService } from './services/student.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
-
-
- 
+import { HomeworkAnswerComponent } from './components/course/homework-answer/homework-answer.component';
  
 
 // used to create fake backend
@@ -91,6 +89,7 @@ import { UserService } from './services/user.service';
         StudenGradesComponent,
         ExamTeacherComponent,
         ExamComponent,
+        HomeworkAnswerComponent,
         
 
     
