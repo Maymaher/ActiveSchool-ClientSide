@@ -12,7 +12,8 @@ import { UserService } from '../../../services/user.service';
 export class CoursesComponent implements OnInit {
   name:string="";
   description:string="";
-  level:string=""
+  level:string="";
+  Zoomlink:string=""
 
   courses:any;
   levels:any;
@@ -102,7 +103,7 @@ export class CoursesComponent implements OnInit {
     let course = {};
     // let teachers = {};
 
-    if (!this.name ||!this.description|| !this.level) {
+    if (!this.name ||!this.description|| !this.level ||!this.Zoomlink) {
       this._flash.show('All fields are required', { cssClass: 'alert-danger' });
       return false;
     }
@@ -112,7 +113,8 @@ export class CoursesComponent implements OnInit {
         
         name:this.name,
         description:this.description,
-        level:this.level
+        level:this.level,
+        Zoomlink:this.Zoomlink
         
       };
       this.courseService.addCourse(course).subscribe(resp => {
