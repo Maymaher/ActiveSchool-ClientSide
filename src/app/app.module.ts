@@ -41,6 +41,7 @@ import {ProfileTeacherComponent} from './components/teacher/profile/profile.comp
  
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
 import { ExamComponent } from './components/exam/exam/exam.component';
+import { HomeworkAnswerComponent } from './components/course/homework-answer/homework-answer.component';
  
 
 // used to create fake backend
@@ -85,6 +86,7 @@ import { ExamComponent } from './components/exam/exam/exam.component';
         StudenGradesComponent,
         ExamTeacherComponent,
         ExamComponent,
+        HomeworkAnswerComponent,
         
 
     
