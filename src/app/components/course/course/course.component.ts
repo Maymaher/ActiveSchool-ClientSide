@@ -14,6 +14,8 @@ export class CourseComponent implements OnInit {
   myfile:any=null;
   cid:any="";
   CurrentUser:any="";
+  myfileMaterial:any=null;
+  fdMaterial=new FormData();
 
   constructor(private _homeworkService :HomeworkService,private activatedRoute: ActivatedRoute,private _userService :UserService,private _flash :FlashMessagesService,) { 
     
@@ -29,6 +31,21 @@ export class CourseComponent implements OnInit {
     else{
       this.fd.append('file',this.myfile,this.myfile.name);
       console.log(this.myfile);
+
+    }
+  }
+
+
+  getFileMaterial(event:any){
+    this.myfileMaterial=<File>event.target.files[0];
+    if(!this.myfileMaterial.name.match(/([a-zA-Z0-9\s_\\.\-\(\):])+(.doc|.docx|.pdf|.png|.svg|.jpg|.jpeg|.gif)$/)){
+      alert("Sorry, You Can't upload This Type");
+      console.log(this.myfileMaterial);
+      this.myfileMaterial=null;
+    }
+    else{
+      this.fdMaterial.append('file',this.myfileMaterial,this.myfileMaterial.name);
+      console.log(this.myfileMaterial);
 
     }
   }
@@ -56,6 +73,11 @@ export class CourseComponent implements OnInit {
       
   
     }
+  }
+
+
+  UplaodMaterial(){
+
   }
 
 }
