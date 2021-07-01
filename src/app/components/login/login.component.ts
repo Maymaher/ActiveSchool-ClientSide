@@ -48,6 +48,8 @@ export class LoginComponent implements OnInit {
             
           }
           else{
+            // console.log(data.user.id);
+            
             //this._flash.show(data.message, { cssClass: 'alert-success'});
             this._userService.saveUserDate(data.token,data.user)
             if(data.user.type=="admin")
@@ -55,7 +57,7 @@ export class LoginComponent implements OnInit {
             else if(data.user.type=="student")
             this._router.navigate(['/home']);
             else
-            this._router.navigate(['/teacher/home']);
+            this._router.navigate([`/teacher/profile/${data.user.id}`]);
 
           }
         });
