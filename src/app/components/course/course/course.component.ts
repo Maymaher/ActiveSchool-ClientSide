@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../../services/user.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { MaterialService } from '../../../services/material.service';
+import {StudentService} from '../../../services/student.service';
 
 
 @Component({
@@ -18,8 +19,15 @@ export class CourseComponent implements OnInit {
   CurrentUser:any="";
   myfileMaterial:any=null;
   fdMaterial=new FormData();
+  course:any;
+  materials:any=[{}]
+  materialFiles:any=[]
 
-  constructor(private _homeworkService :HomeworkService,private activatedRoute: ActivatedRoute,private _userService :UserService,private _flash :FlashMessagesService,private _materialService :MaterialService) { 
+  
+
+  constructor(private _homeworkService :HomeworkService,private activatedRoute: ActivatedRoute,private _userService :UserService,private _flash :FlashMessagesService,private _materialService :MaterialService
+    ,public _studentService:StudentService
+    ) { 
     
   }
 
@@ -55,6 +63,33 @@ export class CourseComponent implements OnInit {
   ngOnInit(): void {
     this.cid = this.activatedRoute.snapshot.paramMap.get('id');
     this.CurrentUser=this._userService.getCurrentUser();
+
+    this._studentService.getCoursesInfo(this.cid).subscribe(resp =>{
+
+      this.course=resp;
+    
+
+      console.log(this.course);
+     })
+
+     this._materialService.getmaterial(this.cid).subscribe(resp =>{
+
+      
+      this.materials=resp;
+      // console.log("my",this.materials);
+      for(let mat of  this.materials)
+      this._materialService.getmaterialfiles(mat._id).subscribe(resp =>{
+
+      
+        this.materialFiles.push(resp);
+        console.log("my",this.materialFiles);
+        
+       })
+      
+     })
+      
+ 
+    
       
   }
 
