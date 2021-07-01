@@ -19,6 +19,7 @@ export class EditCourseComponent implements OnInit {
   allLevels:any;
   courseDetails:any;
   courseId:any;
+  CurrentUser:any
   constructor( private _userService: UserService,
     private _router: Router,
     private _flash: FlashMessagesService,
@@ -31,6 +32,7 @@ export class EditCourseComponent implements OnInit {
   ngOnInit(): void {
     this.getAllLevels()
     this.getCourseDetail()
+    this.CurrentUser=this._userService.getCurrentUser();
   }
 
 

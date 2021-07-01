@@ -1,3 +1,4 @@
+<div *ngIf="authService.getCurrentUser().type=='student'">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="userData ml-3" >
-                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"> {{user[0].name}}</a></h2>
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"> {{user[0].firstName}}</a></h2>
                                     <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Video Uploads</h6>
                                     <h6 class="d-block"><a href="javascript:void(0)">300</a> Blog Posts</h6>
                                 </div>
@@ -43,10 +44,17 @@
                             <div class="col-12">
                                 <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="/student/profile" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Connected Services</a>
+                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="/student/schedular" role="tab" aria-controls="connectedServices" aria-selected="false">Schedular</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="/student/attendence" role="tab" aria-controls="connectedServices" aria-selected="false">Attendance</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="/student/grades" role="tab" aria-controls="connectedServices" aria-selected="false">Grades</a>
                                     </li>
 								</ul>
 								
@@ -61,7 +69,7 @@
 												
                                             </div>
                                             <div class="col-md-8 col-6">
-												{{(user[0].name) ? user[0].name : 'User'}}
+												{{(user[0].firstName) ? user[0].firstName : 'User'}}
                                             </div>
                                         </div>
                                         <hr />
@@ -120,6 +128,11 @@
             </div>
         </div>
     </div>
+</div>
+    <div class="alter alter-danger" *ngIf="authService.getCurrentUser().type!='student'">
+        UnAthoeize
+        </div>
+        
    
     <script type="text/javascript">
       $(document).ready(function () {

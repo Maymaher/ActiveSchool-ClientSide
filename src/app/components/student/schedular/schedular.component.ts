@@ -40,8 +40,8 @@ export class SchedularComponent implements OnInit {
       
     })
   
- 
-    this._studentService.getStudentSchedular("60cc727f770c4c17cae8a420").subscribe(resp =>{
+    console.log("myuse",this._studentService.getCurrentUser().class);
+    this._studentService.getStudentSchedular(this._studentService.getCurrentUser().class).subscribe(resp =>{
 
       this.scheular=resp;
     

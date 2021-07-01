@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
   type: string = '';
   level: string = '';
   class: string = '';
-
+  CurrentUser:any;
   allClassess: any;
   allLevels:any;
 
@@ -38,6 +38,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.getAllclasses();
     this.getAllLevels();
+    this.CurrentUser=this._userService.getCurrentUser();
   }
 
   onRegister() {

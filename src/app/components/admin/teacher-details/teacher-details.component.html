@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 7%">
+<div class="container" style="margin-top: 7%" *ngIf="CurrentUser.type=='admin'">
     <a routerLink="/admin/home" class="btn btn-primary"> Back</a>
 
     <div class="main-body">
@@ -163,3 +163,5 @@
         </div>
     </div>
 </div>
+
+<div *ngIf="CurrentUser.type!='admin'">unauthorized</div>
