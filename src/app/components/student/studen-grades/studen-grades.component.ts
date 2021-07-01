@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class StudenGradesComponent implements OnInit {
 
   grades:any=[{}]
+  coursesinfo:any=[]
   constructor(
     public authService: StudentService,
     public router: Router,
@@ -22,6 +23,20 @@ export class StudenGradesComponent implements OnInit {
 
       this.grades=resp;      
       console.log(this.grades);
+      for(let course of this.grades)
+      {
+        console.log(course.exam.course);
+        this.authService.getCoursesInfo(course.exam.course).subscribe(resp =>{
+
+          this.coursesinfo.push(resp);
+        
+    
+         
+          
+        })
+        
+      }
+      console.log(this.coursesinfo);
       
     })
   
