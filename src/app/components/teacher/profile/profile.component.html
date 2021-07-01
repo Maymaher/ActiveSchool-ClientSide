@@ -93,7 +93,7 @@
                       </h6>
                       <div class="row">
                         <div *ngFor="let course of courses" class="col-sm-6">
-                          <p class="m-b-10 f-w-600">{{ course.name }}</p>
+                          <p class="m-b-10 f-w-600"><a style="color: blue;" routerLink="/course/{{course._id}}">{{ course.name }}</a></p>
                           <h6 class="text-muted f-w-400">
                             Level {{ course.level.number }}
                           </h6>
