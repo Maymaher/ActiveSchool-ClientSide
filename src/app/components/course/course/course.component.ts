@@ -3,6 +3,8 @@ import { HomeworkService } from '../../../services/homework.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../../services/user.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { MaterialService } from '../../../services/material.service';
+
 
 @Component({
   selector: 'app-course',
@@ -17,7 +19,7 @@ export class CourseComponent implements OnInit {
   myfileMaterial:any=null;
   fdMaterial=new FormData();
 
-  constructor(private _homeworkService :HomeworkService,private activatedRoute: ActivatedRoute,private _userService :UserService,private _flash :FlashMessagesService,) { 
+  constructor(private _homeworkService :HomeworkService,private activatedRoute: ActivatedRoute,private _userService :UserService,private _flash :FlashMessagesService,private _materialService :MaterialService) { 
     
   }
 
@@ -77,6 +79,23 @@ export class CourseComponent implements OnInit {
 
 
   UplaodMaterial(){
+    if(this.myfileMaterial==null)
+    {
+      alert("Please, Enter a valid file")
+    }
+    else{
+      const material={
+        file:this.myfileMaterial,
+        teacher:this.CurrentUser.id
+        
+      }
+      this._materialService.upload(this.cid,material,this.myfileMaterial).subscribe(data=>{
+        this._flash.show(data.message, { cssClass: 'alert-success'});
+      })
+     
+      
+  
+    }
 
   }
 
