@@ -1,5 +1,5 @@
 
-<div class="container" style="width: 74%;margin: 0 auto;margin-top: 0px;margin-top: 5%;">
+<div class="container" *ngIf="CurrentUser.type=='admin'" style="width: 74%;margin: 0 auto;margin-top: 0px;margin-top: 5%;">
     <h1 style="text-align: center;">All Users</h1>
    
     <a routerLink="/register" style="float: right; background-color: steelblue;" class="btn btn-primary">Add new user</a>
@@ -88,3 +88,5 @@
   </div>
     
 </div>
+
+<div *ngIf="CurrentUser.type!='admin'">unauthorized</div>

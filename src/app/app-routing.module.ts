@@ -5,21 +5,25 @@ import { EditUserComponent } from './components/admin/edit-user/edit-user.compon
 import { HomeAdminComponent } from './components/admin/home/home.component';
 import { SignUpComponent } from './components/admin/sign-up/sign-up.component';
 import { TeacherDetailsComponent } from './components/admin/teacher-details/teacher-details.component';
+import { ExamComponent } from './components/exam/exam/exam.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProfileTeacherComponent } from './components/teacher/profile/profile.component';
-import { AuthGuard } from './guards/auth.guard';
-import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
-import { ExamComponent } from './components/exam/exam/exam.component';
 import { AttendenceComponent } from './components/student/attendence/attendence.component';
+import { ProfileComponent } from './components/student/profile/profile.component';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
-import { ProfileComponent } from './components/student/profile/profile.component';
+import { AddStudentsGradesComponent } from './components/teacher/add-students-grades/add-students-grades.component';
+import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
+import { ProfileTeacherComponent } from './components/teacher/profile/profile.component';
+import { StudentsExamAnswersComponent } from './components/teacher/students-exam-answers/students-exam-answers.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
     {path:'home',component:StudenthomeComponent,canActivate: [AuthGuard]},
     {path:'header',component:HeaderComponent},
+
+
     { path: 'register', component: SignUpComponent },
     { path: 'admin/home', component: HomeAdminComponent ,canActivate: [AuthGuard]},
     { path: 'admin/teacherDetails/:id', component: TeacherDetailsComponent ,canActivate: [AuthGuard]},
@@ -37,8 +41,12 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     //teacher profile
     { path: 'teacher/profile/:id', component: ProfileTeacherComponent, canActivate: [AuthGuard]},
+
     //Exams of teacher page
     { path: 'teacher/:id/exams', component: ExamTeacherComponent, canActivate: [AuthGuard]},
+    { path: 'teacher/examAnswers/:id', component: StudentsExamAnswersComponent, canActivate: [AuthGuard]},
+    {path:'teacher/examGrade/:stud_id/:exam_id',component:AddStudentsGradesComponent},
+
     //Exam Page
     { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},

@@ -1,4 +1,4 @@
- <form (submit)="onRegister()"  >
+ <form (submit)="onRegister()"  *ngIf="CurrentUser.type=='admin'">
 
 
 <div class="login-wrap">
@@ -73,7 +73,7 @@
 	</div>
 </div>
  </form>
-
+ <div *ngIf="CurrentUser.type!='admin'">unauthorized</div>
 <!-- <form (submit)="onRegister()" class="form-horizontal" >
 
     <h2>Signup</h2>

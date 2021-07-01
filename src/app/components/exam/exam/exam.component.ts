@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../../../services/user.service';
 import { ExamService } from '../../../services/exam.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-exam',
@@ -17,9 +17,11 @@ export class ExamComponent implements OnInit {
   fd=new FormData();
   myfile:any=null;
   eid:any;
+  uid:any; 
 
   ngOnInit(): void {
     this.eid = this.activatedRoute.snapshot.paramMap.get('id');
+    this.uid = this._userService.getCurrentUser().id; 
     this._examService.getSpecificExam(this.eid).subscribe(data =>{
       this.exam=data;
      // this.from=this.exams.from.slice(12, 24);
@@ -50,7 +52,7 @@ UplaodExam(){
     
 
   }
-  this._examService.uploadExamAnswer(this.eid,this.exam,this.myfile).subscribe(data=>{
+  this._examService.uploadExamAnswer(this.eid,this.uid,this.exam,this.myfile).subscribe(data=>{
     console.log(data);
    })
  
