@@ -1,18 +1,32 @@
-<table class="table table-dark table-striped">
-    <thead>
-        <tr >
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      </tbody>
-  </table>
+ <div  class="container table"  style="border: 3px solid  black;margin-top:7%;" >
+    <span style="text-align: center;margin-left: 33%;">
+
+        <span style="font-size: xx-large;text-align: center;">
+
+        CourseName
+        </span>
+        <span  style="font-size: xx-large;margin-left: 7%;text-align: center;">
+Grade
+        
+        </span>
+    </span>
+
+<div  style="text-align:center"*ngFor="let cou of coursesinfo">
+
+    <div *ngFor="let grade of grades">
+        <div *ngIf="cou[0]._id==grade.exam.course">
+           
+        <span >{{cou[0].name}}</span>
+        <span style="margin-left:20%;">{{grade.grade}}</span>
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+ </div>
+    
+  
