@@ -33,7 +33,7 @@ import { UserService } from './services/user.service';
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
 import { ExamComponent } from './components/exam/exam/exam.component';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
-
+import { HomeworkService } from './services/homework.service';
  
 
 
@@ -84,7 +84,8 @@ import { StudenthomeComponent } from './components/student/studenthome/studentho
         ClassService,
         LevelService,
         CourseService,
-        StudentService
+        StudentService,
+        HomeworkService
     ],
     bootstrap: [AppComponent]
 })
