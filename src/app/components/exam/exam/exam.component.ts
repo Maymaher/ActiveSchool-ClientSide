@@ -17,16 +17,35 @@ export class ExamComponent implements OnInit {
   fd=new FormData();
   myfile:any=null;
   eid:any;
-  uid:any; 
+  uid:any;
+  now= Date.parse(Date())
+  ExamNow=false;
 
   ngOnInit(): void {
     this.eid = this.activatedRoute.snapshot.paramMap.get('id');
-    this.uid = this._userService.getCurrentUser().id; 
+    this.uid = this._userService.getCurrentUser().id;
+    
+
     this._examService.getSpecificExam(this.eid).subscribe(data =>{
       this.exam=data;
      // this.from=this.exams.from.slice(12, 24);
-      console.log(this.exam);
+      // console.log(this.exam);
+      // console.log(this.exam.from);
+      // console.log(this.exam.to);
+      // console.log(this.now);
+      
+      if(this.now <= Date.parse(this.exam.to) && this.now >= Date.parse(this.exam.from))
+      {
+        console.log("Ayman")
+      }
+      else
+      {
+        console.log("Laaaaaaaaaa")
+      }
+
     })
+
+    
     
   }
 
@@ -50,10 +69,11 @@ UplaodExam(){
     
     file:this.myfile,
     
+    
 
   }
-  this._examService.uploadExamAnswer(this.eid,this.uid,this.exam,this.myfile).subscribe(data=>{
-    console.log(data);
+  this._examService.uploadExamAnswer(this.eid,this.uid,exam,this.myfile).subscribe(data=>{
+    // console.log(data.success);
    })
  
 }

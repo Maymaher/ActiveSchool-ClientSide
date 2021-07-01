@@ -24,11 +24,11 @@ export class ExamService {
 
   }
 
-  uploadExamAnswer(id:any,student_id:any ,answer:any,file:File)
+  uploadExamAnswer(id:any,student_id:any,exam:any,file:File)
   {
     const formData:FormData = new FormData();
-    formData.append('file',file)
-    return this._http.post('http://localhost:3200/examAnswerUpload/'+id+'/'+student_id ,formData);
+    formData.append('file',file);
+    return this._http.post('http://localhost:3200/examAnswerUpload/'+id+'/'+student_id,formData).pipe(map((resp:any)=> resp.json()));
       
   }
 

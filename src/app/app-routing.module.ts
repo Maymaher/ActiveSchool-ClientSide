@@ -5,13 +5,14 @@ import { EditUserComponent } from './components/admin/edit-user/edit-user.compon
 import { HomeAdminComponent } from './components/admin/home/home.component';
 import { SignUpComponent } from './components/admin/sign-up/sign-up.component';
 import { TeacherDetailsComponent } from './components/admin/teacher-details/teacher-details.component';
+import { CourseComponent } from './components/course/course/course.component';
 import { ExamComponent } from './components/exam/exam/exam.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AttendenceComponent } from './components/student/attendence/attendence.component';
 import { ProfileComponent } from './components/student/profile/profile.component';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
+import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
 import { AddStudentsGradesComponent } from './components/teacher/add-students-grades/add-students-grades.component';
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
@@ -19,11 +20,11 @@ import { ProfileTeacherComponent } from './components/teacher/profile/profile.co
 import { StudentsExamAnswersComponent } from './components/teacher/students-exam-answers/students-exam-answers.component';
 import { AuthGuard } from './guards/auth.guard';
 
+
 const routes: Routes = [
+   
     {path:'home',component:StudenthomeComponent,canActivate: [AuthGuard]},
-    {path:'header',component:HeaderComponent},
-
-
+    {path:'header',component:HeaderComponent,canActivate: [AuthGuard]},
     { path: 'register', component: SignUpComponent },
     { path: 'admin/home', component: HomeAdminComponent ,canActivate: [AuthGuard]},
     { path: 'admin/teacherDetails/:id', component: TeacherDetailsComponent ,canActivate: [AuthGuard]},
@@ -34,11 +35,14 @@ const routes: Routes = [
 
     { path: 'admin/courses', component: CoursesComponent ,canActivate: [AuthGuard]},
 
-    {path:'student/profile',component:ProfileComponent},
-    {path:'student/schedular',component:SchedularComponent},
-    {path:'student/attendence',component:AttendenceComponent},
+    {path:'student/profile',component:ProfileComponent,canActivate: [AuthGuard]},
+    {path:'student/schedular',component:SchedularComponent,canActivate: [AuthGuard]},
+    {path:'student/attendence',component:AttendenceComponent,canActivate: [AuthGuard]},
+    {path:'student/grades',component:StudenGradesComponent,canActivate: [AuthGuard]},
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    // otherwise redirect to home
+    // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     //teacher profile
     { path: 'teacher/profile/:id', component: ProfileTeacherComponent, canActivate: [AuthGuard]},
 
@@ -49,15 +53,21 @@ const routes: Routes = [
 
     //Exam Page
     { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
+    //Course Page
+    { path: 'course/:id', component: CourseComponent, canActivate: [AuthGuard]},
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
-    { path: '**', redirectTo: '' },
+    { path: '**', redirectTo: '' ,canActivate: [AuthGuard]},
    
 
     
    
 ];
 
+
+ 
+ 
+   
 
 // export const appRoutingModule = RouterModule.forRoot(routes);
 

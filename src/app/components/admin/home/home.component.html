@@ -18,12 +18,10 @@
         <table  class="table table-striped table-hover ">
             <thead  class="table-dark">
                 <tr>
-                  <!-- <th scope="col">photo</th> -->
+                  <th scope="col">photo</th>
 
                   <th scope="col">full name</th>
                   <th scope="col">email</th>
-                  <th scope="col">address</th>
-                  <th scope="col">phone</th>
                   <th scope="col">level</th>
                   <th scope="col">class</th>
 
@@ -34,11 +32,9 @@
               </thead>
               <tbody>
                 <tr *ngFor="let student of studentsData">
-                  <!-- <td>{{student.avatar}}</td> -->
+                  <td>{{student.avatar}}</td>
                   <td>{{student.firstName}} {{student.lastName}}</td>
                   <td>{{student.email}}</td>
-                  <td>{{student.address}}</td>
-                  <td>{{student.phone}}</td>
                   <td>{{student.level.number}}</td>
                   <td>{{student.class.number}}</td>
                  
@@ -57,10 +53,9 @@
       <table  class="table table-striped table-hover ">
           <thead  class="table-dark">
               <tr>
-                <!-- <th scope="col">photo</th> -->
+                <th scope="col">photo</th>
                 <th scope="col">full name</th>
                 <th scope="col">email</th>
-                <th scope="col">phone</th>
                 <th scope="col" style="text-align: end;">action</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -71,10 +66,9 @@
              
               <tr *ngFor="let Teacher of teachersData">
                
-                <!-- <td>{{Teacher.avatar}}</td> -->
+                <td>{{Teacher.avatar}}</td>
                 <td>{{Teacher.firstName}} {{Teacher.lastName}}</td>
                 <td>{{Teacher.email}}</td>
-                <td>{{Teacher.phone}}</td>
 
                 <td><a routerLink="/admin/teacherDetails/{{Teacher._id}}" class="btn" style="background-color:#4ba2d7">View</a></td>
 

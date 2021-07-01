@@ -16,13 +16,16 @@ import { EditUserComponent } from './components/admin/edit-user/edit-user.compon
 import { HomeAdminComponent } from './components/admin/home/home.component';
 import { SignUpComponent } from './components/admin/sign-up/sign-up.component';
 import { TeacherDetailsComponent } from './components/admin/teacher-details/teacher-details.component';
+import { CourseComponent } from './components/course/course/course.component';
 import { ExamComponent } from './components/exam/exam/exam.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AttendenceComponent } from './components/student/attendence/attendence.component';
+// import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ProfileComponent } from './components/student/profile/profile.component';
 import { SchedularComponent } from './components/student/schedular/schedular.component';
+import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
 import { AddStudentsGradesComponent } from './components/teacher/add-students-grades/add-students-grades.component';
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
@@ -32,13 +35,16 @@ import { AuthGuard } from './guards/auth.guard';
 import { ClassService } from './services/class.service';
 import { CourseService } from './services/course.service';
 import { ExamAnswerService } from './services/exam-answer.service';
+import { HomeworkService } from './services/homework.service';
 import { LevelService } from './services/level.service';
+import { MaterialService } from './services/material.service';
 import { StudentService } from './services/student.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
 
- 
 
+ 
+ 
 
 // used to create fake backend
 
@@ -52,9 +58,11 @@ import { UserService } from './services/user.service';
         FormsModule,
         FlashMessagesModule.forRoot(),
         HttpModule,
+        RouterModule,
         SidebarModule.forRoot(),
-        RouterModule
+      
        
+        
         
        
     ],
@@ -65,14 +73,12 @@ import { UserService } from './services/user.service';
         LoginComponent,
         HeaderComponent,
         SignUpComponent,
-        ProfileComponent,
-        ExamTeacherComponent,
-        ExamComponent,
         HomeAdminComponent,
         TeacherDetailsComponent,
         CoursesComponent,
         EditUserComponent,
         EditCourseComponent,
+        ProfileComponent,
         SchedularComponent,
         AttendenceComponent,
         StudenthomeComponent,
@@ -80,6 +86,13 @@ import { UserService } from './services/user.service';
         StudentsExamAnswersComponent,
         AddStudentsGradesComponent,
         
+        CourseComponent,
+        
+        StudenGradesComponent,
+        ExamTeacherComponent,
+        ExamComponent,
+        
+
     
        
     ],
@@ -91,7 +104,9 @@ import { UserService } from './services/user.service';
         LevelService,
         CourseService,
         StudentService,
-        ExamAnswerService
+        ExamAnswerService,
+        HomeworkService,
+        MaterialService
     ],
     bootstrap: [AppComponent]
 })
