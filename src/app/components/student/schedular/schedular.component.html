@@ -1,4 +1,6 @@
-<table class="table table-striped">
+<div *ngIf="_studentService.getCurrentUser().type=='student'">
+<h1 style="text-align: center;margin-top:4%;"> Daly Schdular</h1>
+<table class="table table-striped" style="margin-top:2%;" >
     <thead>
       <tr>
         <th style="width: 50px">Day</th>
@@ -6,7 +8,7 @@
         <th style="width: 75px">9:10</th>
         <th style="width: 50px">10:11</th>
         <th style="width: 75px">11:12</th>
-        <th style="width: 75px">12.30:2</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -73,4 +75,8 @@
         </tr>
     </tbody>
   </table>
+</div>
+<div class="alter alter-danger" *ngIf="_studentService.getCurrentUser().type!='student'">
+  UnAthoeize
+  </div>
   

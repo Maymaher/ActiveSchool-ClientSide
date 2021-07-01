@@ -19,7 +19,7 @@ export class StudenGradesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.authService.getAllGrates("60dbc7bb931cfd6e84cb72fe").subscribe(resp =>{
+    this.authService.getAllGrates(this.authService.getCurrentUser().id).subscribe(resp =>{
 
       this.grades=resp;      
       console.log(this.grades);
