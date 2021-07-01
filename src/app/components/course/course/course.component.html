@@ -37,6 +37,13 @@
                  <h5>Materials</h5>
                   
                   
+                 <!-- Button trigger modal -->
+
+           
+            <button style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
+            data-bs-target="#staticBackdropMaterial">
+            Upload Material
+        </button>
                 </div>
             </div>
     </div>
@@ -48,7 +55,7 @@
   <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Upload Exam</h5>
+              <h5 class="modal-title" id="staticBackdropLabel">Upload Homework</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -83,6 +90,50 @@
       </div>
   </div>
 </div>
+
+
+<!-- Modal Upload Material-->
+<div class="modal fade" id="staticBackdropMaterial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Upload Material</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form (submit)="UplaodMaterial()" class="form-horizontal">
+
+                
+                <div class="form-group">
+                    <label for="myfile">Select a file:</label>
+                    <div class="col-lg-10">
+                        <input type="file" id="myfileMaterial" name="myfileMaterial" ngModel (change)="getFileMaterial($event)">
+                    </div>
+                </div>
+
+
+                <br>
+                <div class="form-group">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+
+    </div>
+</div>
+</div>
+
 
 
 
