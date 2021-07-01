@@ -31,6 +31,9 @@ import { StudentService } from './services/student.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+import { HomeworkService } from './services/homework.service';
+import { CourseComponent } from './components/course/course/course.component';
+import { MaterialService } from './services/material.service';
 import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 
 import {ProfileTeacherComponent} from './components/teacher/profile/profile.component';
@@ -76,10 +79,13 @@ import { ExamComponent } from './components/exam/exam/exam.component';
         SchedularComponent,
         AttendenceComponent,
         StudenthomeComponent,
+        ProfileTeacherComponent,
+        CourseComponent,
+        
         StudenGradesComponent,
         ExamTeacherComponent,
         ExamComponent,
-        ProfileTeacherComponent
+        
 
     
        
@@ -91,7 +97,9 @@ import { ExamComponent } from './components/exam/exam/exam.component';
         ClassService,
         LevelService,
         CourseService,
-        StudentService
+        StudentService,
+        HomeworkService,
+        MaterialService
     ],
     bootstrap: [AppComponent]
 })
