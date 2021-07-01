@@ -11,31 +11,47 @@ import { error } from '@angular/compiler/src/util';
 @Injectable({
   providedIn: 'root'
 })
-export class ExamService {
+export class HomeworkService {
 
   constructor(private _http:Http) { }
 
-  //Get Exams of teacher
-  getExams(id:any)
+//Upload homework file
+upload(id:any,homework:any,file:File)
   {
-    return this._http.get('http://localhost:3200/exam/'+id)
+    const formData:FormData = new FormData();
+    formData.append('file',file)
+    
+
+    console.log(formData);
+   
+      return this._http.post('http://localhost:3200/homeworkUpload/'+id, formData)
       .pipe(map((resp:any)=> resp.json()));
+      
+    
+    
+
+
   }
 
-  //Get Specific exam
-  getSpecificExam(id:any)
-  {
-    return this._http.get('http://localhost:3200/exam/'+id+'/specificExam')
-      .pipe(map((resp:any)=> resp.json()));
-
-  }
-
-  uploadExamAnswer(id:any,student_id:any,exam:any,file:File)
+  //upload homework answer
+  uploadHomeworkAnswer(id:any,homework_answer:any,file:File)
   {
     const formData:FormData = new FormData();
     formData.append('file',file);
-    return this._http.post('http://localhost:3200/examAnswerUpload/'+id+'/'+student_id,formData).pipe(map((resp:any)=> resp.json()));
+    formData.append('student',homework_answer.student);
+    
+
+    console.log(formData);
+   
+      return this._http.post('http://localhost:3200/homeworkAnswerUpload'+id, formData)
+      .pipe(map((resp:any)=> resp.json()));
       
+    
+    
+
+
   }
+
+
 
 }

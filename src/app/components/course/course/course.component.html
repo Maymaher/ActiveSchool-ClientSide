@@ -1,0 +1,139 @@
+<div >
+    
+    <div class="card" style="width: 120ch;margin:auto;margin-top: 10ch;">
+        
+        <div class="card-body" style="display: flex;justify-content: space-between;">
+         
+          <img src="/assets/images/Happy students or pupils watching study webinar.jpg" alt="image" width="270" height="220">
+
+          <div>
+            <div class="card" style="width: 40ch;float: right;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
+                 <h5>HomeWorks</h5>
+
+                 <!-- Button trigger modal -->
+
+           
+            <button style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                Upload Homework
+            </button>
+                  
+                  
+                </div>
+            </div>
+             
+          </div>
+          
+          
+        </div>
+        <div>
+            <div class="card" style="width: 87ch;float: right;height: 40ch;margin-top: 10ch;margin-right: 2ch;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
+                 <h5>Materials</h5>
+                  
+                  
+                 <!-- Button trigger modal -->
+
+           
+            <button style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
+            data-bs-target="#staticBackdropMaterial">
+            Upload Material
+        </button>
+                </div>
+            </div>
+    </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Upload Homework</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+              <form (submit)="UplaodHomework()" class="form-horizontal">
+
+                  
+                  <div class="form-group">
+                      <label for="myfile">Select a file:</label>
+                      <div class="col-lg-10">
+                          <input type="file" id="myfile" name="myfile" ngModel (change)="getFile($event)">
+                      </div>
+                  </div>
+
+
+                  <br>
+                  <div class="form-group">
+                      <div class="pull-right">
+                          <button type="submit" class="btn btn-danger">Submit</button>
+                      </div>
+                  </div>
+
+              </form>
+
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+<!-- Modal Upload Material-->
+<div class="modal fade" id="staticBackdropMaterial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Upload Material</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form (submit)="UplaodMaterial()" class="form-horizontal">
+
+                
+                <div class="form-group">
+                    <label for="myfile">Select a file:</label>
+                    <div class="col-lg-10">
+                        <input type="file" id="myfileMaterial" name="myfileMaterial" ngModel (change)="getFileMaterial($event)">
+                    </div>
+                </div>
+
+
+                <br>
+                <div class="form-group">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+
+

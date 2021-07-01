@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/student/profile/profile.component
 import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { AuthGuard } from './guards/auth.guard';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
+import { CourseComponent } from './components/course/course/course.component';
 import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 import { ProfileTeacherComponent } from './components/teacher/profile/profile.component';
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
@@ -46,6 +47,8 @@ const routes: Routes = [
     { path: 'teacher/:id/exams', component: ExamTeacherComponent, canActivate: [AuthGuard]},
     //Exam Page
     { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
+    //Course Page
+    { path: 'course/:id', component: CourseComponent, canActivate: [AuthGuard]},
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' ,canActivate: [AuthGuard]},
