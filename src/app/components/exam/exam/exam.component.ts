@@ -28,19 +28,17 @@ export class ExamComponent implements OnInit {
 
     this._examService.getSpecificExam(this.eid).subscribe(data =>{
       this.exam=data;
-     // this.from=this.exams.from.slice(12, 24);
-      // console.log(this.exam);
-      // console.log(this.exam.from);
-      // console.log(this.exam.to);
-      // console.log(this.now);
+     
       
       if(this.now <= Date.parse(this.exam.to) && this.now >= Date.parse(this.exam.from))
       {
-        console.log("Ayman")
+        this.ExamNow=true;
+        console.log(this.ExamNow)
       }
       else
       {
-        console.log("Laaaaaaaaaa")
+        
+        console.log(this.ExamNow)
       }
 
     })
@@ -74,6 +72,7 @@ UplaodExam(){
   }
   this._examService.uploadExamAnswer(this.eid,this.uid,exam,this.myfile).subscribe(data=>{
     console.log(data.success);
+    
    })
  
 }
