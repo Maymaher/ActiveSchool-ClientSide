@@ -33,7 +33,8 @@ import { UserService } from './services/user.service';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
 import { StudenGradesComponent } from './components/student/studen-grades/studen-grades.component';
 
- 
+import {ProfileTeacherComponent} from './components/teacher/profile/profile.component';
+
  
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
 import { ExamComponent } from './components/exam/exam/exam.component';
@@ -77,7 +78,8 @@ import { ExamComponent } from './components/exam/exam/exam.component';
         StudenthomeComponent,
         StudenGradesComponent,
         ExamTeacherComponent,
-        ExamComponent 
+        ExamComponent,
+        ProfileTeacherComponent
 
     
        
