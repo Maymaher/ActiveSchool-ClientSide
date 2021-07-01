@@ -12,6 +12,7 @@
       <!-- <h6 class="card-subtitle mb-2 text-muted">{{course.name}}</h6> -->
       <p class="card-text">Course Description : {{course.description}}</p>
       <p class="card-text">Course Level : {{course.level.number}}</p>
+     <p class="card-text">Zoom Link :  <a href="{{course.Zoomlink}}">{{course.Zoomlink}}</a></p>
 
       <a routerLink="/admin/editCourse/{{course._id}}" class="btn btn-primary" style="margin:10px"  >Edit</a>
 
@@ -34,6 +35,7 @@
       <div class="modal-body">
       <label class="col-4">Course Name : </label> <input [(ngModel)]="name" name="name" ><br><br>
       <label class="col-4"> Course Description : </label>  <input [(ngModel)]="description" name="description" ><br><br>
+      <label class="col-4"> Zoom Link : </label>  <input [(ngModel)]="Zoomlink" name="Zoomlink" ><br><br>
 
       <label class="col-4"> Course Level : </label>  
       <select class="input" [(ngModel)]="level" name="level">Select course
