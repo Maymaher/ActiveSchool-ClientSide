@@ -16,6 +16,7 @@ import { AttendenceComponent } from './components/student/attendence/attendence.
 import { SchedularComponent } from './components/student/schedular/schedular.component';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
 import { ProfileComponent } from './components/student/profile/profile.component';
+import { CourseComponent } from './components/course/course/course.component';
 
 const routes: Routes = [
     {path:'home',component:StudenthomeComponent,canActivate: [AuthGuard]},
@@ -41,6 +42,8 @@ const routes: Routes = [
     { path: 'teacher/:id/exams', component: ExamTeacherComponent, canActivate: [AuthGuard]},
     //Exam Page
     { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
+    //Course Page
+    { path: 'course/:id', component: CourseComponent, canActivate: [AuthGuard]},
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' },

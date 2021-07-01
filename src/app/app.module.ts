@@ -34,6 +34,8 @@ import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-tea
 import { ExamComponent } from './components/exam/exam/exam.component';
 import { StudenthomeComponent } from './components/student/studenthome/studenthome.component';
 import { HomeworkService } from './services/homework.service';
+import { CourseComponent } from './components/course/course/course.component';
+
  
 
 
@@ -73,7 +75,9 @@ import { HomeworkService } from './services/homework.service';
         SchedularComponent,
         AttendenceComponent,
         StudenthomeComponent,
-        ProfileTeacherComponent
+        ProfileTeacherComponent,
+        CourseComponent,
+        
     
        
     ],
