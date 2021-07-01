@@ -93,6 +93,38 @@ export class UserService {
         return this._http.get(`http://localhost:3200/student/${id}`,{headers})
           .pipe(map(resp=>resp.json()));
       }
-
+      getteacher(id:any){
+        return this._http.get('http://localhost:3200/teacher/'+id).pipe(map((resp:any)=> resp.json()));
+      }
+    
+      getCoursesOfTeacher(id:any){
+        return this._http.get('http://localhost:3200/teacher/'+id+'/levels').pipe(map((resp:any)=> resp.json()));
+    
+      }
+    
+      upload(exam:any,file:File)
+      {
+        const formData:FormData = new FormData();
+        formData.append('file',file)
+        formData.append('course',exam.course);
+        formData.append('from',exam.from);
+        formData.append('to',exam.to);
+        formData.append('date',exam.date);
+        formData.append('teacher',exam.teacher);
+    
+    
+        console.log(formData);
+       
+          return this._http.post('http://localhost:3200/gallery', formData)
+          .pipe(map((resp:any)=> resp.json()));
+          
+        
+        
+    
+    
+      }
+    
+   
+    
   
 }
