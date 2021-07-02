@@ -1,172 +1,225 @@
-<div *ngIf="authorized_user==true" style="display:inline;">
+<div *ngIf="authorized_user == true" style="display: inline">
+  <ng-sidebar-container>
+    <!-- SideBar -->
+    <ng-sidebar [opened]="opened">
+      <button
+        style="background-color: #ff5454; float: right"
+        class="btn btn-secondary btn-lg"
+        (click)="toggleSidebar()"
+      >
+        <img src="/assets/images/close.svg" width="15" height="15" />
+      </button>
 
+      <br /><br /><br /><br /><br />
 
+      <!-- Button trigger modal -->
 
-    <ng-sidebar-container>
-        <!-- SideBar -->
-        <ng-sidebar [opened]="opened">
-            <button style="background-color: #ff5454;float:right; " class="btn btn-secondary btn-lg"
-                (click)="toggleSidebar()"> <img src="/assets/images/close.svg" width="15" height="15"></button>
+      <a [routerLink]="examPagePath">My Exams</a><br /><br />
+      <button
+        style="float: left; padding: 0.7em 0.7em"
+        type="button"
+        class="btn btn-light"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Upload Exam
+      </button>
+    </ng-sidebar>
+    <div ng-sidebar-content>
+      <!-- Page contents-->
+      <button
+        style="background-color: #f26363; margin-top: 0ch"
+        (click)="toggleSidebar()"
+      >
+        <img
+          src="/assets/images/noun_sidebar_385157.svg"
+          width="60"
+          height="60"
+        />
+      </button>
 
-            <br><br><br><br><br>
-
-            <!-- Button trigger modal -->
-
-            <a [routerLink]="examPagePath">My Exams</a><br><br>
-            <button style="float: left; padding:0.7em 0.7em; " type="button" class="btn btn-light" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
-                Upload Exam
-            </button>
-        </ng-sidebar>
-        <div ng-sidebar-content>
-            <!-- Page contents-->
-            <button style="background-color: #f26363;margin-top: 0ch;" (click)="toggleSidebar()">
-                <img src="/assets/images/noun_sidebar_385157.svg" width="60" height="60">
-            </button>
-
-            <div class="page-content page-container" id="page-content">
-                <div class="padding">
-                    <div class="row container d-flex justify-content-center">
-                        <div class="col-xl-6 col-md-12">
-                            <div class="card user-card-full">
-                                <div class="row m-l-0 m-r-0">
-                                    <div class="col-sm-4 bg-c-lite-green user-profile">
-                                        <div class="card-block text-center text-white">
-                                            <div class="m-b-25"> <img [src]="profile_picture+teacher.avatar"
-                                                    class="img-radius" alt="User-Profile-Image" width="100"
-                                                    height="100"> </div>
-                                            <h6 class="f-w-600">{{teacher.name}}</h6>
-                                            <p>{{teacher.type}}</p> <i
-                                                class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    <div class="col-sm-8">
-                                        <div class="card-block">
-                                            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Email</p>
-                                                    <h6 class="text-muted f-w-400">{{teacher.email}}</h6>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">Adress</p>
-                                                    <h6 class="text-muted f-w-400">{{teacher.address}}</h6>
-                                                </div>
-                                            </div>
-                                            <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Courses You Teach</h6>
-                                            <div class="row">
-                                                <div *ngFor="let course of courses" class="col-sm-6">
-                                                    <p class="m-b-10 f-w-600">{{course.name}}</p>
-                                                    <h6 class="text-muted f-w-400">Level {{course.level.number}}</h6>
-
-                                                </div>
-
-                                            </div>
-
-                                            <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Levels You Teach</h6>
-                                            <div class="row">
-                                                <div *ngFor="let course of courses" class="col-sm-6">
-                                                    <p class="text-muted f-w-400">Level {{course.level.number}}</p>
-
-
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                </div>
-                            </div>
-                        </div>
+      <div class="page-content page-container" id="page-content">
+        <div class="padding">
+          <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+              <div class="card user-card-full">
+                <div class="row m-l-0 m-r-0">
+                  <div class="col-sm-4 bg-c-lite-green user-profile">
+                    <div class="card-block text-center text-white">
+                      <div class="m-b-25">
+                        <img
+                          [src]="profile_picture + teacher.avatar"
+                          class="img-radius"
+                          alt="User-Profile-Image"
+                          width="100"
+                          height="100"
+                        />
+                      </div>
+                      <h6 class="f-w-600">{{ teacher.name }}</h6>
+                      <p>{{ teacher.type }}</p>
+                      <i
+                        class="
+                          mdi mdi-square-edit-outline
+                          feather
+                          icon-edit
+                          m-t-10
+                          f-16
+                        "
+                      ></i>
                     </div>
+                  </div>
+
+                  <div class="col-sm-8">
+                    <div class="card-block">
+                      <h6 class="m-b-20 p-b-5 b-b-default f-w-600">
+                        Information
+                      </h6>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <p class="m-b-10 f-w-600">Email</p>
+                          <h6 class="text-muted f-w-400">
+                            {{ teacher.email }}
+                          </h6>
+                        </div>
+                        <div class="col-sm-6">
+                          <p class="m-b-10 f-w-600">Adress</p>
+                          <h6 class="text-muted f-w-400">
+                            {{ teacher.address }}
+                          </h6>
+                        </div>
+                      </div>
+                      <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">
+                        Courses You Teach
+                      </h6>
+                      <div class="row">
+                        <div *ngFor="let course of courses" class="col-sm-6">
+                          <p class="m-b-10 f-w-600"><a style="color: blue;" routerLink="/course/{{course._id}}">{{ course.name }}</a></p>
+                          <h6 class="text-muted f-w-400">
+                            Level {{ course.level.number }}
+                          </h6>
+                        </div>
+                      </div>
+
+                      <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">
+                        Levels You Teach
+                      </h6>
+                      <div class="row">
+                        <div *ngFor="let course of courses" class="col-sm-6">
+                          <p class="text-muted f-w-400">
+                            Level {{ course.level.number }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-
+          </div>
         </div>
-    </ng-sidebar-container>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Upload Exam</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <form (submit)="UplaodExam()" class="form-horizontal">
-
-                        <div class="form-group">
-                            <label for="course">Course:</label><br>
-                            <select name="course" [(ngModel)]="course" id="course">
-                                <option *ngFor="let course of courses" [value]="course._id" >{{course.name}} level
-                                    {{course.level.number}}</option>
-
-                            </select>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="date">Date:</label><br>
-                            <input type="date" id="date" [(ngModel)]="date" name="date" required>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="start">Start At:</label><br>
-                            <input type="time" id="start" [(ngModel)]="start" name="start" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="end">End At:</label><br>
-                            <input type="time" id="end" [(ngModel)]="end" name="end" required>
-                        </div>
-
-
-                        <br>
-                        <div class="form-group">
-                            <label for="myfile">Select a file:</label>
-                            <div class="col-lg-10">
-                                <input type="file" id="myfile" name="myfile" ngModel (change)="getFile($event)">
-                            </div>
-                        </div>
-
-
-                        <br>
-                        <div class="form-group">
-                            <div class="pull-right">
-                                <button type="submit" class="btn btn-danger">Submit</button>
-                            </div>
-                        </div>
-
-                    </form>
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                </div>
-
-            </div>
-        </div>
+      </div>
     </div>
+  </ng-sidebar-container>
 
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Upload Exam</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="UplaodExam()" class="form-horizontal">
+            <div class="form-group">
+              <label for="course">Course:</label><br />
+              <select name="course" [(ngModel)]="course" id="course">
+                <option *ngFor="let course of courses" [value]="course._id">
+                  {{ course.name }} level {{ course.level.number }}
+                </option>
+              </select>
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="date">Date:</label><br />
+              <input
+                type="date"
+                id="date"
+                [(ngModel)]="date"
+                name="date"
+                required
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="start">Start At:</label><br />
+              <input
+                type="time"
+                id="start"
+                [(ngModel)]="start"
+                name="start"
+                required
+              />
+            </div>
 
+            <div class="form-group">
+              <label for="end">End At:</label><br />
+              <input
+                type="time"
+                id="end"
+                [(ngModel)]="end"
+                name="end"
+                required
+              />
+            </div>
+
+            <br />
+            <div class="form-group">
+              <label for="myfile">Select a file:</label>
+              <div class="col-lg-10">
+                <input
+                  type="file"
+                  id="myfile"
+                  name="myfile"
+                  ngModel
+                  (change)="getFile($event)"
+                />
+              </div>
+            </div>
+
+            <br />
+            <div class="form-group">
+              <div class="pull-right">
+                <button type="submit" class="btn btn-danger">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<a href="http://localhost:3200/public/exams/file-sample_100kB.docx">Visit W3Schools.com!</a> 
-
-
-<p *ngIf="authorized_user==false"> Unauthorized </p>
+<p *ngIf="authorized_user == false">Unauthorized</p>

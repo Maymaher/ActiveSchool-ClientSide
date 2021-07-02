@@ -30,6 +30,7 @@ export class CourseComponent implements OnInit {
   Homeworks:any=[];
   Exam:any=[];
   currentDate:any;
+  examPath="http://localhost:3200/public/materials/";
 
   
 

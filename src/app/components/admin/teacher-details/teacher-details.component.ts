@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { CourseService } from 'src/app/services/course.service';
 import { TeacherService } from 'src/app/services/teacher.service';
-
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-teacher-details',
@@ -20,12 +20,14 @@ export class TeacherDetailsComponent implements OnInit {
   unassignedCourses:any;
   tcourse:string="";
   teachercourse:any;
+  CurrentUser:any
 
   constructor( private _router: Router,
     private activatedRoute:ActivatedRoute, 
     private teacherService:TeacherService ,
     private courseService:CourseService,
-    private _flash:FlashMessagesService
+    private _flash:FlashMessagesService,
+    private _userService:UserService
     ) { 
     
   }
@@ -36,6 +38,8 @@ export class TeacherDetailsComponent implements OnInit {
     this.getTeacherlevels()
     this.deleteTeacherCourse()
     this.getUnassignedCourses()
+    this.CurrentUser=this._userService.getCurrentUser();
+
   }
 
   getTeacherDetails(){

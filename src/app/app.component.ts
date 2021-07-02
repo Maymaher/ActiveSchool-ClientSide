@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {StudentService} from '../app/services/student.service'
-import {UserService} from '../app/services/user.service'
+import { StudentService } from '../app/services/student.service';
+import { UserService } from '../app/services/user.service';
  
 
 
@@ -70,7 +70,7 @@ status:any={
 
 
 
-    if( stud.status &&(date.getHours()==11 && date.getMinutes()==21  && date.getSeconds()==7))
+    if( stud.status &&(date.getHours()==15 && date.getMinutes()==37 && date.getSeconds()==7))
         {
           this.user.student=stud._id;
           this.user.status=true;
@@ -86,7 +86,7 @@ status:any={
          
     
         }
-        else if(!stud.status &&(date.getHours()==11 && date.getMinutes()==21 && date.getSeconds()==7))
+        else if(!stud.status &&(date.getHours()==15 && date.getMinutes()==37 && date.getSeconds()==7))
         {
           this.user.student=stud._id;
           this.user.status=false;
@@ -106,6 +106,7 @@ status:any={
       
         
       }
+     
 
         }
 

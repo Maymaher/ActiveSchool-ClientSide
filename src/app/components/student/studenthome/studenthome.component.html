@@ -1,175 +1,241 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<title>School Management System</title>
-<!-- Bootstrap -->
-<link href="/assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<link href="/assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="/src/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- start plugins -->
-<!-- <script type="text/javascript" src="js/jquery.min.js"></script>
+  <head>
+    <title>School Management System</title>
+    <!-- Bootstrap -->
+    <link
+      href="/assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/src/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- start plugins -->
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
-<!-- start slider -->
-<!-- <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" /> -->
+    <!-- start slider -->
+    <!-- <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" /> -->
 
-<!-- Owl Carousel Assets -->
-<link href="/assets/css/owl.carousel.css" rel="stylesheet"> 
-<script src="/assets/js/owl.carousel.js"></script>
-<!-- //Owl Carousel Assets -->
-<!----font-Awesome----->
-<!-- <link rel="stylesheet" href="fonts/css/font-awesome.min.css"> -->
-<!----font-Awesome----->
-</head>
-<body>
-<div class="header_bg">
-<div class="container">
-<div class="row header">
-<div class="logo navbar-left">
-<h1><a href="index.html">Active School </a></h1>
-</div>
-<div class="h_search navbar-right">
-<form>
-<input type="text" class="text" value="Enter text here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter text here';}">
-<input type="submit" value="search">
-</form>
-</div>
-<div class="clearfix"></div>
-</div>
-</div>
-</div>
-
-<div class="slider_bg"><!-- start slider -->
-<div class="container">
-<div id="da-slider" class="da-slider text-center">
-<div class="da-slide">
-<h2>education portal</h2>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide_text"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></p>
-<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">view more</a></h3>
-</div>
-</div>
-</div>
-</div><!-- end slider -->
-<div class="main_bg"><!-- start main -->
-<div class="container" >
-<div class="main row" *ngIf="day=='0'">
-<h3>SunDay Courses</h3>
-<div class="col-md-3 images_1_of_4 text-center" *ngFor="let day of sundaySchedual"> 
-    <div *ngFor="let co of courses" >
-        <div *ngIf="co.name==day.courses" >
-        
-        <span class="bg"><i class="fa fa-globe"></i></span>
-        <h4><a href="/course/{{co._id}}">{{day.courses}}</a></h4>
-        <p class="para">{{co.description}}</p>
-        <a href="/course/{{co._id}}" class="fa-btn btn-1 btn-1e">read more</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="main row" *ngIf="day=='1'">
-<h3>MonDay Courses</h3>
-<div class="col-md-3 images_1_of_4 text-center" *ngFor="let day of mondaySchedual"> 
-    <div *ngFor="let co of courses" >
-        <div *ngIf="co.name==day.courses" >
-        
-        <span class="bg"><i class="fa fa-globe"></i></span>
-        <h4><a href="/course/{{co._id}}">{{day.courses}}</a></h4>
-        <p class="para">{{co.description}}</p>
-        <a href="/course/{{co._id}}" class="fa-btn btn-1 btn-1e">read more</a>
+    <!-- Owl Carousel Assets -->
+    <link href="/assets/css/owl.carousel.css" rel="stylesheet" />
+    <script src="/assets/js/owl.carousel.js"></script>
+    <!-- //Owl Carousel Assets -->
+    <!----font-Awesome----->
+    <!-- <link rel="stylesheet" href="fonts/css/font-awesome.min.css"> -->
+    <!----font-Awesome----->
+  </head>
+  <body>
+    <div class="">
+      <div class="container">
+        <div class="row header">
+          <div class="logo navbar-left">
+            <h1><a href="/home">Active School </a></h1>
+          </div>
+         
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
-</div>
-<div class="main row" *ngIf="day=='2'">
-<h3>tusDay Courses</h3>
-<div class="col-md-3 images_1_of_4 text-center" *ngFor="let day of tusdaySchedual" > 
-<div *ngFor="let co of courses" >
-<div *ngIf="co.name==day.courses" >
 
-<span class="bg"><i class="fa fa-globe"></i></span>
-<h4><a href="/course/{{co._id}}">{{day.courses}}</a></h4>
-<p class="para">{{co.description}}</p>
-<a href="/course/{{co._id}}" class="fa-btn btn-1 btn-1e">read more</a>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="main row" *ngIf="day=='3'">
-<h3>WensDay Courses</h3>
-<div class="col-md-3 images_1_of_4 text-center" *ngFor="let day of wensdaySchedual"> 
-    <div *ngFor="let co of courses" >
-        <div *ngIf="co.name==day.courses" >
-        
-        <span class="bg"><i class="fa fa-globe"></i></span>
-        <h4><a href="/course/{{co._id}}">{{day.courses}}</a></h4>
-        <p class="para">{{co.description}}</p>
-        <a href="/course/{{co._id}}" class="fa-btn btn-1 btn-1e">read more</a>
+    <div class="slider_bg">
+      <!-- start slider -->
+      <div class="container">
+        <div id="da-slider" class="da-slider text-center">
+          <div class="da-slide">
+            <!-- <h2>education portal</h2> -->
+            <!-- <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.<span class="hide_text">
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book.</span
+              >
+            </p> -->
+            <h3 class="da-link">
+              <!-- <a href="single-page.html" class="fa-btn btn-1 btn-1e"
+                >view more</a
+              > -->
+            </h3>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
+    <!-- end slider -->
+    <div class="main_bg">
+      <!-- start main -->
+      <div class="container">
+        <div class="main row" *ngIf="day == '0'">
+          <h3>SunDay Courses</h3>
+          <div
+            class="col-md-3 images_1_of_4 text-center"
+            *ngFor="let day of sundaySchedual"
+          >
+            <span class="bg"><i class="fa fa-globe"></i></span>
+            <h4>
+              <a href="#">{{ day.courses }}</a>
+            </h4>
+            <p class="para">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              1500s.
+            </p>
+            <a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+          </div>
+        </div>
+        <div class="main row" *ngIf="day == '1'">
+          <h3>MonDay Courses</h3>
+          <div
+            class="col-md-3 images_1_of_4 text-center"
+            *ngFor="let day of mondaySchedual"
+          >
+            <span class="bg"><i class="fa fa-globe"></i></span>
+            <h4>
+              <a href="#">{{ day.courses }}</a>
+            </h4>
+            <p class="para">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              1500s.
+            </p>
+            <a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+          </div>
+        </div>
 
-<div class="main row" *ngIf="day=='4'">
-<h3>thursDay Courses</h3>
-<div class="col-md-3 images_1_of_4 text-center" *ngFor="let day of thrisdaySchedual"> 
-<div *ngFor="let co of courses" >
-<div *ngIf="co.name==day.courses" >
-<span class="bg"><i class="fa fa-globe"></i></span>
-<h4><a href="/course/{{co._id}}">{{day.courses}}</a></h4>
-<p class="para">{{co.description}}</p>
-<a href="/course/{{co._id}}"class="fa-btn btn-1 btn-1e">read more</a>
-</div>
-</div>
-</div>
-</div>
+        <div class="main row" *ngIf="day == '2'">
+          <h3>tusDay Courses</h3>
+          <div
+            class="col-md-3 images_1_of_4 text-center"
+            *ngFor="let day of tusdaySchedual"
+          >
+            <div *ngFor="let co of courses">
+              <div *ngIf="co.name == day.courses">
+                <span class="bg"><i class="fa fa-globe"></i></span>
+                <h4>
+                  <a href="#">{{ day.courses }}</a>
+                </h4>
+                <p class="para">{{ co.description }}</p>
+                <a href="single-page.html" class="fa-btn btn-1 btn-1e"
+                  >read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="main row" *ngIf="day == '3'">
+          <h3>WensDay Courses</h3>
+          <div
+            class="col-md-3 images_1_of_4 text-center"
+            *ngFor="let day of wensdaySchedual"
+          >
+            <div *ngFor="let co of courses">
+              <div *ngIf="co.name == day.courses">
+                <span class="bg"><i class="fa fa-globe"></i></span>
+                <h4>
+                  <a href="#">{{ day.courses }}</a>
+                </h4>
+                <p class="para">{{ co.description }}</p>
+                <a href="single-page.html" class="fa-btn btn-1 btn-1e"
+                  >read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
 
-<div class="main row" *ngIf="day=='6'">
-<h3>Saturday Courses</h3>
-<div class="col-md-3 images_1_of_4 text-center" *ngFor="let day of sturdaySchedual"> 
-<div *ngFor="let co of courses" >
-<div *ngIf="co.name==day.courses" >
-<span class="bg"><i class="fa fa-globe"></i></span>
-<h4><a href="/course/{{co._id}}">{{day.courses}}</a></h4>
-<p class="para">{{co.description}}</p>
-<a href="/course/{{co._id}}" class="fa-btn btn-1 btn-1e">read more</a>
-</div>
-</div>
-</div>
-</div>
+        <div class="main row" *ngIf="day == '4'">
+          <h3>thursDay Courses</h3>
+          <div
+            class="col-md-3 images_1_of_4 text-center"
+            *ngFor="let day of thrisdaySchedual"
+          >
+            <div *ngFor="let co of courses">
+              <div *ngIf="co.name == day.courses">
+                <span class="bg"><i class="fa fa-globe"></i></span>
+                <h4>
+                  <a href="#">{{ day.courses }}</a>
+                </h4>
+                <p class="para">{{ co.description }}</p>
+                <a href="single-page.html" class="fa-btn btn-1 btn-1e"
+                  >read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="main row" *ngIf="day == '6'">
+          <h3>Saturday Courses</h3>
+          <div
+            class="col-md-3 images_1_of_4 text-center"
+            *ngFor="let day of sturdaySchedual"
+          >
+            <div *ngFor="let co of courses">
+              <div *ngIf="co.name == day.courses">
+                <span class="bg"><i class="fa fa-globe"></i></span>
+                <h4>
+                  <a href="#">{{ day.courses }}</a>
+                </h4>
+                <p class="para">{{ co.description }}</p>
+                <a href="single-page.html" class="fa-btn btn-1 btn-1e"
+                  >read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end main -->
+    <!-- <div class="main_btm">
+     
+      <div class="container">
+        <div class="main row">
+          <div class="col-md-6 content_left">
+            <img
+              src="../assets/images/pic1.jpg"
+              alt=""
+              class="img-responsive"
+            />
+          </div>
+          <div class="col-md-6 content_right">
+            <h4>
+              Lorem Ipsum is simply
+              <span>dummy text of the ornare </span> vulputate printing and
+              There are many variations of passages.
+            </h4>
+            <p class="para">
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form alteration
+              in some form, by injected humour, or randomised words which don't
+              look even slightly believable. If you are going to use a passage
+              of Lorem Ipsum, you need to be sure there isn't anything
+              embarrassing hidden in the middle of text. All the Lorem Ipsum
+              generators on the Internet tend to repeat predefined chunks as
+              necessary, making this the first true generator on the Internet.
+              It uses a dictionary of over 200 Latin words.
+            </p>
+            <a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
-
-<!-- end main -->
-<div class="main_btm"><!-- start main_btm -->
-<div class="container">
-<div class="main row">
-<div class="col-md-6 content_left">
-<img src="../assets/images/pic1.jpg" alt="" class="img-responsive">
-</div>
-<div class="col-md-6 content_right">
-<h4>Lorem Ipsum is simply <span>dummy text of the ornare </span> vulputate printing and There are many variations of passages.</h4>
-<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words. </p>
-<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="footer_bg"><!-- start footer -->
-<div class="container">
-<div class="row footer">
-<div class="copy text-center">
-<p class="link"><span>&#169; All rights reserved | Design by&nbsp;<a href="http://www.School.com/"> School Management System</a></span></p>
-</div>
-</div>
-</div>
-</div>
-</body>
+    <div class="footer_bg">
+      <!-- start footer -->
+      <div class="container">
+        <div class="row footer">
+          <div class="copy text-center">
+            <p class="link">
+              <span
+                >&#169; All rights reserved | ITI students</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

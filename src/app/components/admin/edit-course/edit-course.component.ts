@@ -16,9 +16,11 @@ export class EditCourseComponent implements OnInit {
   name:string="";
   description:string="";
   level:string="";
+  Zoomlink:string="";
   allLevels:any;
   courseDetails:any;
   courseId:any;
+  CurrentUser:any
   constructor( private _userService: UserService,
     private _router: Router,
     private _flash: FlashMessagesService,
@@ -31,6 +33,7 @@ export class EditCourseComponent implements OnInit {
   ngOnInit(): void {
     this.getAllLevels()
     this.getCourseDetail()
+    this.CurrentUser=this._userService.getCurrentUser();
   }
 
 
@@ -41,7 +44,8 @@ export class EditCourseComponent implements OnInit {
     course={
       name:this.name,
       description:this.description,
-      level:this.level
+      level:this.level,
+      Zoomlink:this.Zoomlink
     }
   this.courseService.updateCourse(this.courseId,course).subscribe((resp: any) => {
     if (!resp.success) {

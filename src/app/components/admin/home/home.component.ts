@@ -18,7 +18,7 @@ export class HomeAdminComponent implements OnInit {
 
    teachersData:any;
    studentsData:any;
-
+   CurrentUser:any
 
 
 
@@ -38,6 +38,8 @@ export class HomeAdminComponent implements OnInit {
     
    this.getStudentsData()
    this.getTeacherData()
+   this.CurrentUser=this._userService.getCurrentUser();
+
 
   }
 

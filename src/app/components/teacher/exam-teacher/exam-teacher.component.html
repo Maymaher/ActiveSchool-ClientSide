@@ -23,12 +23,12 @@
                     <tr *ngFor="let exam of exams">
                 
                         <td><a [href]="examPath+exam.examFile">{{exam.examFile}}</a></td>
-                        <td>{{exam.course.name}}</td>
+                        <td><a routerLink="/exam/{{exam._id}}">{{exam.course.name}}</a></td>
                         <td>{{exam.level.number}}</td>
                         <td>{{exam.date}}</td>
                         <td>{{exam.from}}</td>
                         <td>{{exam.to}}</td>
-                        <td>Answers</td>
+                        <td> <a routerLink="/teacher/examAnswers/{{exam._id}}" class="btn btn-primary">Answers</a></td>
                      </tr>
                
              
