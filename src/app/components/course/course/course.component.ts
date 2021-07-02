@@ -18,6 +18,7 @@ export class CourseComponent implements OnInit {
   CurrentUser:any="";
   myfileMaterial:any=null;
   fdMaterial=new FormData();
+  examPath="http://localhost:3200/public/materials/";
 
   constructor(private _homeworkService :HomeworkService,private activatedRoute: ActivatedRoute,private _userService :UserService,private _flash :FlashMessagesService,private _materialService :MaterialService) { 
     

@@ -71,7 +71,7 @@ status:any={
 
 
 
-    if( stud.status &&(date.getHours()==11 && date.getMinutes()==37  && date.getSeconds()==7))
+    if( stud.status &&(date.getHours()==15 && date.getMinutes()==37 && date.getSeconds()==7))
         {
           this.user.student=stud._id;
           this.user.status=true;
@@ -87,7 +87,7 @@ status:any={
          
     
         }
-        else if(!stud.status &&(date.getHours()==11 && date.getMinutes()==37 && date.getSeconds()==7))
+        else if(!stud.status &&(date.getHours()==15 && date.getMinutes()==37 && date.getSeconds()==7))
         {
           this.user.student=stud._id;
           this.user.status=false;
