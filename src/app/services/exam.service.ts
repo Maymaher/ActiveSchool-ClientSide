@@ -34,8 +34,15 @@ export class ExamService {
   {
     const formData:FormData = new FormData();
     formData.append('file',file);
-    return this._http.post('http://localhost:3200/examAnswerUpload/'+id+'/'+student_id,formData).pipe(map((resp:any)=> resp.json()));
+    return this._http.post('http://localhost:3200/exam/examAnswerUpload/'+id+'/'+student_id,formData).pipe(map((resp:any)=> resp.json()));
       
+  }
+
+  //course Exams
+  getCourseExams(id:any)
+  {
+    return this._http.get('http://localhost:3200/exam/courseexam/'+id)
+      .pipe(map((resp:any)=> resp.json()));
   }
 
 }
