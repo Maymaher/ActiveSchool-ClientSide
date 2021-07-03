@@ -11,16 +11,82 @@
         
                 <div class="card-body" >
                  
+                 <h5>ZoomLink</h5>
+                 <a href="{{course[0].Zoomlink}}" style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger"  
+                 data-bs-target="#staticBackdropMaterial">
+              {{course[0].Zoomlink}}</a> 
+
+           
+         
+                  
+                  
+                </div>
+            </div>
+            
+
+            <div class="card" style="width: 40ch;margin-right: 10px;;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
+                 <h5>ExamLink</h5>
+              
+             
+
+            <ul  *ngFor="let exam of Exam">
+ 
+                <li *ngIF="exam.from==currentDate" >
+                    <a [href]="examsPath+exam.examFile">{{exam.date}}</a>
+    
+                </li>
+                
+            
+            </ul>
+
+           
+         
+                  
+                  
+                </div>
+            </div>
+             
+
+          </div>
+          
+          
+        </div>
+    <div class="card" style="width: 120ch;margin:auto;margin-top: 10ch;">
+        
+        <div class="card-body" style="display: flex;justify-content: space-between;">
+         
+ 
+          <div>
+            <div class="card" style="width: auto;float: right;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
                  <h5>HomeWorks</h5>
 
                  <!-- Button trigger modal -->
 
            
-            <button style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
+            <button style="display: block; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">
                 Upload Homework
             </button>
-                  
+            <ul>
+
+            
+                <li *ngFor="let Homework of Homeworks">
+    
+    <a [href]="homeworkPath+Homework.name" >{{Homework.name}}</a>
+    <button style="margin: 7px;margin-left: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop">
+    Upload Answer
+</button>
+    
+                </li>
+                
+            </ul>
                   
                 </div>
             </div>
@@ -30,7 +96,7 @@
           
         </div>
         <div>
-            <div class="card" style="width: 39ch;float: right;height: 40ch;margin-top: 10ch;margin-right: 2ch;background-color: rgb(228, 225, 225);">
+            <div class="card" style="width: 60ch;height: auto;float: right;height: 40ch;margin-top: 10ch;margin-right: 2ch;background-color: rgb(228, 225, 225);">
         
                 <div class="card-body" >
                  
@@ -40,13 +106,25 @@
                  <!-- Button trigger modal -->
 
            
-            <button style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
+            <button style="padding:0.4em 0.4em; display: block;" type="button" class="btn btn-danger" data-bs-toggle="modal"
             data-bs-target="#staticBackdropMaterial">
             Upload Material
         </button>
+
+
+        <ul>
+
+            
+            <li *ngFor="let material of materialFiles">
+
+<a [href]="materialPath+material" >{{material}}</a>
+
+            </li>
+        </ul>
                 </div>
             </div>
     </div>
+</div>
 </div>
 
   <!-- Modal -->
@@ -133,7 +211,8 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
     </div>
 </div>
 </div>
-
+ 
+</div>
 
 
 

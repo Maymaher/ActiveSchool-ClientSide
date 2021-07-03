@@ -35,4 +35,21 @@ upload(id:any,material:any,file:File)
 
 }
 
+getmaterial(id:any) 
+{
+
+
+  return this._http.get('http://localhost:3200/material/material/'+id).pipe(map((resp:any)=>resp.json()))
+
+}
+
+getmaterialfiles(id:any) 
+{
+
+
+  return this._http.get('http://localhost:3200/material/materialfiles/'+id).pipe(map((resp:any)=>resp.json()))
+
+}
+
+
 }
