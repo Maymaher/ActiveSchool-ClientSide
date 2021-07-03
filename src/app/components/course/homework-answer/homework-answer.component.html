@@ -2,7 +2,7 @@
 
     <div class="card-body" style="display: flex;">
         <img src="/assets/images/3297140.jpg" alt="image" width="270" height="220">
-        
+        <div *ngIf="typeOfUser=='student'">
         <form (submit)="UplaodHomeworkAnswer()" class="form-horizontal">
 
 
@@ -22,6 +22,33 @@
             </div>
 
         </form>
+    </div>
+        <div *ngIf="typeOfUser=='teacher'">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="color: #00c7a1;" scope="col">Answer</th>
+                        <th style="color: #00c7a1;" scope="col">Student</th>
+                        <th style="color: #00c7a1;" scope="col">Student Email</th>
+                        <th style="color: #00c7a1;" scope="col">Student Level</th>
+                        <th style="color: #00c7a1;" scope="col">Student Class</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let answer of answers">
+
+                        <td><a [href]=" homeworkAnswerPath+answer.answer">{{answer.answer}}</a></td>
+                        <td>{{answer.student.firstName}} {{answer.student.lastName}}</td>
+                        <td>{{answer.student.email}}</td> 
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
 
     </div>
 </div>
