@@ -7,14 +7,17 @@
 <div class="row" style="margin: 0 auto;">
  
 <div class="card " style="width: 18rem;;margin:50px" *ngFor="let course of courses">
-    <div class="card-body">
+  <span class="bg" style="margin-bottom: 23px;    text-align: center;margin-top: 24px;
+  "><i style="color:#4c5a7d;font-size: 6em;;" class="fa fa-globe"></i></span>
+  <div class="card-body">
       <h5 class="card-title">Course Name : {{course.name}}</h5>
       <!-- <h6 class="card-subtitle mb-2 text-muted">{{course.name}}</h6> -->
       <p class="card-text">Course Description : {{course.description}}</p>
       <p class="card-text">Course Level : {{course.level.number}}</p>
      <p class="card-text">Zoom Link :  <a href="{{course.Zoomlink}}">{{course.Zoomlink}}</a></p>
 
-      <a routerLink="/admin/editCourse/{{course._id}}" class="btn btn-primary" style="margin:10px"  >Edit</a>
+      <a routerLink="/admin/editCourse/{{course._id}}" class="btn btn-primary" style="margin:10px;background-color: #312141;
+      border-color: #312141;"  >Edit</a>
 
 
 
@@ -32,7 +35,9 @@
         <h5 class="modal-title" id="exampleModalLabel">Add new course</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body">
+
       <label class="col-4">Course Name : </label> <input [(ngModel)]="name" name="name" ><br><br>
       <label class="col-4"> Course Description : </label>  <input [(ngModel)]="description" name="description" ><br><br>
       <label class="col-4"> Zoom Link : </label>  <input [(ngModel)]="Zoomlink" name="Zoomlink" ><br><br>
