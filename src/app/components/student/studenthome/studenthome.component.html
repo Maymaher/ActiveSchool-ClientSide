@@ -152,14 +152,13 @@
     <div class="main_bg">
         <!-- start main -->
         <div class="container">
-          <div class="main row" style="border: 3px solid #4c5a7d;
-          border-radius: 50px;" *ngIf="day == '0'">
+          <div class="main row" style="margin: 0 auto;margin-left: 29px;"  *ngIf="day == '0'">
             <h3>SunDay Courses</h3>
             <div
               class="col-md-3 images_1_of_4 text-center"
               *ngFor="let day of sundaySchedual"
               style="border: 3px solid #4c5a7d;
-              border-radius: 50px;"
+              border-radius: 50px;margin-right: 40px;margin-bottom: 59px;width: 21%;"
             >
             <div *ngFor="let co of courses">
                 <div *ngIf="co.name == day.courses">
@@ -182,13 +181,13 @@
 
 
 
-          <div class="main row" *ngIf="day == '1'">
+          <div class="main row" style="margin: 0 auto;margin-left: 29px;" *ngIf="day == '1'">
             <h3>MonDay Courses</h3>
             <div
               class="col-md-3 images_1_of_4 text-center"
               *ngFor="let day of mondaySchedual"
               style="border: 3px solid #4c5a7d;
-              border-radius: 50px;"
+              border-radius: 50px;margin-right: 40px;margin-bottom: 59px;width: 21%;"
             >
             <div *ngFor="let co of courses">
                 <div *ngIf="co.name == day.courses">
@@ -207,7 +206,7 @@
             </div>
           </div>
   
-          <div class="main row" *ngIf="day == '2'">
+          <div class="main row" style="margin: 0 auto;margin-left: 29px;" *ngIf="day == '2'">
             <h3>tusDay Courses</h3>
             <div
               class="col-md-3 images_1_of_4 text-center"
@@ -232,13 +231,13 @@
             </div>
           </div>
   
-          <div class="main row" *ngIf="day == '3'">
+          <div class="main row"  style="margin: 0 auto;margin-left: 29px;" *ngIf="day == '3'">
             <h3>WensDay Courses</h3>
             <div
               class="col-md-3 images_1_of_4 text-center"
               *ngFor="let day of wensdaySchedual"
               style="border: 3px solid #4c5a7d;
-              border-radius: 50px;"
+              border-radius: 50px;margin-right: 40px;margin-bottom: 59px;width: 21%;"
             >
               <div *ngFor="let co of courses">
                 <div *ngIf="co.name == day.courses">
@@ -257,13 +256,13 @@
             </div>
           </div>
   
-          <div class="main row" *ngIf="day == '4'">
+          <div class="main row" style="margin: 0 auto;margin-left: 29px;" *ngIf="day == '4'">
             <h3>thursDay Courses</h3>
             <div
               class="col-md-3 images_1_of_4 text-center"
               *ngFor="let day of thrisdaySchedual"
               style="border: 3px solid #4c5a7d;
-              border-radius: 50px;"
+              border-radius: 50px;margin-right: 40px;margin-bottom: 59px;width: 21%;"
             >
               <div *ngFor="let co of courses">
                 <div *ngIf="co.name == day.courses">
@@ -282,7 +281,7 @@
             </div>
           </div>
   
-          <div class=" container main row" *ngIf="day == '6'">
+          <div class=" container main row" style="margin: 0 auto;margin-left: 29px;" *ngIf="day == '6'">
             <h1 style="text-align: center;
             color: #eea412;
             font-size: 57px;
@@ -297,7 +296,7 @@
               class="col-md-3 images_1_of_4 text-center"
               *ngFor="let day of sturdaySchedual"
               style="border: 3px solid #4c5a7d;
-              border-radius: 50px;box-shadow: 10px 10px 5px #f0d7a5;"
+              border-radius: 50px;box-shadow: 10px 10px 5px #f0d7a5;margin-right: 40px;margin-bottom: 59px;width: 21%;"
             >
               <div *ngFor="let co of courses">
                 <div *ngIf="co.name == day.courses">
