@@ -62,5 +62,12 @@ getAllHomework(id:any)
 
 }
 
+getAllAnswersOfOneHomework(id:any){
+
+  return this._http.get('http://localhost:3200/homeworks/'+id+'/answers')
+      .pipe(map((resp:any)=> resp.json()));
+
+}
+
 
 }
