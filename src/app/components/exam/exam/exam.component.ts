@@ -21,6 +21,9 @@ export class ExamComponent implements OnInit {
   uid:any;
   now= new Date().toISOString()
   ExamNow=false;
+  from="";
+  to="";
+  date="";
 
   ngOnInit(): void {
     this.eid = this.activatedRoute.snapshot.paramMap.get('id');
@@ -29,7 +32,12 @@ export class ExamComponent implements OnInit {
 
     this._examService.getSpecificExam(this.eid).subscribe(data =>{
       this.exam=data;
-      
+      this.from=this.exam.from;
+      this.from=this.from.substring(11,22);
+      this.to=this.exam.to;
+      this.to=this.to.substring(11,22);
+      this.date=this.exam.date;
+      this.date=this.date.substring(0,10);
       
       if(this.now <= this.exam.to && this.now >= this.exam.from)
       {
@@ -45,10 +53,7 @@ export class ExamComponent implements OnInit {
         console.log(this.ExamNow)
       }
 
-      console.log(this.now)
-      console.log(this.exam.from)
-      console.log(this.exam.to)
-
+  
     })
 
     
