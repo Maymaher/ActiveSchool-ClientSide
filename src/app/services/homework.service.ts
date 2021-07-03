@@ -51,7 +51,16 @@ upload(id:any,homework:any,file:File)
 
 
   }
+getAllHomework(id:any)
+{
 
+
+  return this._http.get('http://localhost:3200/student/homework/'+id).pipe(map((resp:any)=>resp.json()))
+
+
+
+
+}
 
 
 }
