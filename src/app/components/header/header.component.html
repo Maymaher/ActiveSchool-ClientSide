@@ -13,7 +13,7 @@
 				<ul class="navbar-nav ml-auto">
 
 	<!-- student links -->
-
+	
 <li class="nav-item active" *ngIf="currentuser.type=='student'" ><a class="nav-link" routerLink="/home">Home</a></li>
 
 <li class="nav-item active" *ngIf="currentuser.type=='student'"><a class="nav-link"  routerLink="/student/profile">Profile</a></li>
@@ -56,6 +56,11 @@
 					<li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
 					<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
 					<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+
+					<li class="nav-item active" style="position: absolute;margin-left: 70%;">
+	
+						<a class="nav-link" style="font-size: 30px"  routerLink="/student/profile">	<strong>{{currentuser.firstName}}</strong></a></li>
+				
 				</ul>
 				<!-- <ul class="nav navbar-nav navbar-right">
 					<li><a class="hover-btn-new log orange" href="#" data-toggle="modal" data-target="#login"><span>Book Now</span></a></li>
