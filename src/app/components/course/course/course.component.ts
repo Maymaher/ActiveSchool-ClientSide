@@ -29,6 +29,7 @@ export class CourseComponent implements OnInit {
   examsPath="http://localhost:3200/public/exams/";
   Homeworks:any=[];
   Exam:any=[];
+  exam:any;
   currentDate:any;
   examPath="http://localhost:3200/public/materials/";
 
@@ -70,7 +71,7 @@ export class CourseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentDate=Date()
+    this.currentDate=new Date().toISOString()
     this.cid = this.activatedRoute.snapshot.paramMap.get('id');
     this.CurrentUser=this._userService.getCurrentUser();
 
@@ -110,7 +111,13 @@ export class CourseComponent implements OnInit {
 
 this.Exam=resp;
 console.log("exams",this.Exam);
-
+for(let e of this.Exam)
+{
+  if(e.from<=this.currentDate  && e.to >= this.currentDate)
+  {
+    this.exam=e;
+  }
+}
 
      })
       
