@@ -1,108 +1,321 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>School Management System</title>
-<!-- Bootstrap -->
-<link href="/assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<link href="/assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
  
-<link href="/src/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- start plugins -->
-<!-- <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
-<!-- start slider -->
-<!-- <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" /> -->
+     <!-- Site Metas -->
+    <title>SmartEDU - Education Responsive HTML5 Template</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<!-- Owl Carousel Assets -->
-<link href="/assets/css/owl.carousel.css" rel="stylesheet">  
-<script src="/assets/js/owl.carousel.js"></script>
-	
-		<!-- //Owl Carousel Assets -->
-<!----font-Awesome----->
-   	<!-- <link rel="stylesheet" href="fonts/css/font-awesome.min.css"> -->
-<!----font-Awesome----->
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- Site CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- ALL VERSION CSS -->
+    <!-- <link rel="stylesheet" href="css/versions.css"> -->
+    <!-- Responsive CSS -->
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="css/custom.css"> -->
+
+    <!-- Modernizer for Portfolio -->
+    <!-- <script src="js/modernizer.js"></script> -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
-<div class="header_bg">
-<div class="container">
-	<div class="row header">
-		<div class="logo navbar-left">
-			<h1><a href="index.html">Active School </a></h1>
-		</div>
-	
-		<div class="clearfix"></div>
-	</div>
-</div>
-</div>
+<body class="host_version"> 
 
-<div class="slider_bg"><!-- start slider -->
-	<div class="container">
-		<div id="da-slider" class="da-slider text-center">
-			<div class="da-slide">
-				<h2>education portal</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide_text"> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></p>
-				<h3 class="da-link"><a href="single-page.html" class="fa-btn btn-1 btn-1e">view more</a></h3>
+	<!-- Modal -->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header tit-up">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Customer Login</h4>
+			</div>
+			<div class="modal-body customer-box">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs">
+					<li><a class="active" href="#Login" data-toggle="tab">Login</a></li>
+					<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="Login">
+						<form role="form" class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="email1" placeholder="Name" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="exampleInputPassword1" placeholder="Email" type="email">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-10">
+									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
+										Submit
+									</button>
+									<a class="for-pwd" href="javascript:;">Forgot your password?</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane" id="Registration">
+						<form role="form" class="form-horizontal">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" placeholder="Name" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="email" placeholder="Email" type="email">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="mobile" placeholder="Mobile" type="email">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="password" placeholder="Password" type="password">
+								</div>
+							</div>
+							<div class="row">							
+								<div class="col-sm-10">
+									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
+										Save &amp; Continue
+									</button>
+									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
+										Cancel</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+
+  
+	
+	<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" data-pause="hover" data-interval="false" >
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleControls" data-slide-to="1"></li>
+			<li data-target="#carouselExampleControls" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+				<div id="home" class="first-section" style="height: 662px;background-image:url('../../../assets/images/slider-02.jpg');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-right">
+									<div class="big-tagline">
+										<h2><strong>SmartEDU </strong> education </h2>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
 			</div>
 		
-	   </div>
-	</div>
-</div><!-- end slider -->
-<div class="main_bg"><!-- start main -->
-	<div class="container">
-		<div class="main row">
-			<div class="col-md-3 images_1_of_4 text-center">
-				<span class="bg"><i class="fa fa-globe"></i></span>
-				<h4><a href="#">Sed Porta Dolor</a></h4>
-				<p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 1500s.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
-			</div>
-			<div class="col-md-3 images_1_of_4 bg1 text-center">
-				<span class="bg"><i class="fa fa-laptop"></i></span>
-				<h4><a href="#">Lorem Ipsum is</a></h4>
-				<p class="para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
-			</div>
-			<div class="col-md-3 images_1_of_4 bg1 text-center">
-				<span class="bg"><i class="fa fa-cog"></i></span>
-				<h4><a href="#">Sed Porta Dolor</a></h4>
-				<p class="para">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32  by H. Rackham.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
-			</div>		
-			<div class="col-md-3 images_1_of_4 bg1 text-center">
-				<span class="bg"><i class="fa fa-shield"></i> </span>
-				<h4><a href="#">Contrary  belief</a></h4>
-				<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
-			</div>	
+		
 		</div>
 	</div>
-</div><!-- end main -->
-<div class="main_btm"><!-- start main_btm -->
-	<div class="container">
-		<div class="main row">
-			<div class="col-md-6 content_left">
-				<img src="../assets/images/pic1.jpg" alt="" class="img-responsive">
-			</div>
-			<div class="col-md-6 content_right">
-				<h4>Lorem Ipsum is simply <span>dummy text of the ornare  </span> vulputate printing and  There are many variations of passages.</h4>
-				<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words. </p>
-				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
-			</div>
-		</div>
-				</div>
-</div>
+	
+  
+  
 
 
-<div class="footer_bg"><!-- start footer -->
-	<div class="container">
-		<div class="row  footer">
-			<div class="copy text-center">
-				<p class="link"><span>&#169; All rights reserved | Design by&nbsp;<a href="http://www.School.com/"> School Management System</a></span></p>
-			</div>
-		</div>
-	</div>
-</div>
+    <div id="plan" class="section lb">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Your courses</h3>
+            </div><!-- end title -->
+
+          
+            <hr class="invis">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active fade show" id="tab1">
+                            <div class="row text-center">
+
+                                <div class="col-md-4" >
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$45</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$59</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$85</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- end pane -->
+
+                       
+                    </div><!-- end content -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+  
+       <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>About US</h3>
+                        </div>
+                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>   
+						<div class="footer-right">
+							<ul class="footer-links-soi">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-github"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul><!-- end links -->
+						</div>						
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+				<div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Information Link</h3>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Pricing</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contact Details</h3>
+                        </div>
+
+                        <ul class="footer-links">
+                            <li><a href="mailto:#">info@yoursite.com</a></li>
+                            <li><a href="#">www.yoursite.com</a></li>
+                            <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
+                            <li>+61 3 8376 6284</li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-center">                   
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By : <a href="https://html.design/">html design</a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+	<script src="js/timeline.min.js"></script>
+	<!-- <script>
+		timeline(document.querySelectorAll('.timeline'), {
+			forceVerticalMode: 700,
+			mode: 'horizontal',
+			verticalStartPosition: 'left',
+			visibleItems: 4
+		});
+	</script> -->
 </body>
 </html>
