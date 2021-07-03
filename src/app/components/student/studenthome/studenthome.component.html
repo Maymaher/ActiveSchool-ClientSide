@@ -149,252 +149,178 @@
 	
   
   
-
-
-    <div id="plan" class="section lb">
+    <div class="main_bg">
+        <!-- start main -->
         <div class="container">
-            <div class="section-title text-center">
-                <h3>Your courses</h3>
-            </div><!-- end title -->
+          <div class="main row" style="border: 3px solid #4c5a7d;
+          border-radius: 50px;" *ngIf="day == '0'">
+            <h3>SunDay Courses</h3>
+            <div
+              class="col-md-3 images_1_of_4 text-center"
+              *ngFor="let day of sundaySchedual"
+              style="border: 3px solid #4c5a7d;
+              border-radius: 50px;"
+            >
+            <div *ngFor="let co of courses">
+                <div *ngIf="co.name == day.courses">
+                  <span class="bg" style="margin-bottom: 23px;"><i style="color:#4c5a7d" class="fa fa-globe"></i></span>
+                  <h4>
+                    <a href="#" style="color:#eea412;">{{ day.courses }}</a>
+                  </h4>
+                  <p class="para" style="font-size: 15px;
+                  line-height: 1.8em;
+                  color: #4c5a7d;">{{ co.description }}</p>
+                  <a href="single-page.html" class="fa-btn btn-1 btn-1e" style="border: 2px solid #4c5a7d;"
+                    >read more</a
+                  >
 
-          
-            <hr class="invis">
-
-    <div class="row" *ngIf="day == '0'" >
-      <h1>SunDay Courses</h1>
-        <div class="col-md-12">
-            <div class="tab-content">
-                <div class="tab-pane active fade show" id="tab1">
-                    <div class="row text-center">
-
-
-            <div class="col-md-4" *ngFor="let day of sundaySchedual">
-                <div class="pricing-table pricing-table-highlighted" *ngFor="let co of courses">
-                    <div class="pricing-table-header">
-                        
-                        <!-- <h3>per month</h3> -->
-        </div>
-        <div class="pricing-table-space"></div>
-        <div class="pricing-table-features" *ngIf="co.name == day.courses">
-            <p> <strong>Course : </strong><a style="color: black;">{{ day.courses }}</a> </p>
-            <p style="color: black;"> <strong>Course Description : </strong>{{ co.description }} </p>
-    
-           
-        </div>
-        <div class="pricing-table-sign-up">
-            <a href="#" class="hover-btn-new orange"><span>course Details </span></a>
-        </div>
+                  
                 </div>
+              </div>
             </div>
-
-
-            
-                </div><!-- end row -->
-            </div><!-- end pane -->
-
-            
-        </div><!-- end content -->
-    </div><!-- end col -->
-</div><!-- end row -->
+          </div>
 
 
 
-
-<div class="row" *ngIf="day == '1'" >
-  <h1>monday Courses</h1>
-    <div class="col-md-12">
-        <div class="tab-content">
-            <div class="tab-pane active fade show" id="tab1">
-                <div class="row text-center">
-
-
-        <div class="col-md-4" *ngFor="let day of mondaySchedual">
-            <div class="pricing-table pricing-table-highlighted">
-                <div class="pricing-table-header">
-                    
-                    <!-- <h3>per month</h3> -->
-    </div>
-    <div class="pricing-table-space"></div>
-    <div class="pricing-table-features">
-        <p>hjkjhkhjkh</p>
-        <p> <strong>Course : </strong><a style="color: black;">{{ day.courses }}</a> </p>
-        <p style="color: black;"> <strong>Course Description : </strong>desc </p>
-
-       
-    </div>
-    <div class="pricing-table-sign-up">
-        <a href="#" class="hover-btn-new orange"><span>course Details </span></a>
-    </div>
+          <div class="main row" *ngIf="day == '1'">
+            <h3>MonDay Courses</h3>
+            <div
+              class="col-md-3 images_1_of_4 text-center"
+              *ngFor="let day of mondaySchedual"
+              style="border: 3px solid #4c5a7d;
+              border-radius: 50px;"
+            >
+            <div *ngFor="let co of courses">
+                <div *ngIf="co.name == day.courses">
+                  <span class="bg" style="margin-bottom: 23px;"><i style="color:#4c5a7d" class="fa fa-globe"></i></span>
+                  <h4>
+                    <a href="#" style="color:#eea412;">{{ day.courses }}</a>
+                  </h4>
+                  <p class="para" style="font-size: 18px;
+                  line-height: 1.8em;
+                  color: #eea412;">{{ co.description }}</p>
+                  <a href="single-page.html" class="fa-btn btn-1 btn-1e" style="border: 2px solid #4c5a7d;"
+                    >read more</a
+                  >
+                </div>
+              </div>
             </div>
+          </div>
+  
+          <div class="main row" *ngIf="day == '2'">
+            <h3>tusDay Courses</h3>
+            <div
+              class="col-md-3 images_1_of_4 text-center"
+              *ngFor="let day of tusdaySchedual"
+              style="border: 3px solid #4c5a7d;
+              border-radius: 50px;"
+            >
+              <div *ngFor="let co of courses">
+                <div *ngIf="co.name == day.courses">
+                  <span class="bg" style="margin-bottom: 23px;"><i style="color:#4c5a7d" class="fa fa-globe"></i></span>
+                  <h4>
+                    <a href="#" style="color:#eea412;">{{ day.courses }}</a>
+                  </h4>
+                  <p class="para" style="font-size: 15px;
+                  line-height: 1.8em;
+                  color: #4c5a7d;">{{ co.description }}</p>
+                  <a href="single-page.html" class="fa-btn btn-1 btn-1e" style="border: 2px solid #4c5a7d;"
+                    >read more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="main row" *ngIf="day == '3'">
+            <h3>WensDay Courses</h3>
+            <div
+              class="col-md-3 images_1_of_4 text-center"
+              *ngFor="let day of wensdaySchedual"
+              style="border: 3px solid #4c5a7d;
+              border-radius: 50px;"
+            >
+              <div *ngFor="let co of courses">
+                <div *ngIf="co.name == day.courses">
+                  <span class="bg" style="margin-bottom: 23px;"><i style="color:#4c5a7d" class="fa fa-globe"></i></span>
+                  <h4>
+                    <a href="#" style="color:#eea412;">{{ day.courses }}</a>
+                  </h4>
+                  <p class="para" style="font-size: 15px;
+                  line-height: 1.8em;
+                  color: #4c5a7d;">{{ co.description }}</p>
+                  <a href="single-page.html" class="fa-btn btn-1 btn-1e" style="border: 2px solid #4c5a7d;"
+                    >read more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="main row" *ngIf="day == '4'">
+            <h3>thursDay Courses</h3>
+            <div
+              class="col-md-3 images_1_of_4 text-center"
+              *ngFor="let day of thrisdaySchedual"
+              style="border: 3px solid #4c5a7d;
+              border-radius: 50px;"
+            >
+              <div *ngFor="let co of courses">
+                <div *ngIf="co.name == day.courses">
+                  <span class="bg" style="margin-bottom: 23px;"><i style="color:#4c5a7d" class="fa fa-globe"></i></span>
+                  <h4>
+                    <a href="#" style="color:#eea412;">{{ day.courses }}</a>
+                  </h4>
+                  <p class="para" style="font-size: 15px;
+                  line-height: 1.8em;
+                  color: #4c5a7d;">{{ co.description }}</p>
+                  <a href="single-page.html" class="fa-btn btn-1 btn-1e" style="border: 2px solid #4c5a7d;"
+                    >read more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class=" container main row" *ngIf="day == '6'">
+            <h1 style="text-align: center;
+            color: #eea412;
+            font-size: 57px;
+            font-weight: 400;
+            text-transform: capitalize;
+            display: block;
+            margin: 0;
+            padding: 0 0 30px;
+            position: relative;
+            line-height: 120% !important;">Saturday Courses</h1>
+            <div
+              class="col-md-3 images_1_of_4 text-center"
+              *ngFor="let day of sturdaySchedual"
+              style="border: 3px solid #4c5a7d;
+              border-radius: 50px;box-shadow: 10px 10px 5px #f0d7a5;"
+            >
+              <div *ngFor="let co of courses">
+                <div *ngIf="co.name == day.courses">
+                  <span class="bg" style="margin-bottom: 23px;"><i style="color:#4c5a7d" class="fa fa-globe"></i></span>
+                  <h4>
+                    <a href="#" style="color:#eea412;">{{ day.courses }}</a>
+                  </h4>
+                  <p class="para" style="font-size: 15px;
+                  line-height: 1.8em;
+                  color: #4c5a7d;">{{ co.description }}</p>
+                  <a href="single-page.html" class="fa-btn btn-1 btn-1e" style="border: 2px solid #4c5a7d;color: #4c5a7d;"
+                    >details</a
+                  >
+
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-        
-            </div><!-- end row -->
-        </div><!-- end pane -->
-
-        
-    </div><!-- end content -->
-</div><!-- end col -->
-</div><!-- end row -->
+      </div>
 
 
 
-<div class="row" *ngIf="day == '2'" >
-  <h1>tusedat Courses</h1>
-    <div class="col-md-12">
-        <div class="tab-content">
-            <div class="tab-pane active fade show" id="tab1">
-                <div class="row text-center">
-
-
-        <div class="col-md-4" *ngFor="let day of tusdaySchedual">
-            <div class="pricing-table pricing-table-highlighted" *ngFor="let co of courses">
-                <div class="pricing-table-header">
-                    
-                    <!-- <h3>per month</h3> -->
-    </div>
-    <div class="pricing-table-space"></div>
-    <div class="pricing-table-features" *ngIf="co.name == day.courses">
-        <p> <strong>Course : </strong><a style="color: black;">{{ day.courses }}</a> </p>
-        <p style="color: black;"> <strong>Course Description : </strong>{{ co.description }} </p>
-
-       
-    </div>
-    <div class="pricing-table-sign-up">
-        <a href="#" class="hover-btn-new orange"><span>course Details </span></a>
-    </div>
-            </div>
-        </div>
-
-
-        
-            </div><!-- end row -->
-        </div><!-- end pane -->
-
-        
-    </div><!-- end content -->
-</div><!-- end col -->
-</div><!-- end row -->
-
-
-<div class="row" *ngIf="day == '3'" >
-  <h1>wensday Courses</h1>
-    <div class="col-md-12">
-        <div class="tab-content">
-            <div class="tab-pane active fade show" id="tab1">
-                <div class="row text-center">
-
-
-        <div class="col-md-4" *ngFor="let day of wensdaySchedual">
-            <div class="pricing-table pricing-table-highlighted" *ngFor="let co of courses">
-                <div class="pricing-table-header">
-                    
-                    <!-- <h3>per month</h3> -->
-    </div>
-    <div class="pricing-table-space"></div>
-    <div class="pricing-table-features" *ngIf="co.name == day.courses">
-        <p> <strong>Course : </strong><a style="color: black;">{{ day.courses }}</a> </p>
-        <p style="color: black;"> <strong>Course Description : </strong>{{ co.description }} </p>
-
-       
-    </div>
-    <div class="pricing-table-sign-up">
-        <a href="#" class="hover-btn-new orange"><span>course Details </span></a>
-    </div>
-            </div>
-        </div>
-
-
-        
-            </div><!-- end row -->
-        </div><!-- end pane -->
-
-        
-    </div><!-- end content -->
-</div><!-- end col -->
-</div><!-- end row -->
-
-
-
-<div class="row" *ngIf="day == '4'" >
-  <h1>thurseday Courses</h1>
-    <div class="col-md-12">
-        <div class="tab-content">
-            <div class="tab-pane active fade show" id="tab1">
-                <div class="row text-center">
-
-
-        <div class="col-md-4" *ngFor="let day of thrisdaySchedual">
-            <div class="pricing-table pricing-table-highlighted" *ngFor="let co of courses">
-                <div class="pricing-table-header">
-                    
-                    <!-- <h3>per month</h3> -->
-    </div>
-    <div class="pricing-table-space"></div>
-    <div class="pricing-table-features" *ngIf="co.name == day.courses">
-        <p> <strong>Course : </strong><a style="color: black;">{{ day.courses }}</a> </p>
-        <p style="color: rgb(163, 162, 162);"> <strong>Course Description : </strong>{{ co.description }} </p>
-
-       
-    </div>
-    <div class="pricing-table-sign-up">
-        <a href="#" class="hover-btn-new orange"><span>course Details </span></a>
-    </div>
-            </div>
-        </div>
-
-
-        
-            </div><!-- end row -->
-        </div><!-- end pane -->
-
-        
-    </div><!-- end content -->
-</div><!-- end col -->
-</div><!-- end row -->
-
-
-
-<div class="row"  >
-
-    <div class="col-md-12">
-        <div class="tab-content">
-            <div class="tab-pane active fade show" id="tab1">
-                <div class="row text-center" *ngIf="day == '6'" >
-                    <h1>sturday Courses</h1>
-
-        <div class="col-md-4" *ngFor="let day of sturdaySchedual">
-            <div class="pricing-table pricing-table-highlighted" *ngFor="let co of courses">
-               
-    <div class="pricing-table-space"></div>
-    <div class="pricing-table-features" *ngIf="co.name == day.courses">
-        <p> <strong>Course : </strong><a style="color: black;">{{ day.courses }}</a> </p>
-        <p style="color: rgb(163, 162, 162);"> <strong>Course Description : </strong>{{ co.description }} </p>
-
-       
-    </div>
-    <div class="pricing-table-sign-up">
-        <a href="#" class="hover-btn-new orange"><span>course Details </span></a>
-    </div>
-            </div>
-        </div>
-
-
-        
-            </div><!-- end row -->
-        </div><!-- end pane -->
-
-        
-    </div><!-- end content -->
-</div><!-- end col -->
-</div><!-- end row -->
-
-
-
-      
-        </div><!-- end container -->
-    </div><!-- end section -->
 
   
        <footer class="footer">
