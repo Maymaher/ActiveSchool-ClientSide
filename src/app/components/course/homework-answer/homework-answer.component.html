@@ -1,1 +1,26 @@
-<p>homework-answer works!</p>
+<div class="card" style="width: 120ch;margin:auto;margin-top: 10ch;">
+
+    <div class="card-body" style="display: flex;justify-content: space-between;">
+
+        <form (submit)="UplaodHomeworkAnswer()" class="form-horizontal">
+
+
+            <div class="form-group">
+                <label for="myfile">Select a file:</label>
+                <div class="col-lg-10">
+                    <input type="file" id="myfile" name="myfile" ngModel (change)="getFile($event)">
+                </div>
+            </div>
+
+
+            <br>
+            <div class="form-group">
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
