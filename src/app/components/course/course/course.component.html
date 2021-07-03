@@ -69,7 +69,7 @@
                  <!-- Button trigger modal -->
 
            
-            <button style="display: block; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
+            <button *ngIf="typeOfUser=='teacher'" style="display: block; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">
                 Upload Homework
             </button>
@@ -80,10 +80,13 @@
     
     <a [href]="homeworkPath+Homework.name" >{{Homework.name}}</a>
     
-<button style="margin: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-info" >
-<a style="text-decoration: none;" [routerLink]="['/homework',Homework._id,'answers' ]"> Upload Answer </a>
+<button *ngIf="typeOfUser=='student'" style="margin: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-info" >
+<a style="text-decoration: none;" [routerLink]="['/homework',Homework._id,'answers' ]">Upload Answer</a>
 </button>
-
+<button *ngIf="typeOfUser=='teacher'" style="margin: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-info" >
+    <a style="text-decoration: none;" [routerLink]="['/homework',Homework._id,'answers' ]">Answers</a>
+    </button>
+    
                 </li>
                 
             </ul>
@@ -106,7 +109,7 @@
                  <!-- Button trigger modal -->
 
            
-            <button style="padding:0.4em 0.4em; display: block;" type="button" class="btn btn-danger" data-bs-toggle="modal"
+            <button *ngIf="typeOfUser=='teacher'" style="padding:0.4em 0.4em; display: block;" type="button" class="btn btn-danger" data-bs-toggle="modal"
             data-bs-target="#staticBackdropMaterial">
             Upload Material
         </button>
@@ -152,7 +155,7 @@
                   <br>
                   <div class="form-group">
                       <div class="pull-right">
-                          <button type="submit" class="btn btn-danger">Submit</button>
+                          <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
                       </div>
                   </div>
 
@@ -195,7 +198,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <br>
                 <div class="form-group">
                     <div class="pull-right">
-                        <button type="submit" class="btn btn-danger">Submit</button>
+                        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
                     </div>
                 </div>
 
