@@ -16,7 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       /* src:url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'); */
 }
 body {
-	background-image: url('assets/images/bg.png');
+	/* background-image: url('assets/images/bg.png'); */
 	font-family: 'open_sansregular';
 	font-size: 100%;
 }

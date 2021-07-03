@@ -105,7 +105,7 @@ a{
 	left: 40%;
 }
 .top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link{
-	color: #eea412;
+	color: white;
 }
 .top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link::after{
 	opacity: 1;
