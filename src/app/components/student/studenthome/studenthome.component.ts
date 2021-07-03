@@ -106,7 +106,7 @@ console.log("go  "+this.authService.getCurrentUser().level);
       this.courses=resp;
     
 
-      console.log(this.courses);
+      console.log("cooo",this.courses);
       
     })
   
