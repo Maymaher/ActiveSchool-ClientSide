@@ -79,11 +79,11 @@
                 <li *ngFor="let Homework of Homeworks">
     
     <a [href]="homeworkPath+Homework.name" >{{Homework.name}}</a>
-    <button style="margin: 7px;margin-left: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-primary" data-bs-toggle="modal"
-    data-bs-target="#staticBackdrop">
-    Upload Answer
-</button>
     
+<button style="margin: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-info" >
+<a style="text-decoration: none;" [routerLink]="['/homework',Homework._id,'answers' ]"> Upload Answer </a>
+</button>
+
                 </li>
                 
             </ul>
