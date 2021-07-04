@@ -12,7 +12,7 @@
                 <div class="card-body" >
                  
                  <h5>ZoomLink</h5>
-                 <a href="{{course[0].Zoomlink}}" style="float: left; padding:0.4em 0.4em; " type="button" class="btn btn-danger"  
+                 <a href="{{course[0].Zoomlink}}" style=" "   
                  data-bs-target="#staticBackdropMaterial">
               {{course[0].Zoomlink}}</a> 
 
@@ -28,14 +28,14 @@
         
                 <div class="card-body" >
                  
-                 <h5>ExamLink</h5>
+                 <h5>Exam</h5>
               
              
 
             <ul  >
  
                 <li  *ngIf="exam">
-                    <a [href]="examsPath+exam.examFile">{{exam.date}}</a>
+                    <a routerLink="/exam/{{exam._id}}">{{exam.date}}</a>
     
                 </li>
                 <li   *ngIf ="!exam">
@@ -103,7 +103,13 @@
           
         </div>
         <div>
-            <div class="card" style="width: 60ch;height: auto;float: right;height: 40ch;margin-top: 10ch;margin-right: 2ch;background-color: rgb(228, 225, 225);">
+            <div class="card" style="width: 42ch;
+            height: auto;
+         
+            margin-top: 2ch;
+            margin-right: 2ch;
+            background-color: rgb(228, 225, 225);
+            margin-left: 15px;">
         
                 <div class="card-body" >
                  
@@ -159,7 +165,7 @@
                   <br>
                   <div class="form-group">
                       <div class="pull-right">
-                          <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                          <button type="submit" class="btn btn-danger" >Submit</button>
                       </div>
                   </div>
 
@@ -202,7 +208,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <br>
                 <div class="form-group">
                     <div class="pull-right">
-                        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                        <button type="submit" class="btn btn-danger" >Submit</button>
                     </div>
                 </div>
 

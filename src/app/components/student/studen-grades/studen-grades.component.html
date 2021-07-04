@@ -1,6 +1,10 @@
 <div *ngIf="authService.getCurrentUser().type=='student'">
+
+    <div class="container">
+
+  
  <h1 style="text-align: center;margin-top:5%;">Student Grades</h1>
- <div  class="container table"  style="border: 3px solid  black;margin-top:2%;" >
+ <div  class="container table-hover"  style="border: 3px solid  black;margin-top:2%;" >
     <span style="text-align: center;margin-left: 33%;">
 
         <span style="font-size: xx-large;text-align: center;">
@@ -12,6 +16,7 @@ Grade
         
         </span>
     </span>
+    <hr/>
 
 <div  style="text-align:center"*ngFor="let cou of coursesinfo">
 
@@ -19,8 +24,10 @@ Grade
         <div *ngIf="cou[0]._id==grade.exam.course">
            
         <span >{{cou[0].name}}</span>
+     
         <span style="margin-left:20%;">{{grade.grade}}</span>
-
+        <hr/>
+       
         </div>
 
 
@@ -30,6 +37,7 @@ Grade
 
 </div>
  </div>
+</div>
 </div>
 <div class="alter alter-danger" *ngIf="authService.getCurrentUser().type!='student'">
     UnAthoeize
