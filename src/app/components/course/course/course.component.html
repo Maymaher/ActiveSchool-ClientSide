@@ -32,10 +32,14 @@
               
              
 
-            <ul  *ngFor="let exam of Exam">
+            <ul  >
  
-                <li *ngIF="exam.from==currentDate" >
+                <li  *ngIf="exam">
                     <a [href]="examsPath+exam.examFile">{{exam.date}}</a>
+    
+                </li>
+                <li   *ngIf ="!exam">
+                   <h5 style="color:green ">there is no Exam</h5>
     
                 </li>
                 

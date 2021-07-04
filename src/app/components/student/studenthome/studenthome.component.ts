@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
- import { UserService } from '../../../services/user.service';
-import { StudentService } from '../../../services/student.service';
-import { Observable } from 'rxjs';
-import { Router } from "@angular/router";
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { StudentService } from '../../../services/student.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-studenthome',
@@ -48,7 +47,7 @@ export class StudenthomeComponent implements OnInit {
       
   
 
-     console.log(this.scheular[0]._id);
+     console.log("schedual",this.scheular[0]._id);
      this._studentService.getStudentSturdaySchedular(this.scheular[0]._id).subscribe(resp =>{
 
       this.sturdaySchedual=resp;
@@ -107,7 +106,7 @@ console.log("go  "+this.authService.getCurrentUser().level);
       this.courses=resp;
     
 
-      console.log(this.courses);
+      console.log("cooo",this.courses);
       
     })
   

@@ -21,10 +21,11 @@ import { StudentsExamAnswersComponent } from './components/teacher/students-exam
 import { HomeworkAnswerComponent } from './components/course/homework-answer/homework-answer.component';
 import { AuthGuard } from './guards/auth.guard';
 
-
 const routes: Routes = [
-   
+    // { path: 'home', component: HomeComponent},
+
     {path:'home',component:StudenthomeComponent,canActivate: [AuthGuard]},
+
     {path:'header',component:HeaderComponent,canActivate: [AuthGuard]},
     { path: 'register', component: SignUpComponent },
     { path: 'admin/home', component: HomeAdminComponent ,canActivate: [AuthGuard]},

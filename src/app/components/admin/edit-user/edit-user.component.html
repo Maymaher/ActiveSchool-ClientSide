@@ -39,8 +39,9 @@
                     </div>
     
            
-    
+  
             <div class="group" *ngIf="userData.type=='student'">
+          
                         <label for="pass" class="label">level</label>
               <select id="type" type="option" class="input" [(ngModel)]="level" name="level">
                 <option *ngFor="let level of allLevels" value="{{level._id}}" name="level">{{level.number}}</option>
