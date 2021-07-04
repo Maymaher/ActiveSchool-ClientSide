@@ -43,7 +43,7 @@ upload(id:any,homework:any,file:File)
 
     console.log(formData);
    
-      return this._http.post('http://localhost:3200/homeworkAnswerUpload'+id, formData)
+      return this._http.post('http://localhost:3200/homeworkAnswerUpload/'+id, formData)
       .pipe(map((resp:any)=> resp.json()));
       
     
@@ -59,6 +59,13 @@ getAllHomework(id:any)
 
 
 
+
+}
+
+getAllAnswersOfOneHomework(id:any){
+
+  return this._http.get('http://localhost:3200/homeworks/'+id+'/answers')
+      .pipe(map((resp:any)=> resp.json()));
 
 }
 

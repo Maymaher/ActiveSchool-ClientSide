@@ -18,6 +18,7 @@ import { AddStudentsGradesComponent } from './components/teacher/add-students-gr
 import { ExamTeacherComponent } from './components/teacher/exam-teacher/exam-teacher.component';
 import { ProfileTeacherComponent } from './components/teacher/profile/profile.component';
 import { StudentsExamAnswersComponent } from './components/teacher/students-exam-answers/students-exam-answers.component';
+import { HomeworkAnswerComponent } from './components/course/homework-answer/homework-answer.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -57,6 +58,8 @@ const routes: Routes = [
     { path: 'exam/:id', component: ExamComponent, canActivate: [AuthGuard]},
     //Course Page
     { path: 'course/:id', component: CourseComponent, canActivate: [AuthGuard]},
+    //HomeWork Answer Page
+    { path: 'homework/:id/answers', component: HomeworkAnswerComponent, canActivate: [AuthGuard]},
     // { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' ,canActivate: [AuthGuard]},

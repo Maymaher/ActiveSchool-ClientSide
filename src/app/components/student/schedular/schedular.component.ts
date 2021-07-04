@@ -17,6 +17,7 @@ export class SchedularComponent implements OnInit {
   public tusdaySchedual:any
   public wensdaySchedual:any
   public thrisdaySchedual:any
+  public courses:any
   
 
   public user:any=[{
@@ -102,6 +103,14 @@ export class SchedularComponent implements OnInit {
     })
 
 
+    this._studentService.getlevelCourcese(this._studentService.getCurrentUser().level).subscribe(resp =>{
+
+      this.courses=resp;
+    
+
+      console.log(this.courses);
+      
+    })
   
   
 }

@@ -42,6 +42,7 @@ import { StudentService } from './services/student.service';
 import { TeacherService } from './services/teacher.service';
 import { UserService } from './services/user.service';
 import { HomeworkAnswerComponent } from './components/course/homework-answer/homework-answer.component';
+import { FooterComponent } from './components/footer/footer.component';
  
 
 // used to create fake backend
@@ -90,6 +91,7 @@ import { HomeworkAnswerComponent } from './components/course/homework-answer/hom
         ExamTeacherComponent,
         ExamComponent,
         HomeworkAnswerComponent,
+        FooterComponent,
         
 
     
