@@ -1,0 +1,32 @@
+<div class="login-container" style="display: flex;align-items: center;
+justify-content: center;margin-top: 10%;"> 
+  <img src="/assets/images/4860253.jpg" alt="image" width="300" height="230"  >
+<form (submit)="onLogin()" class="form-horizontal" >
+  
+
+    <h2>Login</h2>
+  
+  
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="email" class="form-control" [(ngModel)]="email" name="email" >
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" [(ngModel)]="password" name="password" >
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <div class="">
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </div>
+    </div>
+  
+  </form>
+</div>
+

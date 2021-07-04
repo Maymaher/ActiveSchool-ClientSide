@@ -1,0 +1,41 @@
+<div *ngIf="authorized_user==true">
+    
+    <div class="card" style="width: auto;margin:auto;margin-top: 10ch;">
+        
+        <div class="card-body" style="display: flex;">
+         
+          <img src="/assets/images/WhatsApp Image 2021-06-27 at 3.07.54 PM.jpeg" alt="image" width="270" height="220">
+          <table  class="table table-bordered" >
+            <thead>
+              <tr>
+                <th scope="col">Exam</th>
+                <th scope="col">Course</th>
+                <th scope="col">Level</th>
+                <th scope="col">Date</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Answers</th>
+
+              </tr>
+            </thead>
+            <tbody>
+                
+                    <tr *ngFor="let exam of exams">
+                
+                        <td><a [href]="examPath+exam.examFile">{{exam.examFile}}</a></td>
+                        <td><a routerLink="/exam/{{exam._id}}">{{exam.course.name}}</a></td>
+                        <td>{{exam.level.number}}</td>
+                        <td>{{exam.date}}</td>
+                        <td>{{exam.from}}</td>
+                        <td>{{exam.to}}</td>
+                        <td> <a routerLink="/teacher/examAnswers/{{exam._id}}" class="btn btn-primary">Answers</a></td>
+                     </tr>
+               
+             
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+</div>
+<p *ngIf="authorized_user==false"> Unauthorized </p>

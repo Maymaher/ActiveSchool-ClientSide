@@ -1,0 +1,7 @@
+.student:active{
+    background-color: yellow;
+    color: blue;
+}
+.student{
+    background-color: #db4b4b;
+}

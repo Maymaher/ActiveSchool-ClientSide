@@ -1,0 +1,24 @@
+<div class="container">
+
+<div class="row" style="margin: 0 auto;">
+
+<div class="card" style="width: 22rem;margin:50px" *ngFor="let answer of answers">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+     
+
+      <h5 class="card-title"><h4 style="display: inline-block  ">Student Name : </h4 > {{answer.student.firstName}} {{answer.student.lastName}}</h5>
+        <h4 style="display: inline-block  ">Answer : </h4><a [href]="examPath+answer.exam.examFile">{{answer.exam.examFile}}</a>
+
+        <h5 class="card-title"><h4 style="display: inline-block  ">Exam Name : </h4 > {{exam.course.name}}</h5>
+          <h5 class="card-title"><h4 style="display: inline-block  ">Grade : </h4 > {{answer.grade}}</h5>
+
+          <h5 class="card-title"><h4 style="display: inline-block  ">Level : </h4 > {{exam.level.number}}</h5>
+
+          <a routerLink="/teacher/examGrade/{{answer.student._id}}/{{answer.exam._id}}" class="btn btn-primary">Add Grade</a>
+    </div>
+  </div>
+
+
+</div>
+</div>

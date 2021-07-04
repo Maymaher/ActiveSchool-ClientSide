@@ -1,0 +1,130 @@
+<div class="container"  style="background: #fffefe;" *ngIf="_studentService.getCurrentUser().type=='student'">
+  <h1 style="text-align: center;
+  color: #312141;
+  font-size: 57px;
+  font-weight: 400;
+  text-transform: capitalize;
+  display: block;
+  margin: 0;
+  margin-top:20px;
+  padding: 0 0 30px;
+  position: relative;
+  line-height: 120% !important;
+  margin-top: 2%;
+  ">Daily Schedule</h1>
+  <table class="table-hover table table-striped grid  " style="margin-top:2%; background-color: #dad7d7;" >
+  <thead>
+  <tr style="background-color: #797979;">
+  <th style="width: 75px ;color: #312141; ">Day</th>
+  <th style="width: 75px;color: #312141;">9:10</th>
+  <th style="width: 75px;color: #312141;">10:11</th>
+  <th style="width: 75px;color: #312141;">11:12</th>
+  <th style="width: 75px;color: #312141;">12:1</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>
+  <h5 style="color: #312141;">Sturday</h5>
+  </td>
+  <td *ngFor="let day of sturdaySchedual"  style="   width: 50px;">
+    <div *ngFor="let co of courses" > 
+      <div *ngIf="co.name == day.courses">
+  <a  id="myico"style="margin: auto; width: 30px;" class=" grid-template-rows  grid bg-red schedule-item" routerLink="/course/{{co._id}}">{{day.courses}} </a>
+      </div>
+      </div>
+  </td>
+  </tr>
+  <tr>
+  
+  <td>
+  <h5 style="color: #312141;">Sunday</h5>
+  </td>
+  <td *ngFor="let day of sundaySchedual">
+    <div *ngFor="let co of courses"  style="   width: 50px;" >
+      <div *ngIf="co.name == day.courses">
+        <a    style="margin: auto;  width: 30px;"class=" grid-template-rows  grid bg-blue schedule-item" routerLink="/course/{{co._id}}">{{day.courses}} </a>
+
+      </div>
+      </div>
+  </td>
+  </tr>
+  <tr>
+  
+  <td>
+  <h5 style="color: #312141;">Monday</h5>
+  </td>
+  <td *ngFor="let day of mondaySchedual">
+    <div *ngFor="let co of courses">
+      <div *ngIf="co.name == day.courses">
+        <a routerLink="/course/{{co._id}}"
+        style="margin: auto;"
+        class=" grid-template-rows  grid bg-purple schedule-item" 
+        >{{day.courses}} </a>
+
+      </div>
+      </div>
+  </td>
+  </tr>
+  
+  <tr>
+  
+  <td>
+  <h5 style="color: #312141;">Tusday</h5>
+  </td>
+  <td *ngFor="let day of tusdaySchedual">
+    <div *ngFor="let co of courses">
+      <div *ngIf="co.name == day.courses">
+        <a routerLink="/course/{{co._id}}"
+        class=" grid-template-rows  grid bg-yellow schedule-item"  style="margin: auto;" >{{day.courses}}
+        
+        
+        </a>
+
+      </div>
+      </div>
+  </td>
+  </tr>
+  <tr>
+  
+  <td>
+  <h5 style="color: #312141;">Wensday</h5>
+  </td>
+  <td *ngFor="let day of wensdaySchedual">
+    <div *ngFor="let co of courses">
+      <div *ngIf="co.name == day.courses">
+        <a routerLink="/course/{{co._id}}"
+        
+        style="margin: auto;"
+        class=" grid-template-rows  grid bg-green schedule-item" 
+        >{{day.courses}} </a>
+
+      </div>
+      </div>
+  </td>
+  </tr>
+  
+  <tr>
+  
+  <td>
+  <h5 style="color: #312141;">Thrisday</h5>
+  </td>
+  <td *ngFor="let day of thrisdaySchedual"   style="width: 40px;">
+    <div *ngFor="let co of courses">
+      <div *ngIf="co.name == day.courses">
+        <a routerLink="/course/{{co._id}}"
+        style="margin: auto;"
+        class=" grid-template-rows  grid bg-purple schedule-item" 
+        >{{day.courses}} </a>
+      </div>
+      </div>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+ 
+  </div>
+  <div class="alter alter-danger" *ngIf="_studentService.getCurrentUser().type!='student'">
+  UnAthoeize
+  </div>
+ 

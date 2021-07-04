@@ -1,0 +1,45 @@
+<div class="container" *ngIf="CurrentUser.type=='admin'">
+      <div class="row">
+    <div class="col-md-12">
+      <form action="index.html" method="post" style="margin-bottom: 10%;
+      margin-top: 10%;"> 
+        <h1> Edit Course </h1>
+        
+        <fieldset>
+          
+        
+          <label for="name">Course Name:</label>
+          <input type="text" id="name" n [(ngModel)]="name" placeholder="{{courseDetails.name}}"  name="name" >
+        
+          <label for="email">Course Description:</label>
+          <input type="text" id="mail" [(ngModel)]="description"  placeholder="{{courseDetails.description}}"  name="description" >
+       
+
+          <label for="zoom">Zoom link:</label>
+          <input type="text" id="zoom" [(ngModel)]="Zoomlink"  placeholder="{{courseDetails.Zoomlink}}"  name="Zoomlink" >
+       
+          <label for="password">Course Level:</label>
+          <!-- <input type="password" id="password"     [(ngModel)]="level"   name="level" > -->
+          <div class="group" >
+            <select id="type" type="option" class="input" [(ngModel)]="level" name="level">
+                <!-- <option></option> -->
+                <option *ngFor="let level of allLevels" value="{{level._id}}" name="level">{{level.number}}</option>
+              </select>
+    
+
+</div>
+         
+        </fieldset>
+      
+       <div style="text-align: center;">
+        <button type="submit" (click)="updateCourse()" class="btn btn-primary">Edit</button>
+
+       </div>
+        
+       </form>
+        </div>
+      </div>
+    </div>
+
+
+<div *ngIf="CurrentUser.type!='admin'">unauthorized</div>

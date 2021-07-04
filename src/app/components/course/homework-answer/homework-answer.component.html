@@ -1,0 +1,54 @@
+<div class="card" style="width: 120ch;margin:auto;margin-top: 10ch;">
+
+    <div class="card-body" style="display: flex;">
+        <img src="/assets/images/3297140.jpg" alt="image" width="270" height="220">
+        <div *ngIf="typeOfUser=='student'">
+        <form (submit)="UplaodHomeworkAnswer()" class="form-horizontal">
+
+
+            <div class="form-group">
+                <label for="myfile">Select a file:</label>
+                <div class="col-lg-10">
+                    <input type="file" id="myfile" name="myfile" ngModel (change)="getFile($event)">
+                </div>
+            </div>
+
+
+            <br>
+            <div class="form-group">
+                <div class="pull-right">
+                    <button type="submit" class="btn" style="background-color: #00c7a1;">Upload Answer</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+        <div *ngIf="typeOfUser=='teacher'">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="color: #00c7a1;" scope="col">Answer</th>
+                        <th style="color: #00c7a1;" scope="col">Student</th>
+                        <th style="color: #00c7a1;" scope="col">Student Email</th>
+                        <!-- <th style="color: #00c7a1;" scope="col">Student Level</th>
+                        <th style="color: #00c7a1;" scope="col">Student Class</th> -->
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let answer of answers">
+
+                        <td><a [href]=" homeworkAnswerPath+answer.answer">{{answer.answer}}</a></td>
+                        <td>{{answer.student.firstName}} {{answer.student.lastName}}</td>
+                        <td>{{answer.student.email}}</td> 
+                        <!-- <td>{{answer.student.class.number}}</td>  -->
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

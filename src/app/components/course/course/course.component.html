@@ -1,0 +1,231 @@
+<div >
+    
+    <div class="card" style="width: 120ch;margin:auto;margin-top: 10ch;">
+        
+        <div class="card-body" style="display: flex;justify-content: space-between;">
+         
+          <img src="/assets/images/Happy students or pupils watching study webinar.jpg" alt="image" width="270" height="220">
+
+          <div>
+            <div class="card" style="width: 40ch;float: right;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
+                 <h5>ZoomLink</h5>
+                 <a href="{{course[0].Zoomlink}}" style=" "   
+                 data-bs-target="#staticBackdropMaterial">
+              {{course[0].Zoomlink}}</a> 
+
+           
+         
+                  
+                  
+                </div>
+            </div>
+            
+
+            <div class="card" style="width: 40ch;margin-right: 10px;;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
+                 <h5>Exam</h5>
+              
+             
+
+            <ul  >
+ 
+                <li  *ngIf="exam">
+                    <a routerLink="/exam/{{exam._id}}">{{exam.date}}</a>
+    
+                </li>
+                <li   *ngIf ="!exam">
+                   <h5 style="color:green ">there is no Exam</h5>
+    
+                </li>
+                
+            
+            </ul>
+
+           
+         
+                  
+                  
+                </div>
+            </div>
+             
+
+          </div>
+          
+          
+        </div>
+    <div class="card" style="width: 120ch;margin:auto;margin-top: 10ch;">
+        
+        <div class="card-body" style="display: flex;justify-content: space-between;">
+         
+ 
+          <div>
+            <div class="card" style="width: auto;float: right;background-color: rgb(228, 225, 225);">
+        
+                <div class="card-body" >
+                 
+                 <h5>HomeWorks</h5>
+
+                 <!-- Button trigger modal -->
+
+           
+            <button *ngIf="typeOfUser=='teacher'" style="display: block; padding:0.4em 0.4em; " type="button" class="btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                Upload Homework
+            </button>
+            <ul>
+
+            
+                <li *ngFor="let Homework of Homeworks">
+    
+    <a [href]="homeworkPath+Homework.name" >{{Homework.name}}</a>
+    
+<button *ngIf="typeOfUser=='student'" style="margin: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-info" >
+<a style="text-decoration: none;" [routerLink]="['/homework',Homework._id,'answers' ]">Upload Answer</a>
+</button>
+<button *ngIf="typeOfUser=='teacher'" style="margin: 5px; padding:0.4em 0.4em; " type="button" class="btn btn-info" >
+    <a style="text-decoration: none;" [routerLink]="['/homework',Homework._id,'answers' ]">Answers</a>
+    </button>
+    
+                </li>
+                
+            </ul>
+                  
+                </div>
+            </div>
+             
+          </div>
+          
+          
+        </div>
+        <div>
+            <div class="card" style="width: 42ch;
+            height: auto;
+         
+            margin-top: 2ch;
+            margin-right: 2ch;
+            background-color: rgb(228, 225, 225);
+            margin-left: 15px;">
+        
+                <div class="card-body" >
+                 
+                 <h5>Materials</h5>
+                  
+                  
+                 <!-- Button trigger modal -->
+
+           
+            <button *ngIf="typeOfUser=='teacher'" style="padding:0.4em 0.4em; display: block;" type="button" class="btn btn-danger" data-bs-toggle="modal"
+            data-bs-target="#staticBackdropMaterial">
+            Upload Material
+        </button>
+
+
+        <ul>
+
+            
+            <li *ngFor="let material of materialFiles">
+
+<a [href]="materialPath+material" >{{material}}</a>
+
+            </li>
+        </ul>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Upload Homework</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+              <form (submit)="UplaodHomework()" class="form-horizontal">
+
+                  
+                  <div class="form-group">
+                      <label for="myfile">Select a file:</label>
+                      <div class="col-lg-10">
+                          <input type="file" id="myfile" name="myfile" ngModel (change)="getFile($event)">
+                      </div>
+                  </div>
+
+
+                  <br>
+                  <div class="form-group">
+                      <div class="pull-right">
+                          <button type="submit" class="btn btn-danger" >Submit</button>
+                      </div>
+                  </div>
+
+              </form>
+
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+<!-- Modal Upload Material-->
+<div class="modal fade" id="staticBackdropMaterial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Upload Material</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form (submit)="UplaodMaterial()" class="form-horizontal">
+
+                
+                <div class="form-group">
+                    <label for="myfile">Select a file:</label>
+                    <div class="col-lg-10">
+                        <input type="file" id="myfileMaterial" name="myfileMaterial" ngModel (change)="getFileMaterial($event)">
+                    </div>
+                </div>
+
+
+                <br>
+                <div class="form-group">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-danger" >Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+
+    </div>
+</div>
+</div>
+ 
+</div>
+
+
+

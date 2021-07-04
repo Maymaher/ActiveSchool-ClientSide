@@ -1,0 +1,46 @@
+<div class="container" style="background: #fffefe;" *ngIf="_studentAuth.getCurrentUser().type=='student'">
+<head>
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  
+  <h1 style="text-align: center;margin-top:4%;"> Student Attendance</h1>
+  <table class="table-hover table table-striped" style="text-align: center;margin-top:3%;">
+  
+    <thead>
+      <tr style="    background-color: #a4a5a7;
+      color: #312141;">
+        <th style="width: 50px">Day</th>
+        <th style="width: 50px">Attendance </th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let user of attendence">
+ 
+            <td>{{user.date}}</td>
+          <td *ngIf="user.status">
+            <i class="fa fa-check" style="font-size:48px;color:green"></i>
+       
+          </td>
+
+          <td *ngIf="!user.status">
+            <i class="fa fa-close" style="font-size:48px;color:red"></i>
+       
+          </td>
+
+
+    
+        </tr>
+  
+    
+    </tbody>
+  </table>
+  
+</div>
+<div class="alter alter-danger" *ngIf="_studentAuth.getCurrentUser().type!='student'">
+  UnAthoeize
+  </div>
+  
+  
