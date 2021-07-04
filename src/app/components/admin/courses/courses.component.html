@@ -28,7 +28,18 @@
 </button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+      <a   (click)="deleteCourse(course._id)"  class="btn btn-danger">Delete</a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<div *ngIf="CurrentUser.type!='admin'">unauthorized</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -57,13 +68,3 @@
     </div>
   </div>
 </div>
-
-
-      <a  (click)="deleteCourse(course._id)"  class="btn btn-danger">Delete</a>
-      
-    </div>
-  </div>
-</div>
-</div>
-
-<div *ngIf="CurrentUser.type!='admin'">unauthorized</div>
