@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 import { ExamService } from '../../../services/exam.service';
 import { UserService } from '../../../services/user.service';
-import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-exam',
@@ -86,6 +86,7 @@ UplaodExam(){
   this._examService.uploadExamAnswer(this.eid,this.uid,exam,this.myfile).subscribe(data=>{
     // console.log(data.success);
     this._flash.show(data.message, { cssClass: 'alert-success'});
+    // alert(data.message);
    })
  
 }

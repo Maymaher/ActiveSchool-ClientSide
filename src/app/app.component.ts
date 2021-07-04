@@ -70,7 +70,7 @@ status:any={
 
 
 
-    if( stud.status &&(date.getHours()==9 && date.getMinutes()==20 && date.getSeconds()==7))
+    if( stud.status &&(date.getHours()==9 && date.getMinutes()==20 && date.getSeconds()==8))
         {
           this.user.student=stud._id;
           this.user.status=true;
