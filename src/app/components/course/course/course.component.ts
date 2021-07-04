@@ -32,6 +32,7 @@ export class CourseComponent implements OnInit {
   exam:any;
   currentDate:any;
   examPath="http://localhost:3200/public/materials/";
+  typeOfUser="student";
 
   
 
@@ -74,6 +75,7 @@ export class CourseComponent implements OnInit {
     this.currentDate=new Date().toISOString()
     this.cid = this.activatedRoute.snapshot.paramMap.get('id');
     this.CurrentUser=this._userService.getCurrentUser();
+    this.typeOfUser= this.CurrentUser.type;
 
     this._studentService.getCoursesInfo(this.cid).subscribe(resp =>{
 
@@ -135,6 +137,7 @@ for(let e of this.Exam)
       }
       this._homeworkService.upload(this.cid,homework,this.myfile).subscribe(data=>{
         this._flash.show(data.message, { cssClass: 'alert-success'});
+        location.reload();
       })
      
       
@@ -156,6 +159,7 @@ for(let e of this.Exam)
       }
       this._materialService.upload(this.cid,material,this.myfileMaterial).subscribe(data=>{
         this._flash.show(data.message, { cssClass: 'alert-success'});
+        location.reload();
       })
      
       

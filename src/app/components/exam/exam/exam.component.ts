@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExamService } from '../../../services/exam.service';
 import { UserService } from '../../../services/user.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-exam',
@@ -10,7 +11,7 @@ import { UserService } from '../../../services/user.service';
 })
 export class ExamComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private _userService :UserService,private _examService :ExamService) { }
+  constructor(private activatedRoute: ActivatedRoute,private _userService :UserService,private _examService :ExamService,private _flash :FlashMessagesService) { }
   
   exam:any={};
   examPath="http://localhost:3200/public/exams/";
@@ -18,8 +19,11 @@ export class ExamComponent implements OnInit {
   myfile:any=null;
   eid:any;
   uid:any;
-  now= Date.parse(Date())
+  now= new Date().toISOString()
   ExamNow=false;
+  from="";
+  to="";
+  date="";
 
   ngOnInit(): void {
     this.eid = this.activatedRoute.snapshot.paramMap.get('id');
@@ -28,23 +32,28 @@ export class ExamComponent implements OnInit {
 
     this._examService.getSpecificExam(this.eid).subscribe(data =>{
       this.exam=data;
-      // console.log("now " +this.now);
-      // console.log("dateeeeee  "+Date.parse(this.exam.to))
-
-      // console.log("dateeeeee  "+Date.parse(this.exam.from))
-
+      this.from=this.exam.from;
+      this.from=this.from.substring(11,22);
+      this.to=this.exam.to;
+      this.to=this.to.substring(11,22);
+      this.date=this.exam.date;
+      this.date=this.date.substring(0,10);
       
-      if(this.now <= Date.parse(this.exam.to) && this.now >= Date.parse(this.exam.from))
+      if(this.now <= this.exam.to && this.now >= this.exam.from)
       {
         this.ExamNow=true;
         console.log(this.ExamNow)
       }
       else
       {
+        console.log(Date.parse(this.exam.from))
+        console.log(Date.parse(this.exam.to))
+        console.log(this.now)
         
         console.log(this.ExamNow)
       }
 
+  
     })
 
     
@@ -76,6 +85,7 @@ UplaodExam(){
   }
   this._examService.uploadExamAnswer(this.eid,this.uid,exam,this.myfile).subscribe(data=>{
     // console.log(data.success);
+    this._flash.show(data.message, { cssClass: 'alert-success'});
    })
  
 }
