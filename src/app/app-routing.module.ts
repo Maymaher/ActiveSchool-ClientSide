@@ -36,6 +36,7 @@ const routes: Routes = [
     { path: 'admin/editCourse/:id', component: EditCourseComponent ,canActivate: [AuthGuard]},
 
     { path: 'admin/courses', component: CoursesComponent ,canActivate: [AuthGuard]},
+    // { path: 'admin/courses/:id', component: CoursesComponent ,canActivate: [AuthGuard]},
 
     {path:'student/profile',component:ProfileComponent,canActivate: [AuthGuard]},
     {path:'student/schedular',component:SchedularComponent,canActivate: [AuthGuard]},
